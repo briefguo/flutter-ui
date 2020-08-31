@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "lib": ["DOM"],
+    "jsx": "react",
+    "moduleResolution": "Node",
+    "types": ["node"],
+    "esModuleInterop": true
+  },
+  "include": ["src/**.tsx", "src/**.ts"]
+}

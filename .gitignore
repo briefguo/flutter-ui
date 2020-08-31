@@ -1,0 +1,7 @@
+# nextjs
+.next
+build
+out
+
+# npm
+node_modules

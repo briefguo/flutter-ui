@@ -5,7 +5,10 @@
     "jsx": "react",
     "moduleResolution": "Node",
     "types": ["node"],
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    // 如果没有这个，会出现react_1.useRef和react_1['default'].createElement使用的不是一个React实例
+    // 而导致hooks call error
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src/**.tsx", "src/**.ts"]
 }

@@ -25,11 +25,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 exports.__esModule = true;
-exports.ContentContainer = exports.SizedBox = exports.Container = void 0;
+exports.Container = void 0;
 var react_1 = __importDefault(require("react"));
 var renderChildren_1 = require("./renderChildren");
-var Device_1 = require("./Device");
-var deafultTheme_1 = require("./deafultTheme");
 exports.Container = function (props) {
     var contrastingColor = props.contrastingColor, flex = props.flex, id = props.id, expanded = props.expanded, child = props.child, children = props.children, _a = props.visible, visible = _a === void 0 ? true : _a, className = props.className, onClick = props.onClick, styles = __rest(props, ["contrastingColor", "flex", "id", "expanded", "child", "children", "visible", "className", "onClick"]);
     if (child && children) {
@@ -40,14 +38,6 @@ exports.Container = function (props) {
     }
     return (react_1["default"].createElement("div", { id: id, onClick: onClick, className: className !== null && className !== void 0 ? className : '', style: __assign(__assign({}, styles), { cursor: onClick ? 'pointer' : props.cursor, display: flex ? 'flex' : undefined, flex: expanded ? '1 1' : undefined, color: contrastingColor }) }, renderChildren_1.renderChildren(child || children)));
 };
-exports.SizedBox = function (props) {
+exports.Container.SizedBox = function (props) {
     return react_1["default"].createElement(exports.Container, { width: props.width, height: props.height });
-};
-exports.ContentContainer = function (props) {
-    var _a;
-    return (react_1["default"].createElement(react_1["default"].Fragment, null,
-        react_1["default"].createElement(Device_1.Desktop, null,
-            react_1["default"].createElement(exports.Container, { className: props.className, width: (_a = props.width) !== null && _a !== void 0 ? _a : deafultTheme_1.theme.contentContainerWidth, margin: "0 auto", child: props.children })),
-        react_1["default"].createElement(Device_1.Mobile, null,
-            react_1["default"].createElement(exports.Container, { className: props.className, margin: "0 12px", child: props.children }))));
 };

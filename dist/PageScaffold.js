@@ -17,8 +17,8 @@ exports.PageScaffold = function (props) {
     }
     if (props.loading) {
         return (react_1["default"].createElement(react_1["default"].Fragment, null,
-            react_1["default"].createElement(Container_1.SizedBox, { height: 300 }),
-            react_1["default"].createElement(Container_1.SizedBox, { height: 300 })));
+            react_1["default"].createElement(Container_1.Container.SizedBox, { height: 300 }),
+            react_1["default"].createElement(Container_1.Container.SizedBox, { height: 300 })));
     }
     var contrastingColor = props.contrastingColor || deafultTheme_1.theme.defaultContrastingColor;
     var backgroundColor = props.backgroundColor || deafultTheme_1.theme.defaultBodyBackground;

@@ -6,14 +6,15 @@
   "repository": "git@github.com:briefguo/flutter-ui.git",
   "author": "郭永杰 <gyj1206@icloud.com>",
   "license": "MIT",
-  "private": true,
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "tsc -d"
   },
-  "dependencies": {
+  "peerDependencies": {
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "dependencies": {
     "react-overlays": "^4.1.0",
     "react-responsive": "^8.1.0"
   },

@@ -1,8 +1,5 @@
-export * from './CountDownText';
-export * from './Device';
-export * from './PageScaffold';
-export * from './Container';
-export * from './Text';
-export * from './renderChildren';
-export * from './renderComponent';
-export * from './deafultTheme';
+export { PageScaffold } from './PageScaffold';
+export { Container } from './Container';
+export { Text } from './Text';
+export { renderChildren } from './renderChildren';
+export { renderComponent, RenderedComponent } from './renderComponent';

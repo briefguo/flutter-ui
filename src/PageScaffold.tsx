@@ -2,7 +2,7 @@ import React from 'react'
 import Portal from 'react-overlays/Portal'
 
 import { theme } from './deafultTheme'
-import { SizedBox } from './Container'
+import { Container } from './Container'
 import { isServer } from './isServer'
 
 interface PageScaffoldProps {
@@ -25,9 +25,9 @@ export const PageScaffold = (props: PageScaffoldProps) => {
   if (props.loading) {
     return (
       <>
-        <SizedBox height={300}></SizedBox>
+        <Container.SizedBox height={300}></Container.SizedBox>
         {/* <Center>loading...</Center> */}
-        <SizedBox height={300}></SizedBox>
+        <Container.SizedBox height={300}></Container.SizedBox>
       </>
     )
   }

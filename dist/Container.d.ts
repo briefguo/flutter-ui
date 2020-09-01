@@ -5,6 +5,7 @@ export interface ContainerProps {
     child?: any;
     onClick?: any;
     children?: React.ReactNode[];
+    className?: string;
     backgroundColor?: string;
     background?: string;
     backgroundPosition?: string;
@@ -21,7 +22,6 @@ export interface ContainerProps {
     borderBottom?: string;
     textAlign?: Property.TextAlign;
     fontSize?: string | number;
-    className?: string;
     height?: number;
     width?: number | string;
     flex?: boolean;
@@ -37,15 +37,12 @@ export interface ContainerProps {
     overflow?: Property.Overflow;
     position?: Property.Position;
 }
-export declare const Container: (props: ContainerProps) => JSX.Element;
+export declare const Container: {
+    (props: ContainerProps): JSX.Element;
+    SizedBox(props: SizedBoxProps): JSX.Element;
+};
 interface SizedBoxProps {
     width?: number;
     height?: number;
 }
-export declare const SizedBox: (props: SizedBoxProps) => JSX.Element;
-export interface ContentContainerProps {
-    className?: string;
-    width?: number | string;
-}
-export declare const ContentContainer: React.SFC<ContentContainerProps>;
 export {};

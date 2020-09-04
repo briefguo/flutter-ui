@@ -15,10 +15,11 @@
     "react-dom": "^16.13.1"
   },
   "dependencies": {
-    "react-overlays": "^4.1.0",
-    "react-responsive": "^8.1.0"
+    "react-overlays": "^4.1.0"
   },
   "devDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "@types/node": "^14.6.2",

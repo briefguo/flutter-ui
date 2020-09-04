@@ -38,6 +38,3 @@ exports.Container = function (props) {
     }
     return (react_1["default"].createElement("div", { id: id, onClick: onClick, className: className !== null && className !== void 0 ? className : '', style: __assign(__assign({}, styles), { cursor: onClick ? 'pointer' : props.cursor, display: flex ? 'flex' : undefined, flex: expanded ? '1 1' : undefined, color: contrastingColor }) }, renderChildren_1.renderChildren(child || children)));
 };
-exports.Container.SizedBox = function (props) {
-    return react_1["default"].createElement(exports.Container, { width: props.width, height: props.height });
-};

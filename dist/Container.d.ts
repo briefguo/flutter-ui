@@ -37,12 +37,4 @@ export interface ContainerProps {
     overflow?: Property.Overflow;
     position?: Property.Position;
 }
-export declare const Container: {
-    (props: ContainerProps): JSX.Element;
-    SizedBox(props: SizedBoxProps): JSX.Element;
-};
-interface SizedBoxProps {
-    width?: number;
-    height?: number;
-}
-export {};
+export declare const Container: (props: ContainerProps) => JSX.Element;

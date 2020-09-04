@@ -7,9 +7,7 @@ var __createBinding = (this && this.__createBinding) || (Object.create ? (functi
     o[k2] = m[k];
 }));
 exports.__esModule = true;
-exports.renderComponent = exports.renderChildren = exports.Text = exports.Container = exports.PageScaffold = void 0;
-var PageScaffold_1 = require("./PageScaffold");
-__createBinding(exports, PageScaffold_1, "PageScaffold");
+exports.renderComponent = exports.renderChildren = exports.Text = exports.Container = void 0;
 var Container_1 = require("./Container");
 __createBinding(exports, Container_1, "Container");
 var Text_1 = require("./Text");

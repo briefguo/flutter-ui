@@ -1,4 +1,3 @@
-export { PageScaffold } from './PageScaffold'
 export { Container } from './Container'
 export { Text } from './Text'
 export { renderChildren } from './renderChildren'

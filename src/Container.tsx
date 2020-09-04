@@ -78,12 +78,3 @@ export const Container = (props: ContainerProps) => {
     </div>
   )
 }
-
-interface SizedBoxProps {
-  width?: number
-  height?: number
-}
-
-Container.SizedBox = (props: SizedBoxProps) => {
-  return <Container width={props.width} height={props.height}></Container>
-}

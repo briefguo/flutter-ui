@@ -1,12 +1,9 @@
 import React from 'react'
 import { Property } from 'csstype'
-import { textTheme, colors } from './deafultTheme'
 import { renderChildren } from './renderChildren'
 
 interface TextProps {
   children?: any
-  type?: keyof typeof textTheme
-  colorType?: keyof typeof colors
   color?: string
 
   fontWeight?: Property.FontWeight
@@ -22,25 +19,13 @@ interface TextProps {
 }
 
 export const Text = (props: TextProps) => {
-  const {
-    className,
-    children,
-    type: theme,
-    colorType,
-    color,
-    onClick,
-    style,
-    ...styles
-  } = props
-  const currentTextTheme = textTheme[theme || 'default'] as React.CSSProperties
-  const colorTheme = colorType ? colors[colorType] : undefined
+  const { className, children, color, onClick, style, ...styles } = props
   return (
     <span
       className={className}
       style={{
-        ...currentTextTheme,
+        color,
         ...styles,
-        color: color || colorTheme || currentTextTheme?.color,
         ...style,
       }}
       onClick={onClick}

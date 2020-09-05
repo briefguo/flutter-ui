@@ -6,7 +6,7 @@ export interface ContainerProps {
   id?: string
   child?: any
   onClick?: any
-  children?: React.ReactNode[]
+  children?: any
 
   className?: string
 

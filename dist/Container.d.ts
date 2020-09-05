@@ -1,10 +1,9 @@
-import React from 'react';
 import { Property } from 'csstype';
 export interface ContainerProps {
     id?: string;
     child?: any;
     onClick?: any;
-    children?: React.ReactNode[];
+    children?: any;
     className?: string;
     backgroundColor?: string;
     background?: string;

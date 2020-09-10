@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { Property } from 'csstype';
 export interface ContainerProps {
     id?: string;

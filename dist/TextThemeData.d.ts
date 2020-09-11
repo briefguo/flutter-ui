@@ -6,7 +6,7 @@ export declare class TextThemeData {
     static large: StyleData;
     static xlarge: StyleData;
     static xxlarge: StyleData;
-    static defaultTextTheme: any;
+    static defaultTextTheme: TextThemeData;
     constructor(v: {
         [key: string]: StyleData;
     });

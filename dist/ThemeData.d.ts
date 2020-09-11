@@ -1,11 +1,13 @@
 import { Colors } from './Colors';
+import { TextThemeData } from './TextThemeData';
 export declare class ThemeData {
-    static defaultTheme: {
-        contentContainerWidth: number;
-        bodyContrastingColor: string;
-        bodyBackground: string;
-        baseBorderRadius: string;
-        colors: typeof Colors;
-        textTheme: any;
-    };
+    contentContainerWidth: number;
+    bodyContrastingColor: string;
+    bodyBackground: string;
+    baseBorderRadius: string;
+    colors: typeof Colors;
+    textTheme: TextThemeData;
+    static defaultTheme: ThemeData;
+    constructor(v: Partial<ThemeData>);
+    copyWith(v: Partial<ThemeData>): any;
 }

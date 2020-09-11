@@ -41,7 +41,11 @@ var TextThemeData = /** @class */ (function () {
     TextThemeData.xxlarge = new StyleData_1.StyleData({
         fontSize: 48
     });
-    TextThemeData.defaultTextTheme = new TextThemeData(__assign(__assign({}, TextThemeData), { title: TextThemeData.middle, description: TextThemeData.small.copyWith({ color: Colors_1.Colors.secondary }), body: TextThemeData["default"] }));
+    TextThemeData.defaultTextTheme = new TextThemeData({
+        title: TextThemeData.middle,
+        description: TextThemeData.small.copyWith({ color: Colors_1.Colors.secondary }),
+        body: TextThemeData["default"]
+    });
     return TextThemeData;
 }());
 exports.TextThemeData = TextThemeData;

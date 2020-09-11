@@ -23,7 +23,6 @@ export class TextThemeData {
   })
 
   static defaultTextTheme = new TextThemeData({
-    ...TextThemeData,
     title: TextThemeData.middle,
     description: TextThemeData.small.copyWith({ color: Colors.secondary }),
     body: TextThemeData.default,

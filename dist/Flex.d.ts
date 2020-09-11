@@ -11,5 +11,5 @@ export interface FlexProps {
     children?: any;
     style?: React.CSSProperties;
 }
-export declare const Flex: import("styled-components").StyledComponent<(props: import("./Container").ContainerProps) => JSX.Element, any, FlexProps, never>;
-export declare const Center: import("styled-components").StyledComponent<(props: import("./Container").ContainerProps) => JSX.Element, any, FlexProps, never>;
+export declare const Flex: import("styled-components").StyledComponent<(props: import("./Container").ContainerProps) => JSX.Element, import("styled-components").DefaultTheme, FlexProps, never>;
+export declare const Center: import("styled-components").StyledComponent<(props: import("./Container").ContainerProps) => JSX.Element, import("styled-components").DefaultTheme, FlexProps, never>;

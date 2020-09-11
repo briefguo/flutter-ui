@@ -1,8 +1,13 @@
 import React from 'react'
 import Portal from 'react-overlays/Portal'
-import { GlobalStyle } from './defaultTheme'
+import { createGlobalStyle } from 'styled-components'
 
 const isServer = typeof window === 'undefined'
+
+const GlobalStyle = createGlobalStyle<{ color: string; background: string }>`
+  color:${props => props.color};
+  background:${props => props.background};
+`
 
 interface PageScaffoldProps {
   child?: React.ReactChild
@@ -35,10 +40,7 @@ export const PageScaffold = (props: PageScaffoldProps) => {
       {props.portal && <Portal container={bodyChild}>{props.portal}</Portal>}
       {props.footer}
       {props.modal}
-      <GlobalStyle
-        contrastingColor={contrastingColor}
-        backgroundColor={backgroundColor}
-      />
+      <GlobalStyle color={contrastingColor} background={backgroundColor} />
     </>
   )
 }

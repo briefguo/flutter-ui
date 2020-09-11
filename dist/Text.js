@@ -27,8 +27,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 exports.__esModule = true;
 exports.Text = void 0;
 var react_1 = __importDefault(require("react"));
-var renderChildren_1 = require("./renderChildren");
 exports.Text = function (props) {
     var className = props.className, children = props.children, color = props.color, onClick = props.onClick, style = props.style, styles = __rest(props, ["className", "children", "color", "onClick", "style"]);
-    return (react_1["default"].createElement("span", { className: className, style: __assign(__assign({ color: color }, styles), style), onClick: onClick }, renderChildren_1.renderChildren(children)));
+    return (react_1["default"].createElement("span", { className: className, style: __assign(__assign({ color: color }, styles), style), onClick: onClick }, children));
 };

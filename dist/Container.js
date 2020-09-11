@@ -27,7 +27,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 exports.__esModule = true;
 exports.Container = void 0;
 var react_1 = __importDefault(require("react"));
-var renderChildren_1 = require("./renderChildren");
 exports.Container = function (props) {
     var contrastingColor = props.contrastingColor, id = props.id, child = props.child, children = props.children, _a = props.visible, visible = _a === void 0 ? true : _a, className = props.className, onClick = props.onClick, style = props.style, styles = __rest(props, ["contrastingColor", "id", "child", "children", "visible", "className", "onClick", "style"]);
     if (child && children) {
@@ -36,5 +35,5 @@ exports.Container = function (props) {
     if (!visible) {
         return null;
     }
-    return (react_1["default"].createElement("div", { id: id, onClick: onClick, className: className !== null && className !== void 0 ? className : '', style: __assign(__assign(__assign({}, styles), { cursor: onClick ? 'pointer' : props.cursor, color: contrastingColor }), style) }, renderChildren_1.renderChildren(child || children)));
+    return (react_1["default"].createElement("div", { id: id, onClick: onClick, className: className !== null && className !== void 0 ? className : '', style: __assign(__assign(__assign({}, styles), { cursor: onClick ? 'pointer' : props.cursor, color: contrastingColor }), style) }, child || children));
 };

@@ -7,8 +7,7 @@ var __createBinding = (this && this.__createBinding) || (Object.create ? (functi
     o[k2] = m[k];
 }));
 exports.__esModule = true;
-exports.isMobile = exports.isDesktop = exports.Tablet = exports.Default = exports.Desktop = exports.Mobile = exports.renderComponent = exports.renderChildren = exports.Center = exports.Flex = exports.Space = exports.PageScaffold = exports.Content = exports.TextThemeData = exports.ThemeData = exports.Colors = exports.Text = exports.Container = void 0;
-require("./styled");
+exports.isMobile = exports.isDesktop = exports.Tablet = exports.Default = exports.Desktop = exports.Mobile = exports.renderComponent = exports.Center = exports.Flex = exports.Space = exports.PageScaffold = exports.Content = exports.TextThemeData = exports.ThemeData = exports.Colors = exports.Text = exports.Container = void 0;
 // base
 var Container_1 = require("./Container");
 __createBinding(exports, Container_1, "Container");
@@ -33,8 +32,6 @@ var Flex_1 = require("./Flex");
 __createBinding(exports, Flex_1, "Flex");
 __createBinding(exports, Flex_1, "Center");
 // utils
-var renderChildren_1 = require("./renderChildren");
-__createBinding(exports, renderChildren_1, "renderChildren");
 var renderComponent_1 = require("./renderComponent");
 __createBinding(exports, renderComponent_1, "renderComponent");
 // media query

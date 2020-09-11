@@ -1,58 +1,39 @@
 import React from 'react'
-import { Property } from 'csstype'
 import { renderChildren } from './renderChildren'
 
 export interface ContainerProps {
   id?: string
   child?: any
-  onClick?: any
   children?: any
+  onClick?: any
+
+  visible?: boolean
 
   className?: string
 
-  backgroundColor?: string
-  background?: string
-  backgroundPosition?: string
-  backgroundSize?: string
-  backgroundImage?: string
-  borderRadius?: string | number
   contrastingColor?: string
+  background?: string
   padding?: string | number
-  paddingTop?: number
-  paddingBottom?: number
-  paddingLeft?: number
-  paddingRight?: number
-  borderTop?: string
-  borderBottom?: string
-  textAlign?: Property.TextAlign
-  fontSize?: string | number
-  height?: number
+  margin?: string | number
+  height?: string | number
   width?: number | string
-  flex?: boolean
-  expanded?: boolean
-  visible?: boolean
-  cursor?: string
-  margin?: string
-  marginTop?: number
+  borderRadius?: string | number
   border?: string
-  marginBottom?: number
-  marginLeft?: number
-  marginRight?: number
-  overflow?: Property.Overflow
-  position?: Property.Position
+  cursor?: string
+
+  style?: React.CSSProperties
 }
 
 export const Container = (props: ContainerProps) => {
   const {
     contrastingColor,
-    flex,
     id,
-    expanded,
     child,
     children,
     visible = true,
     className,
     onClick,
+    style,
     ...styles
   } = props
   if (child && children) {
@@ -69,9 +50,8 @@ export const Container = (props: ContainerProps) => {
       style={{
         ...styles,
         cursor: onClick ? 'pointer' : props.cursor,
-        display: flex ? 'flex' : undefined,
-        flex: expanded ? '1 1' : undefined,
         color: contrastingColor,
+        ...style,
       }}
     >
       {renderChildren(child || children)}

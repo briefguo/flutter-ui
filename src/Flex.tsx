@@ -48,7 +48,7 @@ export const Flex = styled(Container)<FlexProps>`
   flex-wrap: ${props => (props.wrap ? props.wrap : 'nowrap')};
   margin: ${calcContainerGutter};
   & > * {
-    margin: ${calcGutter} !important;
+    margin: ${calcGutter};
   }
 `
 

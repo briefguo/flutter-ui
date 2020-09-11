@@ -31,3 +31,9 @@ export const Container = styled.div<ContainerProps>`
   border-radius: ${props => props.borderRadius};
   display: ${props => (props.visible ? 'inherit' : 'none')};
 `
+
+export interface SizedBoxProps {
+  width: number
+  height: number
+}
+export const SizedBox = styled(Container)<SizedBoxProps>``

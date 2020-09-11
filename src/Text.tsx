@@ -1,6 +1,5 @@
 import React from 'react'
 import { Property } from 'csstype'
-import { renderChildren } from './renderChildren'
 
 interface TextProps {
   children?: any
@@ -30,7 +29,7 @@ export const Text = (props: TextProps) => {
       }}
       onClick={onClick}
     >
-      {renderChildren(children)}
+      {children}
     </span>
   )
 }

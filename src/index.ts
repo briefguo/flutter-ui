@@ -16,7 +16,6 @@ export { Space } from './Space'
 export { Flex, Center } from './Flex'
 
 // utils
-export { renderChildren } from './renderChildren'
 export { renderComponent, RenderedComponent } from './renderComponent'
 
 // media query

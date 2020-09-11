@@ -1,5 +1,4 @@
 import React from 'react'
-import { renderChildren } from './renderChildren'
 
 export interface ContainerProps {
   id?: string
@@ -54,7 +53,7 @@ export const Container = (props: ContainerProps) => {
         ...style,
       }}
     >
-      {renderChildren(child || children)}
+      {child || children}
     </div>
   )
 }

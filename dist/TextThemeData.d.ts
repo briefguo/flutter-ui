@@ -1,21 +1,16 @@
+import { StyleData } from './StyleData';
 export declare class TextThemeData {
-    static defaultTheme: {
-        middle: {
-            fontSize: number;
-        };
-        title: {
-            fontSize: number;
-        };
-        light: {
-            fontSize: number;
-        };
-        description: {
-            fontSize: number;
-            color: string;
-        };
-        default: {};
-        body: {
-            fontSize: number;
-        };
-    };
+    static default: StyleData;
+    static small: StyleData;
+    static middle: StyleData;
+    static large: StyleData;
+    static xlarge: StyleData;
+    static xxlarge: StyleData;
+    static defaultTextTheme: any;
+    constructor(v: {
+        [key: string]: StyleData;
+    });
+    copyWith(v: {
+        [key: string]: StyleData;
+    }): TextThemeData;
 }

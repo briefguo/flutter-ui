@@ -1,11 +1,7 @@
 import React from 'react';
 export interface ContainerProps {
     id?: string;
-    child?: any;
-    children?: any;
-    onClick?: any;
     visible?: boolean;
-    className?: string;
     contrastingColor?: string;
     background?: string;
     padding?: string | number;
@@ -17,4 +13,4 @@ export interface ContainerProps {
     cursor?: string;
     style?: React.CSSProperties;
 }
-export declare const Container: (props: ContainerProps) => JSX.Element;
+export declare const Container: import("styled-components").StyledComponent<"div", any, ContainerProps, never>;

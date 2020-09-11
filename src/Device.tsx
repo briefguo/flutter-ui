@@ -3,6 +3,7 @@ import { useMediaQuery } from 'react-responsive'
 
 export const isMobile = '@media screen and (max-width: 767px)'
 export const isDesktop = '@media screen and (min-width: 992px)'
+export const isNotMobile = '@media screen and (min-width: 768px)'
 
 export const Desktop = ({ children }) => {
   const isDesktop = useMediaQuery({ minWidth: 992 })

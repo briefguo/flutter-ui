@@ -1,22 +1,22 @@
 // base
-export { Container } from './Container'
-export { Text } from './Text'
+export * from './Container'
+export * from './Text'
 
 // theme and colors
-export { Colors } from './Colors'
-export { ThemeData } from './ThemeData'
-export { TextThemeData } from './TextThemeData'
+export * from './Colors'
+export * from './ThemeData'
+export * from './TextThemeData'
 
 // scaffold
-export { Content } from './Content'
-export { PageScaffold } from './PageScaffold'
+export * from './Content'
+export * from './PageScaffold'
 
 // layout and gutter
-export { Space } from './Space'
-export { Flex, Center } from './Flex'
+export * from './Space'
+export * from './Flex'
 
 // utils
-export { renderComponent, RenderedComponent } from './renderComponent'
+export * from './renderComponent'
 
 // media query
-export { Mobile, Desktop, Default, Tablet, isDesktop, isMobile } from './Device'
+export * from './Device'

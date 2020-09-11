@@ -1,6 +1,6 @@
 import React from 'react'
 import { Property } from 'csstype'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Container } from './Container'
 
 export interface FlexProps {
@@ -15,29 +15,28 @@ export interface FlexProps {
   style?: React.CSSProperties
 }
 
-const calcContainerGutter = (props: FlexProps) => {
-  if (!props.gutter) {
-    return ''
+const calcParentGutter = (props: FlexProps) => {
+  if (props.direction === 'column') {
+    return `-${props.gutter / 2}px 0`
   } else {
-    if (props.direction === 'column') {
-      return `-${props.gutter / 2}px 0`
-    } else {
-      return `0 -${props.gutter / 2}px`
-    }
+    return `0 -${props.gutter / 2}px`
   }
 }
 
-const calcGutter = (props: FlexProps) => {
-  if (!props.gutter) {
-    return ''
+const calcItemGutter = (props: FlexProps) => {
+  if (props.direction === 'column') {
+    return `${props.gutter / 2}px 0`
   } else {
-    if (props.direction === 'column') {
-      return `${props.gutter / 2}px 0`
-    } else {
-      return `0 ${props.gutter / 2}px`
-    }
+    return `0 ${props.gutter / 2}px`
   }
 }
+
+export const gutterMixin = css`
+  margin: ${calcParentGutter};
+  & > * {
+    margin: ${calcItemGutter};
+  }
+`
 
 export const Flex = styled(Container)<FlexProps>`
   display: ${props => (props.inline ? 'inline-flex' : 'flex')};
@@ -46,10 +45,7 @@ export const Flex = styled(Container)<FlexProps>`
   justify-content: ${props => props.justify};
   flex-direction: ${props => props.direction};
   flex-wrap: ${props => (props.wrap ? props.wrap : 'nowrap')};
-  margin: ${calcContainerGutter};
-  & > * {
-    margin: ${calcGutter};
-  }
+  ${props => (props.gutter ? gutterMixin : null)}
 `
 
 export const Center = styled(Flex)`

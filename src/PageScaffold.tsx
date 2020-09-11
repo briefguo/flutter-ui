@@ -2,8 +2,6 @@ import React from 'react'
 import Portal from 'react-overlays/Portal'
 import { createGlobalStyle } from 'styled-components'
 
-const isServer = typeof window === 'undefined'
-
 const GlobalStyle = createGlobalStyle<{ color: string; background: string }>`
   color:${props => props.color};
   background:${props => props.background};
@@ -13,8 +11,6 @@ interface PageScaffoldProps {
   child?: React.ReactChild
   className?: string
   children?: React.ReactChild[]
-  footer?: React.ReactChild
-  modal?: React.ReactChild
   portal?: React.ReactElement
   backgroundColor?: string
   contrastingColor?: string
@@ -22,25 +18,26 @@ interface PageScaffoldProps {
 }
 
 export const PageScaffold = (props: PageScaffoldProps) => {
-  // const theme = useTheme()
-  let bodyChild
-  if (!isServer) {
-    bodyChild = document.createElement('div')
-    document.body.appendChild(bodyChild)
+  let portalContainer
+  if (typeof window !== 'undefined') {
+    portalContainer = document.createElement('div')
+    document.body.appendChild(portalContainer)
   }
 
   if (props.loading) {
     return <>loading...</>
   }
-  const contrastingColor = props.contrastingColor
-  const backgroundColor = props.backgroundColor
+
   return (
     <>
-      <div className={props.className}>{props.child || props.children}</div>
-      {props.portal && <Portal container={bodyChild}>{props.portal}</Portal>}
-      {props.footer}
-      {props.modal}
-      <GlobalStyle color={contrastingColor} background={backgroundColor} />
+      <GlobalStyle
+        color={props.contrastingColor}
+        background={props.backgroundColor}
+      />
+      <main className={props.className}>{props.child || props.children}</main>
+      {props.portal && (
+        <Portal container={portalContainer}>{props.portal}</Portal>
+      )}
     </>
   )
 }

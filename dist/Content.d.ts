@@ -1,2 +1,1 @@
-/// <reference types="react" />
-export declare const Content: import("styled-components").StyledComponent<(props: import("./Container").ContainerProps) => JSX.Element, any, {}, never>;
+export declare const Content: import("styled-components").StyledComponent<"div", any, import("./Container").ContainerProps, never>;

@@ -11,5 +11,6 @@ export interface FlexProps {
     children?: any;
     style?: React.CSSProperties;
 }
-export declare const Flex: import("styled-components").StyledComponent<(props: import("./Container").ContainerProps) => JSX.Element, any, FlexProps, never>;
-export declare const Center: import("styled-components").StyledComponent<(props: import("./Container").ContainerProps) => JSX.Element, any, FlexProps, never>;
+export declare const gutterMixin: import("styled-components").FlattenInterpolation<import("styled-components").ThemedStyledProps<FlexProps, any>>;
+export declare const Flex: import("styled-components").StyledComponent<"div", any, import("./Container").ContainerProps & FlexProps, never>;
+export declare const Center: import("styled-components").StyledComponent<"div", any, import("./Container").ContainerProps & FlexProps, never>;

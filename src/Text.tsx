@@ -1,35 +1,17 @@
-import React from 'react'
 import { Property } from 'csstype'
+import styled from 'styled-components'
 
 interface TextProps {
-  children?: any
   color?: string
 
   fontWeight?: Property.FontWeight
   fontSize?: string | number
-  textAlign?: Property.TextAlign
+
   whiteSpace?: Property.WhiteSpace
-  onClick?: any
-  maxWidth?: string | number
-  cursor?: Property.Cursor
-
-  className?: string
-  style?: React.CSSProperties
 }
 
-export const Text = (props: TextProps) => {
-  const { className, children, color, onClick, style, ...styles } = props
-  return (
-    <span
-      className={className}
-      style={{
-        color,
-        ...styles,
-        ...style,
-      }}
-      onClick={onClick}
-    >
-      {children}
-    </span>
-  )
-}
+export const Text = styled.span<TextProps>`
+  font-weight: ${props => props.fontWeight};
+  font-size: ${props => props.fontSize};
+  white-space: ${props => props.whiteSpace};
+`

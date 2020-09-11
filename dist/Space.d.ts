@@ -8,5 +8,5 @@ interface SpaceProps {
     className?: string;
     style?: React.CSSProperties;
 }
-export declare const Space: React.SFC<SpaceProps>;
+export declare const Space: import("styled-components").StyledComponent<"div", any, import("./Container").ContainerProps & import("./Flex").FlexProps & SpaceProps, never>;
 export {};

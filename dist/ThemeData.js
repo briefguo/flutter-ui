@@ -7,11 +7,12 @@ var ThemeData = /** @class */ (function () {
     function ThemeData() {
     }
     ThemeData.defaultTheme = {
-        defaultBodyBackground: '#F5F5F9',
-        defaultContrastingColor: '#333',
+        contentContainerWidth: 1080,
+        bodyContrastingColor: '#333',
+        bodyBackground: '#F5F5F9',
         baseBorderRadius: '5px',
         colors: Colors_1.Colors,
-        textTheme: TextThemeData_1.TextThemeData.defaultTheme
+        textTheme: TextThemeData_1.TextThemeData.defaultTextTheme
     };
     return ThemeData;
 }());

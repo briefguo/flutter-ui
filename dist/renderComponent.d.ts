@@ -1,5 +1,5 @@
 import React from 'react';
-export declare type RenderedComponent<T = any> = React.SFC<T & {
+export declare type RenderedComponent<T = any> = React.FC<T & {
     onClose: any;
     onComplete: any;
 }>;

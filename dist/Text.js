@@ -1,33 +1,13 @@
 "use strict";
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
 };
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 exports.__esModule = true;
 exports.Text = void 0;
-var react_1 = __importDefault(require("react"));
-exports.Text = function (props) {
-    var className = props.className, children = props.children, color = props.color, onClick = props.onClick, style = props.style, styles = __rest(props, ["className", "children", "color", "onClick", "style"]);
-    return (react_1["default"].createElement("span", { className: className, style: __assign(__assign({ color: color }, styles), style), onClick: onClick }, children));
-};
+var styled_components_1 = __importDefault(require("styled-components"));
+exports.Text = styled_components_1["default"].span(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  font-weight: ", ";\n  font-size: ", ";\n  white-space: ", ";\n"], ["\n  font-weight: ", ";\n  font-size: ", ";\n  white-space: ", ";\n"])), function (props) { return props.fontWeight; }, function (props) { return props.fontSize; }, function (props) { return props.whiteSpace; });
+var templateObject_1;

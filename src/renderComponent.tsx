@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom'
 import React from 'react'
 
-export type RenderedComponent<T = any> = React.SFC<
+export type RenderedComponent<T = any> = React.FC<
   T & { onClose: any; onComplete: any }
 >
 

@@ -2,6 +2,8 @@
 
 ## Get Started
 
+### Installation
+
 ```shell
 npm install flutter-ui@git+https://github.com/briefguo/flutter-ui.git
 # use yarn
@@ -12,7 +14,7 @@ npm install react react-dom styled-components
 yarn add react react-dom styled-components
 ```
 
-## Example
+## Examples
 
 ### Basic Useage
 
@@ -75,3 +77,36 @@ declare module 'styled-components' {
   }
 }
 ```
+
+## Documentation
+
+- [base](https://github.com/briefguo/flutter-ui#base)
+- [theme and colors](https://github.com/briefguo/flutter-ui#theme-and-colors)
+- [scaffold](https://github.com/briefguo/flutter-ui#scaffold)
+- [layout and gutter](https://github.com/briefguo/flutter-ui#layout-and-gutter)
+- [utils](https://github.com/briefguo/flutter-ui#utils)
+- [media query](https://github.com/briefguo/flutter-ui#media-query)
+
+### base
+
+TODO
+
+### theme and colors
+
+TODO
+
+### scaffold
+
+TODO
+
+### layout and gutter
+
+TODO
+
+### utils
+
+TODO
+
+### media query
+
+TODO

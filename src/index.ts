@@ -17,6 +17,7 @@ export * from './Flex'
 
 // utils
 export * from './renderComponent'
+export { useTheme } from 'styled-components'
 
 // media query
 export * from './Device'

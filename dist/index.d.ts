@@ -8,4 +8,5 @@ export * from './PageScaffold';
 export * from './Space';
 export * from './Flex';
 export * from './renderComponent';
+export { useTheme } from 'styled-components';
 export * from './Device';

@@ -10,6 +10,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 exports.__esModule = true;
+exports.useTheme = void 0;
 // base
 __exportStar(require("./Container"), exports);
 __exportStar(require("./Text"), exports);
@@ -25,5 +26,7 @@ __exportStar(require("./Space"), exports);
 __exportStar(require("./Flex"), exports);
 // utils
 __exportStar(require("./renderComponent"), exports);
+var styled_components_1 = require("styled-components");
+__createBinding(exports, styled_components_1, "useTheme");
 // media query
 __exportStar(require("./Device"), exports);

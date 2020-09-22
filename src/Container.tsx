@@ -32,7 +32,7 @@ export const Container = styled.div<ContainerProps>`
 `
 
 export interface SizedBoxProps {
-  width?: number
-  height?: number
+  width?: number | string
+  height?: number | string
 }
 export const SizedBox = styled(Container)<SizedBoxProps>``

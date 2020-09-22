@@ -24,8 +24,8 @@ export const PageScaffold = (props: PageScaffoldProps) => {
     document.body.appendChild(portalContainer)
   }
 
-  if (props.loading) {
-    return <>loading...</>
+  if (props.loading ?? false) {
+    return <>page loading...</>
   }
 
   return (

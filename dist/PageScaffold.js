@@ -13,13 +13,14 @@ var Portal_1 = __importDefault(require("react-overlays/Portal"));
 var styled_components_1 = require("styled-components");
 var GlobalStyle = styled_components_1.createGlobalStyle(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  color:", ";\n  background:", ";\n"], ["\n  color:", ";\n  background:", ";\n"])), function (props) { return props.color; }, function (props) { return props.background; });
 exports.PageScaffold = function (props) {
+    var _a;
     var portalContainer;
     if (typeof window !== 'undefined') {
         portalContainer = document.createElement('div');
         document.body.appendChild(portalContainer);
     }
-    if (props.loading) {
-        return react_1["default"].createElement(react_1["default"].Fragment, null, "loading...");
+    if ((_a = props.loading) !== null && _a !== void 0 ? _a : false) {
+        return react_1["default"].createElement(react_1["default"].Fragment, null, "page loading...");
     }
     return (react_1["default"].createElement(react_1["default"].Fragment, null,
         react_1["default"].createElement(GlobalStyle, { color: props.contrastingColor, background: props.backgroundColor }),

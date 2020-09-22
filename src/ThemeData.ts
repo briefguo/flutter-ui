@@ -2,7 +2,7 @@ import { Colors } from './Colors'
 import { TextThemeData } from './TextThemeData'
 
 export class ThemeData {
-  contentContainerWidth = 1080
+  contentContainerWidth = '1080px'
   bodyContrastingColor = '#333'
   bodyBackground = '#F5F5F9'
   baseBorderRadius = '5px'

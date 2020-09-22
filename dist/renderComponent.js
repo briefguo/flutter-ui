@@ -18,7 +18,6 @@ exports.renderComponent = void 0;
 var react_dom_1 = __importDefault(require("react-dom"));
 var react_1 = __importDefault(require("react"));
 function renderComponent(C, props) {
-    if (props === void 0) { props = {}; }
     return new Promise(function (resolve) {
         var container = document.createElement('div');
         document.body.appendChild(container);

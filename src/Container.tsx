@@ -29,7 +29,6 @@ export const Container = styled.div<ContainerProps>`
   width: ${props => props.width};
   border: ${props => props.border};
   border-radius: ${props => props.borderRadius};
-  display: ${props => (props.visible ? 'inherit' : 'none')};
 `
 
 export interface SizedBoxProps {

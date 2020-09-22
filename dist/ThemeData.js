@@ -17,7 +17,7 @@ var TextThemeData_1 = require("./TextThemeData");
 var ThemeData = /** @class */ (function () {
     function ThemeData(v) {
         var _this = this;
-        this.contentContainerWidth = 1080;
+        this.contentContainerWidth = '1080px';
         this.bodyContrastingColor = '#333';
         this.bodyBackground = '#F5F5F9';
         this.baseBorderRadius = '5px';

@@ -11,6 +11,7 @@ interface TextProps {
 }
 
 export const Text = styled.span<TextProps>`
+  color: ${props => props.color};
   font-weight: ${props => props.fontWeight};
   font-size: ${props => props.fontSize};
   white-space: ${props => props.whiteSpace};

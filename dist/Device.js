@@ -3,12 +3,28 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 exports.__esModule = true;
-exports.Default = exports.Mobile = exports.Tablet = exports.Desktop = exports.isNotMobile = exports.isDesktop = exports.isMobile = void 0;
+exports.Default = exports.Mobile = exports.Tablet = exports.Desktop = exports.useDevices = exports.isDefault = exports.isNotMobile = exports.isDesktop = exports.isMobile = void 0;
 var react_1 = __importDefault(require("react"));
 var react_responsive_1 = require("react-responsive");
 exports.isMobile = '@media screen and (max-width: 767px)';
 exports.isDesktop = '@media screen and (min-width: 992px)';
+/**
+ * @deprecated
+ */
 exports.isNotMobile = '@media screen and (min-width: 768px)';
+exports.isDefault = '@media screen and (min-width: 768px)';
+exports.useDevices = function () {
+    var isDesktop = react_responsive_1.useMediaQuery({ minWidth: 992 });
+    var isTablet = react_responsive_1.useMediaQuery({ minWidth: 768, maxWidth: 991 });
+    var isMobile = react_responsive_1.useMediaQuery({ maxWidth: 767 });
+    var isNotMobile = react_responsive_1.useMediaQuery({ minWidth: 768 });
+    return {
+        isDesktop: isDesktop,
+        isTablet: isTablet,
+        isMobile: isMobile,
+        isNotMobile: isNotMobile
+    };
+};
 exports.Desktop = function (_a) {
     var children = _a.children;
     var isDesktop = react_responsive_1.useMediaQuery({ minWidth: 992 });

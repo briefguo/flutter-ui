@@ -26,6 +26,7 @@ __exportStar(require("./Space"), exports);
 __exportStar(require("./Flex"), exports);
 // utils
 __exportStar(require("./renderComponent"), exports);
+__exportStar(require("./StopPropagation"), exports);
 var styled_components_1 = require("styled-components");
 __createBinding(exports, styled_components_1, "useTheme");
 // media query

@@ -12,15 +12,11 @@ export const isNotMobile = '@media screen and (min-width: 768px)'
 export const isDefault = '@media screen and (min-width: 768px)'
 
 export const useDevices = () => {
-  const isDesktop = useMediaQuery({ minWidth: 992 })
-  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 991 })
   const isMobile = useMediaQuery({ maxWidth: 767 })
-  const isNotMobile = useMediaQuery({ minWidth: 768 })
+  const isDefault = useMediaQuery({ minWidth: 768 })
   return {
-    isDesktop,
-    isTablet,
     isMobile,
-    isNotMobile,
+    isDefault,
   }
 }
 

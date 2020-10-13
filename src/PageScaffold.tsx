@@ -4,7 +4,7 @@ import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle<{ color: string; background: string }>`
   color:${props => props.color};
-  background:${props => props.background};
+  background:${props => props.background} !important;
 `
 
 interface PageScaffoldProps {

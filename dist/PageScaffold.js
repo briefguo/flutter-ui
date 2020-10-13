@@ -11,7 +11,7 @@ exports.PageScaffold = void 0;
 var react_1 = __importDefault(require("react"));
 var Portal_1 = __importDefault(require("react-overlays/Portal"));
 var styled_components_1 = require("styled-components");
-var GlobalStyle = styled_components_1.createGlobalStyle(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  color:", ";\n  background:", " !important;\n"], ["\n  color:", ";\n  background:", " !important;\n"])), function (props) { return props.color; }, function (props) { return props.background; });
+var GlobalStyle = styled_components_1.createGlobalStyle(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  body {\n    color:", ";\n    background:", " !important;\n  }\n"], ["\n  body {\n    color:", ";\n    background:", " !important;\n  }\n"])), function (props) { return props.color; }, function (props) { return props.background; });
 exports.PageScaffold = function (props) {
     var _a;
     var portalContainer;

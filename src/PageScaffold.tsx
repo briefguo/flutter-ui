@@ -3,8 +3,10 @@ import Portal from 'react-overlays/Portal'
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle<{ color: string; background: string }>`
-  color:${props => props.color};
-  background:${props => props.background} !important;
+  body {
+    color:${props => props.color};
+    background:${props => props.background} !important;
+  }
 `
 
 interface PageScaffoldProps {

@@ -1,5 +1,17 @@
 # Flutter-ui
 
+
+## RoadMap
+
+### V2版本
+
+- [ ] 去掉styled-components
+- [ ] 去掉react-overlays
+- [ ] 引入ResponsiveComponents，写一套DSL生成两端的代码
+  - [x] 开发完成
+  - [ ] 整理
+- [ ] 兼容SSR
+
 ## Get Started
 
 ### Installation
@@ -43,7 +55,6 @@ export default IndexPage
 ```tsx
 import React from 'react'
 import { IRouteComponentProps } from 'umi'
-import { ThemeProvider } from 'styled-components'
 import { TextThemeData, ThemeData } from 'flutter-ui'
 
 const theme = ThemeData.defaultTheme.copyWith({

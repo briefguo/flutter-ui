@@ -13,7 +13,7 @@ exports.isDesktop = '@media screen and (min-width: 992px)';
  */
 exports.isNotMobile = '@media screen and (min-width: 768px)';
 exports.isDefault = '@media screen and (min-width: 768px)';
-exports.useDevices = function () {
+var useDevices = function () {
     var isMobile = react_responsive_1.useMediaQuery({ maxWidth: 767 });
     var isDefault = react_responsive_1.useMediaQuery({ minWidth: 768 });
     return {
@@ -21,23 +21,28 @@ exports.useDevices = function () {
         isDefault: isDefault
     };
 };
-exports.Desktop = function (_a) {
+exports.useDevices = useDevices;
+var Desktop = function (_a) {
     var children = _a.children;
     var isDesktop = react_responsive_1.useMediaQuery({ minWidth: 992 });
     return isDesktop ? react_1["default"].createElement(react_1["default"].Fragment, null, children) : null;
 };
-exports.Tablet = function (_a) {
+exports.Desktop = Desktop;
+var Tablet = function (_a) {
     var children = _a.children;
     var isTablet = react_responsive_1.useMediaQuery({ minWidth: 768, maxWidth: 991 });
     return isTablet ? react_1["default"].createElement(react_1["default"].Fragment, null, children) : null;
 };
-exports.Mobile = function (_a) {
+exports.Tablet = Tablet;
+var Mobile = function (_a) {
     var children = _a.children;
     var isMobile = react_responsive_1.useMediaQuery({ maxWidth: 767 });
     return isMobile ? children : null;
 };
-exports.Default = function (_a) {
+exports.Mobile = Mobile;
+var Default = function (_a) {
     var children = _a.children;
     var isNotMobile = react_responsive_1.useMediaQuery({ minWidth: 768 });
     return isNotMobile ? react_1["default"].createElement(react_1["default"].Fragment, null, children) : null;
 };
+exports.Default = Default;

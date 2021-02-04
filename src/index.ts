@@ -18,7 +18,8 @@ export * from './Flex'
 // utils
 export * from './renderComponent'
 export * from './StopPropagation'
-export { useTheme } from 'styled-components'
 
 // media query
 export * from './Device'
+
+export * from './RS'

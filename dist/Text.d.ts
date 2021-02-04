@@ -1,9 +1,24 @@
+import React from 'react';
 import { Property } from 'csstype';
-interface TextProps {
+import { RSProperty } from './_interfaces';
+export interface SingleTextProps {
+    fontSize?: number | string;
     color?: string;
+    lg?: boolean;
+    xs?: boolean;
     fontWeight?: Property.FontWeight;
-    fontSize?: string | number;
-    whiteSpace?: Property.WhiteSpace;
+    textAlign?: Property.TextAlign;
+    className?: string;
+    style?: React.CSSProperties;
 }
-export declare const Text: import("styled-components").StyledComponent<"span", any, TextProps, never>;
-export {};
+export declare const SingleText: React.FC<SingleTextProps>;
+export declare const Text: React.FC<SingleTextProps>;
+export interface ResponsiveTextProps {
+    fontSize?: RSProperty<number | string>;
+    color?: RSProperty<string>;
+    textAlign?: RSProperty<Property.TextAlign>;
+    fontWeight?: RSProperty<Property.FontWeight>;
+    className?: RSProperty<string>;
+    style?: RSProperty<React.CSSProperties>;
+}
+export declare const ResponsiveText: React.FC<ResponsiveTextProps>;

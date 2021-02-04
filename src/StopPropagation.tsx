@@ -1,11 +1,11 @@
 import React from 'react'
 
-export const StopPropagation = (
-  props: React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLSpanElement>,
-    HTMLSpanElement
-  >,
-) => {
+type StopPropagationProps = React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLSpanElement>,
+  HTMLSpanElement
+>
+
+export const StopPropagation = (props: StopPropagationProps) => {
   return (
     <span
       {...props}

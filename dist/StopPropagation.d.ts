@@ -1,2 +1,4 @@
 import React from 'react';
-export declare const StopPropagation: (props: React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>) => JSX.Element;
+declare type StopPropagationProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>;
+export declare const StopPropagation: (props: StopPropagationProps) => JSX.Element;
+export {};

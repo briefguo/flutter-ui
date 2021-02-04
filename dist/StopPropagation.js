@@ -16,10 +16,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 exports.__esModule = true;
 exports.StopPropagation = void 0;
 var react_1 = __importDefault(require("react"));
-exports.StopPropagation = function (props) {
+var StopPropagation = function (props) {
     return (react_1["default"].createElement("span", __assign({}, props, { onClick: function (e) {
             var _a;
             e.stopPropagation();
             (_a = props.onClick) === null || _a === void 0 ? void 0 : _a.call(props, e);
         } }), props.children));
 };
+exports.StopPropagation = StopPropagation;

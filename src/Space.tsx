@@ -1,7 +1,6 @@
 import React from 'react'
 import { Property } from 'csstype'
-import { Flex } from './Flex'
-import styled from 'styled-components'
+// import { Flex } from './Flex'
 
 interface SpaceProps {
   direction?: 'vertical' | 'horizen'
@@ -12,6 +11,6 @@ interface SpaceProps {
   style?: React.CSSProperties
 }
 
-export const Space = styled(Flex)<SpaceProps>`
-  display: 'inline-flex';
-`
+// export const Space = styled(Flex)<SpaceProps>`
+//   display: 'inline-flex';
+// `

@@ -1,13 +1,48 @@
 "use strict";
-var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
 };
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 exports.__esModule = true;
-exports.Text = void 0;
-var styled_components_1 = __importDefault(require("styled-components"));
-exports.Text = styled_components_1["default"].span(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  color: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  white-space: ", ";\n"], ["\n  color: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  white-space: ", ";\n"])), function (props) { return props.color; }, function (props) { return props.fontWeight; }, function (props) { return props.fontSize; }, function (props) { return props.whiteSpace; });
-var templateObject_1;
+exports.ResponsiveText = exports.Text = exports.SingleText = void 0;
+var react_1 = __importDefault(require("react"));
+var classnames_1 = __importDefault(require("classnames"));
+var _rsUtil_1 = require("./_rsUtil");
+var Device_1 = require("./Device");
+var propsKeys = [
+    'fontSize',
+    'fontWeight',
+    'textAlign',
+    'color',
+    'className',
+    'style',
+];
+var mapPropsToStyle = function (p) { return (__assign({ fontSize: p.fontSize, color: p.color, textAlign: p.textAlign, fontWeight: p.fontWeight }, p.style)); };
+var SingleText = function (props) {
+    return (react_1["default"].createElement("span", { style: mapPropsToStyle(props), className: classnames_1["default"](props.className, 'single-text', {
+            lg: props.lg,
+            xs: props.xs
+        }) }, props.children));
+};
+exports.SingleText = SingleText;
+exports.Text = exports.SingleText;
+var ResponsiveText = function (props) {
+    var lgProps = _rsUtil_1.pickProps(props, propsKeys, 'lg');
+    var xsProps = _rsUtil_1.pickProps(props, propsKeys, 'xs');
+    // TODO: 待优化实现
+    var _a = Device_1.useDevices(), isDefault = _a.isDefault, isMobile = _a.isMobile;
+    return (react_1["default"].createElement(react_1["default"].Fragment, null,
+        isDefault && (react_1["default"].createElement(exports.SingleText, __assign({ lg: true }, lgProps), props.children)),
+        isMobile && (react_1["default"].createElement(exports.SingleText, __assign({ xs: true }, xsProps), props.children))));
+};
+exports.ResponsiveText = ResponsiveText;

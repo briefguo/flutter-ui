@@ -1,15 +1,24 @@
 "use strict";
-var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
 };
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 exports.__esModule = true;
-exports.Content = void 0;
-var styled_components_1 = __importDefault(require("styled-components"));
+exports.Content = exports.ResponsiveContent = void 0;
+var react_1 = __importDefault(require("react"));
 var Container_1 = require("./Container");
-var Device_1 = require("./Device");
-exports.Content = styled_components_1["default"](Container_1.Container)(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  ", " {\n    margin: 0 auto;\n    width: ", ";\n  }\n  ", " {\n    margin: 0 24px;\n  }\n"], ["\n  ", " {\n    margin: 0 auto;\n    width: ", ";\n  }\n  ", " {\n    margin: 0 24px;\n  }\n"])), Device_1.isDesktop, function (props) { return props.theme.contentContainerWidth; }, Device_1.isMobile);
-var templateObject_1;
+var ResponsiveContent = function (props) {
+    return (react_1["default"].createElement(Container_1.ResponsiveContainer, __assign({ margin: { xs: '0 20px', lg: '0 auto' }, width: { lg: 1200 } }, props), props.children));
+};
+exports.ResponsiveContent = ResponsiveContent;
+exports.Content = exports.ResponsiveContent;

@@ -1,48 +1,108 @@
 "use strict";
-var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
 };
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 exports.__esModule = true;
-exports.Center = exports.Flex = exports.gutterMixin = void 0;
-var styled_components_1 = __importStar(require("styled-components"));
+exports.ResponsiveFlex = exports.mapLayoutPropsToFlexProps = exports.Center = exports.SingleCenter = exports.SingleColumn = exports.Flex = exports.SingleFlex = void 0;
+var react_1 = __importDefault(require("react"));
+var _rsUtil_1 = require("./_rsUtil");
 var Container_1 = require("./Container");
-var calcParentGutter = function (props) {
-    if (props.direction === 'column') {
-        return "-" + props.gutter / 2 + "px 0";
-    }
-    else {
-        return "0 -" + props.gutter / 2 + "px";
+var propsKeys = [
+    'align',
+    'gutter',
+    'justify',
+    'wrap',
+    'expanded',
+    'inline',
+    'direction',
+    'layout',
+    'style',
+];
+var mapPropsToStyle = function (p) { return (__assign({ display: p.inline ? 'inline-flex' : 'flex', alignItems: p.align, justifyContent: p.justify, flexWrap: p.wrap, height: p.expanded ? '100%' : undefined, flex: p.expanded ? '1 1 auto' : undefined, flexDirection: p.direction }, p.style)); };
+var SingleFlex = function (props) {
+    return (react_1["default"].createElement(Container_1.SingleContainer, { className: props.className, style: mapPropsToStyle(__assign(__assign({}, props), exports.mapLayoutPropsToFlexProps(props.layout))) }, props.children));
+};
+exports.SingleFlex = SingleFlex;
+exports.Flex = exports.SingleFlex;
+var SingleColumn = function (props) {
+    return (react_1["default"].createElement(exports.SingleFlex, __assign({ direction: "column" }, props), props.children));
+};
+exports.SingleColumn = SingleColumn;
+var SingleCenter = function (props) {
+    return (react_1["default"].createElement(exports.SingleColumn, __assign({ align: "center", justify: "center" }, props, { style: __assign({ textAlign: 'center' }, props.style) }), props.children));
+};
+exports.SingleCenter = SingleCenter;
+exports.Center = exports.SingleFlex;
+var layouts = {
+    // TODO:
+    center: {
+        justify: 'center',
+        expanded: true,
+        style: {
+            textAlign: 'center'
+        }
+    },
+    leftBottom: {
+        direction: 'column',
+        justify: 'flex-end',
+        expanded: true
+    },
+    rightTop: {
+        direction: 'column',
+        align: 'flex-end',
+        expanded: true
+    },
+    rightBottom: {
+        direction: 'column',
+        justify: 'flex-end',
+        align: 'flex-end',
+        expanded: true
+    },
+    leftTop: {
+        direction: 'column',
+        align: 'flex-start',
+        expanded: true
+    },
+    leftCenter: {
+        direction: 'column',
+        expanded: true,
+        justify: 'center'
+    },
+    rightCenter: {
+        direction: 'column',
+        expanded: true,
+        justify: 'center',
+        align: 'flex-end'
     }
 };
-var calcItemGutter = function (props) {
-    if (props.direction === 'column') {
-        return props.gutter / 2 + "px 0";
+var mapLayoutPropsToFlexProps = function (layout) {
+    var layoutProps;
+    if (Object.keys(layouts).includes(layout)) {
+        layoutProps = layouts[layout];
     }
     else {
-        return "0 " + props.gutter / 2 + "px";
+        layoutProps = layout;
     }
+    return layoutProps;
 };
-exports.gutterMixin = styled_components_1.css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  margin: ", ";\n  & > * {\n    margin: ", ";\n  }\n"], ["\n  margin: ", ";\n  & > * {\n    margin: ", ";\n  }\n"])), calcParentGutter, calcItemGutter);
-exports.Flex = styled_components_1["default"](Container_1.Container)(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  display: ", ";\n  flex: ", ";\n  align-items: ", ";\n  justify-content: ", ";\n  flex-direction: ", ";\n  flex-wrap: ", ";\n  ", "\n"], ["\n  display: ", ";\n  flex: ", ";\n  align-items: ", ";\n  justify-content: ", ";\n  flex-direction: ", ";\n  flex-wrap: ", ";\n  ", "\n"])), function (props) { return (props.inline ? 'inline-flex' : 'flex'); }, function (props) { return (props.expanded ? '1 1' : null); }, function (props) { return props.align; }, function (props) { return props.justify; }, function (props) { return props.direction; }, function (props) { return (props.wrap ? props.wrap : 'nowrap'); }, function (props) { return (props.gutter ? exports.gutterMixin : null); });
-exports.Center = styled_components_1["default"](exports.Flex)(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  justify-content: center;\n  align-items: center;\n"], ["\n  justify-content: center;\n  align-items: center;\n"])));
-var templateObject_1, templateObject_2, templateObject_3;
+exports.mapLayoutPropsToFlexProps = mapLayoutPropsToFlexProps;
+var ResponsiveFlex = function (props) {
+    var lgFlexProps = _rsUtil_1.pickProps(props, propsKeys, 'lg');
+    var xsFlexProps = _rsUtil_1.pickProps(props, propsKeys, 'xs');
+    return (react_1["default"].createElement(Container_1.ResponsiveContainer, { style: {
+            lg: mapPropsToStyle(__assign(__assign({}, exports.mapLayoutPropsToFlexProps(lgFlexProps.layout)), lgFlexProps)),
+            xs: mapPropsToStyle(__assign(__assign({}, exports.mapLayoutPropsToFlexProps(xsFlexProps.layout)), xsFlexProps))
+        } }, props.children));
+};
+exports.ResponsiveFlex = ResponsiveFlex;

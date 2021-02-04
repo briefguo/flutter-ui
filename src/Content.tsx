@@ -1,13 +1,18 @@
-import styled from 'styled-components'
-import { Container } from './Container'
-import { isMobile, isDesktop } from './Device'
+import React from 'react'
+import { ResponsiveContainer, ResponsiveContainerProps } from './Container'
 
-export const Content = styled(Container)`
-  ${isDesktop} {
-    margin: 0 auto;
-    width: ${props => props.theme.contentContainerWidth};
-  }
-  ${isMobile} {
-    margin: 0 24px;
-  }
-`
+export type ResponsiveContentProps = ResponsiveContainerProps
+
+export const ResponsiveContent: React.FC<ResponsiveContentProps> = props => {
+  return (
+    <ResponsiveContainer
+      margin={{ xs: '0 20px', lg: '0 auto' }}
+      width={{ lg: 1200 }}
+      {...props}
+    >
+      {props.children}
+    </ResponsiveContainer>
+  )
+}
+
+export const Content = ResponsiveContent

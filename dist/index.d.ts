@@ -9,5 +9,5 @@ export * from './Space';
 export * from './Flex';
 export * from './renderComponent';
 export * from './StopPropagation';
-export { useTheme } from 'styled-components';
 export * from './Device';
+export * from './RS';

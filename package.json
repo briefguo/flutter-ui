@@ -1,5 +1,5 @@
 {
-  "name": "@sunmi/flutter-ui",
+  "name": "flutter-ui",
   "version": "2.0.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

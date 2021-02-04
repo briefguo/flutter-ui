@@ -7,9 +7,9 @@ var Flex_1 = require("./Flex");
 var Content_1 = require("./Content");
 var Img_1 = require("./Img");
 exports.RS = {
-    Container: Container_1.Container,
-    Text: Text_1.Text,
-    Flex: Flex_1.Flex,
+    Container: Container_1.ResponsiveContainer,
+    Text: Text_1.ResponsiveText,
+    Flex: Flex_1.ResponsiveFlex,
     Background: Container_1.ResponsiveBackground,
     Content: Content_1.ResponsiveContent,
     Image: Img_1.ResponsiveImage

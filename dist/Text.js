@@ -23,11 +23,12 @@ var propsKeys = [
     'fontSize',
     'fontWeight',
     'textAlign',
+    'whiteSpace',
     'color',
     'className',
     'style',
 ];
-var mapPropsToStyle = function (p) { return (__assign({ fontSize: p.fontSize, color: p.color, textAlign: p.textAlign, fontWeight: p.fontWeight }, p.style)); };
+var mapPropsToStyle = function (p) { return (__assign({ fontSize: p.fontSize, color: p.color, textAlign: p.textAlign, whiteSpace: p.whiteSpace, fontWeight: p.fontWeight }, p.style)); };
 var SingleText = function (props) {
     return (react_1["default"].createElement("span", { style: mapPropsToStyle(props), className: classnames_1["default"](props.className, 'single-text', {
             lg: props.lg,

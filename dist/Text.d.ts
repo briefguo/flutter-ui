@@ -10,6 +10,10 @@ export interface SingleTextProps {
     textAlign?: Property.TextAlign;
     className?: string;
     style?: React.CSSProperties;
+    /**
+     * @deprecated
+     */
+    whiteSpace?: Property.WhiteSpace;
 }
 export declare const SingleText: React.FC<SingleTextProps>;
 export declare const Text: React.FC<SingleTextProps>;

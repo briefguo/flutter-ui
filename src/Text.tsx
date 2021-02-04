@@ -14,12 +14,17 @@ export interface SingleTextProps {
   textAlign?: Property.TextAlign
   className?: string
   style?: React.CSSProperties
+  /**
+   * @deprecated
+   */
+  whiteSpace?: Property.WhiteSpace
 }
 
 const propsKeys = [
   'fontSize',
   'fontWeight',
   'textAlign',
+  'whiteSpace',
   'color',
   'className',
   'style',
@@ -29,6 +34,7 @@ const mapPropsToStyle = (p: SingleTextProps) => ({
   fontSize: p.fontSize,
   color: p.color,
   textAlign: p.textAlign,
+  whiteSpace: p.whiteSpace,
   fontWeight: p.fontWeight,
   ...p.style,
 })

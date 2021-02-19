@@ -1,4 +1,5 @@
 import React from 'react'
+import cx from 'classnames'
 import { Property } from 'csstype'
 import { BaseComponentProps, RSProperty } from '../interfaces'
 import { createRSC } from '../helpers/createRSC'
@@ -32,7 +33,11 @@ export const SingleFlex = (p: SingleFlexProps) => {
         ...p.style,
       }}
     >
-      {className => <div className={className}>{p.children}</div>}
+      {className => (
+        <div className={cx(className, p.className, { lg: p.lg, xs: p.xs })}>
+          {p.children}
+        </div>
+      )}
     </CSSStyleInjector>
   )
 }

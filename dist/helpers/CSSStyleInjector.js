@@ -35,7 +35,7 @@ var CSSStyleInjector = function (props) {
     var inlineStyle = exports.CSSStyleDeclaration2InlineCSSText(props.style);
     var currentClassName = props.classNamePrefix + "-" + inlineStyle.uuid;
     return (react_1["default"].createElement(react_1["default"].Fragment, null,
-        inlineStyle.cssText && (react_1["default"].createElement("style", { "data-target": currentClassName, scoped: true }, "." + currentClassName + " {" + inlineStyle.cssText + "}")), (_a = props.children) === null || _a === void 0 ? void 0 :
+        inlineStyle.cssText && (react_1["default"].createElement("style", { "data-target": currentClassName, scoped: true }, "style[scoped] {display: none !important;} ." + currentClassName + " {" + inlineStyle.cssText + "}")), (_a = props.children) === null || _a === void 0 ? void 0 :
         _a.call(props, currentClassName)));
 };
 exports.CSSStyleInjector = CSSStyleInjector;

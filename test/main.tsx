@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import styled from 'styled-components'
 import {
   Container,
   Flex,
@@ -13,6 +14,10 @@ import {
   Content,
   Layout,
 } from '../src'
+
+const StyledFlex = styled(Flex)`
+  background: red;
+`
 
 const SampleBox: React.FC = props => {
   return (
@@ -76,7 +81,7 @@ const Test = () => {
               <Img src="//pic.cdn.sunmi.com/IMG/16026708266762.jpg" />
             </CodeSample>
             <CodeSample title="Flex">
-              <Flex justify="space-between">
+              <Flex className="test-flex" justify="space-between">
                 <SampleBox>1</SampleBox>
                 <SampleBox>2</SampleBox>
                 <SampleBox>3</SampleBox>
@@ -260,6 +265,11 @@ const Test = () => {
               <SampleBox>2</SampleBox>
             </RS.Space>
           </div>
+          支持Styled-Components
+          <StyledFlex>
+            <SampleBox>1</SampleBox>
+            <SampleBox>2</SampleBox>
+          </StyledFlex>
         </div>
       </RS.Content>
     </PageScaffold>

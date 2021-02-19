@@ -34,10 +34,9 @@ export const CSSStyleInjector = (props: CSSStyleProviderProps) => {
   return (
     <>
       {inlineStyle.cssText && (
-        <style
-          data-target={currentClassName}
-          scoped
-        >{`.${currentClassName} {${inlineStyle.cssText}}`}</style>
+        <style data-target={currentClassName} scoped>
+          {`style[scoped] {display: none !important;} .${currentClassName} {${inlineStyle.cssText}}`}
+        </style>
       )}
       {props.children?.(currentClassName)}
     </>

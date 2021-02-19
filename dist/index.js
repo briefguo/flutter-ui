@@ -11,21 +11,23 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 exports.__esModule = true;
 // base
-__exportStar(require("./Container"), exports);
-__exportStar(require("./Text"), exports);
+__exportStar(require("./bases/Container"), exports);
+__exportStar(require("./bases/Text"), exports);
+__exportStar(require("./bases/Image"), exports);
+__exportStar(require("./bases/Space"), exports);
+__exportStar(require("./bases/Layout"), exports);
+__exportStar(require("./bases/Flex"), exports);
+// extend
+__exportStar(require("./extends/Background"), exports);
+__exportStar(require("./extends/Content"), exports);
 // theme and colors
-__exportStar(require("./Colors"), exports);
-__exportStar(require("./ThemeData"), exports);
-__exportStar(require("./TextThemeData"), exports);
+__exportStar(require("./theme/Colors"), exports);
+__exportStar(require("./theme/ThemeData"), exports);
+__exportStar(require("./theme/TextThemeData"), exports);
 // scaffold
-__exportStar(require("./Content"), exports);
-__exportStar(require("./PageScaffold"), exports);
-// layout and gutter
-__exportStar(require("./Space"), exports);
-__exportStar(require("./Flex"), exports);
-// utils
-__exportStar(require("./renderComponent"), exports);
-__exportStar(require("./StopPropagation"), exports);
-// media query
-__exportStar(require("./Device"), exports);
+__exportStar(require("./scaffolds/PageScaffold"), exports);
+// helpers
+__exportStar(require("./helpers/renderComponent"), exports);
+__exportStar(require("./helpers/StopPropagation"), exports);
+__exportStar(require("./deprecated"), exports);
 __exportStar(require("./RS"), exports);

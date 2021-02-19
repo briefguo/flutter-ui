@@ -1,0 +1,34 @@
+.single-video-background {
+  overflow: hidden;
+  position: relative;
+  /* https://stackoverflow.com/questions/37792720/ie-and-edge-fix-for-object-fit-cover */
+}
+
+.single-video-background__video {
+  position: absolute;
+  z-index: 1;
+  object-fit: cover;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+}
+
+.single-space {
+}
+
+@media screen and (max-width: 767px) {
+  .lg,
+  .single-text.lg,
+  .single-container.lg {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .xs,
+  .single-text.xs,
+  .single-container.xs {
+    display: none !important;
+  }
+}

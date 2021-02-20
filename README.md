@@ -150,22 +150,6 @@ const IndexPage = () => (
 export default IndexPage
 ```
 
-### Typescript Support
-
-```tsx
-// 添加 styled.d.ts 用于 theme 的自动提示
-/// <reference types="styled-components" />
-
-import { ThemeData } from 'flutter-ui'
-
-// and extend them!
-declare module 'styled-components' {
-  export interface DefaultTheme extends ThemeData {
-    contentContainerWidth: number
-  }
-}
-```
-
 ### Advanced
 
 ```tsx

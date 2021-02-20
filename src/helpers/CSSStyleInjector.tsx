@@ -27,29 +27,20 @@ interface CSSStyleProviderProps {
   children?: (className: string) => JSX.Element
 }
 
-const cache = []
-
 export const CSSStyleInjector = (props: CSSStyleProviderProps) => {
+
   // 相同样式的md5值是一样的
   const inlineStyle = CSSStyleDeclaration2InlineCSSText(props.style)
   const currentClassName = `${props.classNamePrefix}-${inlineStyle.uuid}`
 
-  let styleTag
   // TODO: 合并去重
-  if (cache.includes(currentClassName)) {
-    styleTag = null
-  } else {
-    cache.push(currentClassName)
-    styleTag = (
-      <style data-target={currentClassName}>
-        {`.${currentClassName} {${inlineStyle.cssText}}`}
-      </style>
-    )
-  }
-
   return (
     <>
-      {styleTag}
+      {inlineStyle.cssText && (
+        <style data-target={currentClassName} scoped>
+          {`.${currentClassName} {${inlineStyle.cssText}}`}
+        </style>
+      )}
       {props.children?.(currentClassName)}
     </>
   )

@@ -25,3 +25,4 @@ export * from './helpers/StopPropagation'
 export * from './deprecated'
 
 export * from './RS'
+export * from './interfaces'

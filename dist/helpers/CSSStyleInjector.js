@@ -29,13 +29,23 @@ var CSSStyleDeclaration2InlineCSSText = function (css) {
     };
 };
 exports.CSSStyleDeclaration2InlineCSSText = CSSStyleDeclaration2InlineCSSText;
+var cache = [];
 var CSSStyleInjector = function (props) {
     var _a;
     // 相同样式的md5值是一样的
     var inlineStyle = exports.CSSStyleDeclaration2InlineCSSText(props.style);
     var currentClassName = props.classNamePrefix + "-" + inlineStyle.uuid;
+    var styleTag;
+    // TODO: 合并去重
+    if (cache.includes(inlineStyle.uuid)) {
+        styleTag = null;
+    }
+    else {
+        cache.push(inlineStyle.uuid);
+        styleTag = (react_1["default"].createElement("style", { "data-target": currentClassName }, "." + currentClassName + " {" + inlineStyle.cssText + "}"));
+    }
     return (react_1["default"].createElement(react_1["default"].Fragment, null,
-        inlineStyle.cssText && (react_1["default"].createElement("style", { "data-target": currentClassName, scoped: true }, "style[scoped] {display: none !important;} ." + currentClassName + " {" + inlineStyle.cssText + "}")), (_a = props.children) === null || _a === void 0 ? void 0 :
+        styleTag, (_a = props.children) === null || _a === void 0 ? void 0 :
         _a.call(props, currentClassName)));
 };
 exports.CSSStyleInjector = CSSStyleInjector;

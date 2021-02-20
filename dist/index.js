@@ -31,3 +31,4 @@ __exportStar(require("./helpers/renderComponent"), exports);
 __exportStar(require("./helpers/StopPropagation"), exports);
 __exportStar(require("./deprecated"), exports);
 __exportStar(require("./RS"), exports);
+__exportStar(require("./interfaces"), exports);

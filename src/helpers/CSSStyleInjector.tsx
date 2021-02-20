@@ -1,5 +1,5 @@
 import React from 'react'
-import md5 from 'md5'
+import { v4 } from 'uuid'
 
 function isNumber(n: any) {
   return typeof n === 'number'
@@ -19,7 +19,7 @@ export const CSSStyleDeclaration2InlineCSSText = (css: React.CSSProperties) => {
     cssText: styleString ? styleString + ';' : '',
     // TODO: 合并样式
     // uuid: md5(JSON.stringify(css)).slice(0, 8) as string,
-    uuid: md5(Date.now().toString()).slice(0, 8) as string,
+    uuid: v4().slice(0, 8),
   }
 }
 

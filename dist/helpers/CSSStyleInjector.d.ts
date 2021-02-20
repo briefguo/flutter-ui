@@ -1,7 +1,7 @@
 import React from 'react';
 export declare const CSSStyleDeclaration2InlineCSSText: (css: React.CSSProperties) => {
     cssText: string;
-    uuid: string;
+    uuid: any;
 };
 interface CSSStyleProviderProps {
     classNamePrefix?: string;

@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 exports.__esModule = true;
 exports.CSSStyleInjector = exports.CSSStyleDeclaration2InlineCSSText = void 0;
 var react_1 = __importDefault(require("react"));
-var md5_1 = __importDefault(require("md5"));
+var uuid_1 = require("uuid");
 function isNumber(n) {
     return typeof n === 'number';
 }
@@ -27,7 +27,7 @@ var CSSStyleDeclaration2InlineCSSText = function (css) {
         cssText: styleString ? styleString + ';' : '',
         // TODO: 合并样式
         // uuid: md5(JSON.stringify(css)).slice(0, 8) as string,
-        uuid: md5_1["default"](Date.now().toString()).slice(0, 8)
+        uuid: uuid_1.v4().slice(0, 8)
     };
 };
 exports.CSSStyleDeclaration2InlineCSSText = CSSStyleDeclaration2InlineCSSText;

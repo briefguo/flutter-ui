@@ -14,10 +14,10 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "md5": "^2.3.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-responsive": "^8.2.0"
+    "react-responsive": "^8.2.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",

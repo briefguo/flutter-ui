@@ -8,6 +8,7 @@
   - [x] 重写了组件样式生成逻辑，让组件生成的dom变得更加整洁、易于调试
   - [x] 新组件RS。引入ResponsiveComponents，写一套DSL生成两端的代码
   - [x] 新组件Space。
+  - [x] 新组件Layout。
   - [x] 新的样式生成逻辑。CSSStyleInjector
   - [ ] 重写的屏幕调试组件
   - [ ] 为组件编写测试用例
@@ -44,11 +45,98 @@ yarn add flutter-ui
 
 ### Basic Useage
 
+#### Container/Text
+
 ```tsx
-import React from 'react'
+import { Container } from 'flutter-ui'
+
+const IndexPage = () => (
+  <Container padding={10} background="gray" contrastingColor="#fff">
+    <Text fontSize={15}>
+      Hello Flutter-UI
+    </Text>
+  </Container>
+)
+
+export default IndexPage
+```
+
+#### Flex
+
+```tsx
+import { Flex } from 'flutter-ui'
+
+const IndexPage = () => (
+  <Flex className="test-flex" justify="space-between">
+    <SampleBox>1</SampleBox>
+    <SampleBox>2</SampleBox>
+    <SampleBox>3</SampleBox>
+  </Flex>
+)
+
+export default IndexPage
+```
+#### Background/Layout
+
+```tsx
+import { Background, Layout } from 'flutter-ui'
+
+const IndexPage = () => (
+  <Background
+    src="//pic.cdn.sunmi.com/IMG/16026708266762.jpg"
+    height={200}
+  >
+    <Layout alignment="leftCenter">
+      <SampleBox>alignment="default"</SampleBox>
+    </Layout>
+  </Background>
+)
+
+export default IndexPage
+```
+
+#### Space
+
+```tsx
+import { Space } from 'flutter-ui'
+
+const IndexPage = () => (
+  <Space box="flex" direction="vertical" gutter={10}>
+    <SampleBox>1</SampleBox>
+    <SampleBox>2</SampleBox>
+    <SampleBox>3</SampleBox>
+    <SampleBox>4</SampleBox>
+  </Space>
+)
+
+export default IndexPage
+```
+
+#### RS
+
+```tsx
+import { RS } from 'flutter-ui'
+
+const IndexPage = () => (
+  <RS.Content>
+    <RS.Container>2</RS.Container>
+    <RS.Text>2</RS.Text>
+    <RS.Content>2</RS.Content>
+    <RS.Background>2</RS.Background>
+    <RS.Image>2</RS.Image>
+    <RS.Space>1</RS.Space>
+  </RS.Content>
+)
+
+export default IndexPage
+```
+
+#### PageScaffold
+
+```tsx
 import { PageScaffold, Text, Center } from 'flutter-ui'
 
-const IndexPage: Page = () => (
+const IndexPage = () => (
   <PageScaffold
     backgroundColor="#f6f7f8"
     child={
@@ -58,8 +146,6 @@ const IndexPage: Page = () => (
     }
   />
 )
-
-IndexPage.title = '首页'
 
 export default IndexPage
 ```

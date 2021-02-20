@@ -96,119 +96,118 @@ const Test = () => {
               </Space>
             </CodeSample>
           </Space>
-
-          <Section title="组合用法">
-            <h3>Layout</h3>
-            <p>Layout组件会充满父级元素，并按照alignment指定的位置来布局</p>
-            <Space box="flex" direction="vertical" gutter={24}>
-              <Space box="flex" gutter={24}>
-                <Background
-                  src="//pic.cdn.sunmi.com/IMG/16026708266762.jpg"
-                  height={200}
-                >
-                  <Layout>
-                    <SampleBox>alignment="default"</SampleBox>
-                  </Layout>
-                </Background>
-                <Background
-                  src="//pic.cdn.sunmi.com/IMG/16026708266762.jpg"
-                  height={200}
-                >
-                  <Layout alignment="leftCenter">
-                    <SampleBox>alignment="leftCenter"</SampleBox>
-                  </Layout>
-                </Background>
-                <Background
-                  src="//pic.cdn.sunmi.com/IMG/16026708266762.jpg"
-                  height={200}
-                >
-                  <Layout alignment="leftBottom">
-                    <SampleBox>alignment="leftBottom"</SampleBox>
-                  </Layout>
-                </Background>
-              </Space>
-              <Space box="flex" gutter={24}>
-                <Background
-                  src="//pic.cdn.sunmi.com/IMG/16026708266762.jpg"
-                  height={200}
-                >
-                  <Layout alignment="rightTop">
-                    <SampleBox>alignment="rightTop"</SampleBox>
-                  </Layout>
-                </Background>
-                <Background
-                  src="//pic.cdn.sunmi.com/IMG/16026708266762.jpg"
-                  height={200}
-                >
-                  <Layout alignment="rightCenter">
-                    <SampleBox>alignment="rightCenter"</SampleBox>
-                  </Layout>
-                </Background>
-                <Background
-                  src="//pic.cdn.sunmi.com/IMG/16026708266762.jpg"
-                  height={200}
-                >
-                  <Layout alignment="rightBottom">
-                    <SampleBox>alignment="rightBottom"</SampleBox>
-                  </Layout>
-                </Background>
-                <Background
-                  src="//pic.cdn.sunmi.com/IMG/16026708266762.jpg"
-                  height={200}
-                >
-                  <Layout alignment="center">
-                    <SampleBox>alignment="center"</SampleBox>
-                  </Layout>
-                </Background>
-              </Space>
-            </Space>
-            <h3>Space</h3>
+        </Section>
+        <Section title="组合用法">
+          <h3>Layout</h3>
+          <p>Layout组件会充满父级元素，并按照alignment指定的位置来布局</p>
+          <Space box="flex" direction="vertical" gutter={24}>
             <Space box="flex" gutter={24}>
-              <SampleGroup>
-                <h4>垂直</h4>
-                <CodeSample title="行内">
-                  <Space direction="vertical" gutter={10}>
-                    <SampleBox>1</SampleBox>
-                    <SampleBox>2</SampleBox>
-                    <SampleBox>3</SampleBox>
-                    <SampleBox>4</SampleBox>
-                  </Space>
-                </CodeSample>
-                <CodeSample title="块">
-                  <Space box="flex" direction="vertical" gutter={10}>
-                    <SampleBox>1</SampleBox>
-                    <SampleBox>2</SampleBox>
-                    <SampleBox>3</SampleBox>
-                    <SampleBox>4</SampleBox>
-                  </Space>
-                </CodeSample>
-              </SampleGroup>
-              <SampleGroup>
-                <h4>水平</h4>
-                <CodeSample title="行内">
-                  <Space direction="horizen" gutter={24} align="center">
-                    <SampleBox>1</SampleBox>
-                    <SampleBox>2</SampleBox>
-                    <SampleBox>3</SampleBox>
-                    <SampleBox>4</SampleBox>
-                  </Space>
-                </CodeSample>
-                <CodeSample title="块">
-                  <Space
-                    box="flex"
-                    direction="horizen"
-                    gutter={24}
-                    align="flex-end"
-                  >
-                    <SampleBox>1</SampleBox>
-                    <SampleBox>2</SampleBox>
-                    <SampleBox>3</SampleBox>
-                    <SampleBox>4</SampleBox>
-                  </Space>
-                </CodeSample>
-              </SampleGroup>
+              <Background
+                src="//pic.cdn.sunmi.com/IMG/16026708266762.jpg"
+                height={200}
+              >
+                <Layout>
+                  <SampleBox>alignment="default"</SampleBox>
+                </Layout>
+              </Background>
+              <Background
+                src="//pic.cdn.sunmi.com/IMG/16026708266762.jpg"
+                height={200}
+              >
+                <Layout alignment="leftCenter">
+                  <SampleBox>alignment="leftCenter"</SampleBox>
+                </Layout>
+              </Background>
+              <Background
+                src="//pic.cdn.sunmi.com/IMG/16026708266762.jpg"
+                height={200}
+              >
+                <Layout alignment="leftBottom">
+                  <SampleBox>alignment="leftBottom"</SampleBox>
+                </Layout>
+              </Background>
             </Space>
-          </Section>
+            <Space box="flex" gutter={24}>
+              <Background
+                src="//pic.cdn.sunmi.com/IMG/16026708266762.jpg"
+                height={200}
+              >
+                <Layout alignment="rightTop">
+                  <SampleBox>alignment="rightTop"</SampleBox>
+                </Layout>
+              </Background>
+              <Background
+                src="//pic.cdn.sunmi.com/IMG/16026708266762.jpg"
+                height={200}
+              >
+                <Layout alignment="rightCenter">
+                  <SampleBox>alignment="rightCenter"</SampleBox>
+                </Layout>
+              </Background>
+              <Background
+                src="//pic.cdn.sunmi.com/IMG/16026708266762.jpg"
+                height={200}
+              >
+                <Layout alignment="rightBottom">
+                  <SampleBox>alignment="rightBottom"</SampleBox>
+                </Layout>
+              </Background>
+              <Background
+                src="//pic.cdn.sunmi.com/IMG/16026708266762.jpg"
+                height={200}
+              >
+                <Layout alignment="center">
+                  <SampleBox>alignment="center"</SampleBox>
+                </Layout>
+              </Background>
+            </Space>
+          </Space>
+          <h3>Space</h3>
+          <Space box="flex" gutter={24}>
+            <SampleGroup>
+              <h4>垂直</h4>
+              <CodeSample title="行内">
+                <Space direction="vertical" gutter={10}>
+                  <SampleBox>1</SampleBox>
+                  <SampleBox>2</SampleBox>
+                  <SampleBox>3</SampleBox>
+                  <SampleBox>4</SampleBox>
+                </Space>
+              </CodeSample>
+              <CodeSample title="块">
+                <Space box="flex" direction="vertical" gutter={10}>
+                  <SampleBox>1</SampleBox>
+                  <SampleBox>2</SampleBox>
+                  <SampleBox>3</SampleBox>
+                  <SampleBox>4</SampleBox>
+                </Space>
+              </CodeSample>
+            </SampleGroup>
+            <SampleGroup>
+              <h4>水平</h4>
+              <CodeSample title="行内">
+                <Space direction="horizen" gutter={24} align="center">
+                  <SampleBox>1</SampleBox>
+                  <SampleBox>2</SampleBox>
+                  <SampleBox>3</SampleBox>
+                  <SampleBox>4</SampleBox>
+                </Space>
+              </CodeSample>
+              <CodeSample title="块">
+                <Space
+                  box="flex"
+                  direction="horizen"
+                  gutter={24}
+                  align="flex-end"
+                >
+                  <SampleBox>1</SampleBox>
+                  <SampleBox>2</SampleBox>
+                  <SampleBox>3</SampleBox>
+                  <SampleBox>4</SampleBox>
+                </Space>
+              </CodeSample>
+            </SampleGroup>
+          </Space>
         </Section>
         <Section title="扩展组件">
           <div>

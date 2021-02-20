@@ -10,5 +10,5 @@
     // 而导致hooks call error
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src/**.tsx", "src/**.ts"]
+  "include": ["src/**/**.tsx", "src/**/**.ts"]
 }

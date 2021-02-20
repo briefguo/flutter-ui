@@ -1,6 +1,6 @@
 {
   "name": "flutter-ui",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "repository": "git@github.com:briefguo/flutter-ui.git",
@@ -8,25 +8,24 @@
   "license": "MIT",
   "scripts": {
     "prebuild": "rm -rf dist",
-    "build": "tsc -d"
-  },
-  "peerDependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "styled-components": "^5.2.0"
+    "test": "SHOW_SCREEN_DEBUG=true parcel index.html",
+    "start": "npm run test",
+    "build": "tsc -d && cp src/index.css dist/index.css"
   },
   "dependencies": {
-    "react-overlays": "^4.1.0",
-    "react-responsive": "^8.1.0"
+    "classnames": "^2.2.6",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-responsive": "^8.2.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "@types/classnames": "^2.2.11",
     "@types/node": "^14.6.2",
     "@types/react": "^16.9.48",
     "@types/react-dom": "^16.9.8",
-    "@types/react-overlays": "^3.1.0",
-    "@types/styled-components": "^5.1.2",
     "@typescript-eslint/eslint-plugin": "^3.6.1",
     "@typescript-eslint/parser": "^3.6.1",
     "eslint": "^7.4.0",
@@ -37,8 +36,10 @@
     "eslint-plugin-react-hooks": "^4.0.8",
     "husky": "^4.2.5",
     "lint-staged": "^10.0.7",
+    "parcel-bundler": "^1.12.4",
     "prettier": "^1.19.1",
     "react-is": "^16.13.1",
+    "styled-components": "^5.2.1",
     "typescript": "^4.0.2"
   },
   "gitHooks": {

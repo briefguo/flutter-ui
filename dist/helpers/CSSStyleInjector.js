@@ -25,7 +25,9 @@ var CSSStyleDeclaration2InlineCSSText = function (css) {
         .join(';');
     return {
         cssText: styleString ? styleString + ';' : '',
-        uuid: md5_1["default"](JSON.stringify(css)).slice(0, 8)
+        // TODO: 合并样式
+        // uuid: md5(JSON.stringify(css)).slice(0, 8) as string,
+        uuid: md5_1["default"](Date.now().toString()).slice(0, 8)
     };
 };
 exports.CSSStyleDeclaration2InlineCSSText = CSSStyleDeclaration2InlineCSSText;

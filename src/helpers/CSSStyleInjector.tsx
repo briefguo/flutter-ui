@@ -17,7 +17,9 @@ export const CSSStyleDeclaration2InlineCSSText = (css: React.CSSProperties) => {
 
   return {
     cssText: styleString ? styleString + ';' : '',
-    uuid: md5(JSON.stringify(css)).slice(0, 8) as string,
+    // TODO: 合并样式
+    // uuid: md5(JSON.stringify(css)).slice(0, 8) as string,
+    uuid: md5(Date.now().toString()).slice(0, 8) as string,
   }
 }
 
@@ -28,7 +30,6 @@ interface CSSStyleProviderProps {
 }
 
 export const CSSStyleInjector = (props: CSSStyleProviderProps) => {
-
   // 相同样式的md5值是一样的
   const inlineStyle = CSSStyleDeclaration2InlineCSSText(props.style)
   const currentClassName = `${props.classNamePrefix}-${inlineStyle.uuid}`

@@ -48,7 +48,7 @@ yarn add flutter-ui
 #### Container/Text
 
 ```tsx
-import { Container } from 'flutter-ui'
+import { Container, Text } from 'flutter-ui'
 
 const IndexPage = () => (
   <Container padding={10} background="gray" contrastingColor="#fff">

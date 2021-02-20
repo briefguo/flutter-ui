@@ -10,7 +10,7 @@ export interface SpaceProps extends BaseComponentProps {
   box?: 'inline-flex' | 'flex'
   children: React.ReactElement[]
   align?: Property.AlignItems
-  gutter?: number
+  size?: number
 }
 
 export function SingleSpace(p: SpaceProps) {
@@ -20,7 +20,7 @@ export function SingleSpace(p: SpaceProps) {
     direction = 'horizen',
     box = 'inline-flex',
     align,
-    gutter,
+    size,
     ...props
   } = p
 
@@ -33,8 +33,8 @@ export function SingleSpace(p: SpaceProps) {
             display: box,
             flexDirection: 'column',
             alignItems: align,
-            marginTop: -gutter / 2,
-            marginBottom: -gutter / 2,
+            marginTop: -size / 2,
+            marginBottom: -size / 2,
           }}
         >
           {className => (
@@ -46,7 +46,7 @@ export function SingleSpace(p: SpaceProps) {
                 <CSSStyleInjector
                   key={index}
                   classNamePrefix="single-space__item"
-                  style={{ marginTop: gutter / 2, marginBottom: gutter / 2 }}
+                  style={{ marginTop: size / 2, marginBottom: size / 2 }}
                 >
                   {className => <div className={cx(className)}>{child}</div>}
                 </CSSStyleInjector>
@@ -63,8 +63,8 @@ export function SingleSpace(p: SpaceProps) {
           style={{
             display: box,
             alignItems: align,
-            marginLeft: -gutter / 2,
-            marginRight: -gutter / 2,
+            marginLeft: -size / 2,
+            marginRight: -size / 2,
           }}
         >
           {className => (
@@ -78,8 +78,8 @@ export function SingleSpace(p: SpaceProps) {
                   classNamePrefix="single-space__item"
                   style={{
                     flex: box === 'flex' ? '1 1' : undefined,
-                    marginLeft: gutter / 2,
-                    marginRight: gutter / 2,
+                    marginLeft: size / 2,
+                    marginRight: size / 2,
                   }}
                 >
                   {className => <div className={cx(className)}>{child}</div>}
@@ -95,7 +95,7 @@ export function SingleSpace(p: SpaceProps) {
 export interface RSSpaceProps {
   direction?: RSProperty<'vertical' | 'horizen'>
   align?: RSProperty<Property.AlignItems>
-  gutter?: RSProperty<number>
+  size?: RSProperty<number>
   className?: RSProperty<string>
   style?: RSProperty<React.CSSProperties>
   children: React.ReactChild[]
@@ -104,4 +104,4 @@ export interface RSSpaceProps {
 
 export const ResponsiveSpace: React.FC<RSSpaceProps> = createRSC(SingleSpace)
 
-export const Space = ResponsiveSpace
+export const Space = SingleSpace

@@ -25,7 +25,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 exports.__esModule = true;
-exports.ResponsiveText = exports.Text = exports.SingleText = void 0;
+exports.Text = exports.ResponsiveText = exports.SingleText = void 0;
 var react_1 = __importDefault(require("react"));
 var classnames_1 = __importDefault(require("classnames"));
 var createRSC_1 = require("../helpers/createRSC");
@@ -41,5 +41,5 @@ var SingleText = function (p) {
         } }, function (currentClassName) { return (react_1["default"].createElement("span", __assign({}, props, { className: classnames_1["default"](props.className, currentClassName, { lg: lg, xs: xs }) }), props.children)); }));
 };
 exports.SingleText = SingleText;
-exports.Text = exports.SingleText;
 exports.ResponsiveText = createRSC_1.createRSC(exports.SingleText);
+exports.Text = exports.SingleText;

@@ -50,5 +50,5 @@ var SingleContainer = function (p) {
 };
 exports.SingleContainer = SingleContainer;
 exports.ResponsiveContainer = createRSC_1.createRSC(exports.SingleContainer);
-exports.Container = exports.ResponsiveContainer;
-exports.SizedBox = exports.ResponsiveContainer;
+exports.Container = exports.SingleContainer;
+exports.SizedBox = exports.SingleContainer;

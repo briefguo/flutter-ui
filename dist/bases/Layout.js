@@ -25,10 +25,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 exports.__esModule = true;
-exports.Layout = exports.SingleLayout = void 0;
+exports.Layout = exports.RSLayout = exports.SingleLayout = void 0;
 var react_1 = __importDefault(require("react"));
 var classnames_1 = __importDefault(require("classnames"));
 var CSSStyleInjector_1 = require("../helpers/CSSStyleInjector");
+var createRSC_1 = require("../helpers/createRSC");
 var layouts = {
     center: {
         justifyContent: 'center',
@@ -91,4 +92,5 @@ var SingleLayout = function (p) {
 };
 exports.SingleLayout = SingleLayout;
 exports.SingleLayout.mapLayoutPropsToFlexProps = _mapLayoutPropsToFlexProps;
+exports.RSLayout = createRSC_1.createRSC(exports.SingleLayout);
 exports.Layout = exports.SingleLayout;

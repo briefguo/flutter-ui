@@ -87,5 +87,5 @@ export const ResponsiveContainer: React.FC<ResponsiveContainerProps> = createRSC
   SingleContainer,
 )
 
-export const Container = ResponsiveContainer
-export const SizedBox = ResponsiveContainer
+export const Container = SingleContainer
+export const SizedBox = SingleContainer

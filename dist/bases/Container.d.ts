@@ -27,5 +27,5 @@ export interface ResponsiveContainerProps extends BaseRSComponentProps {
     textAlign?: RSProperty<Property.TextAlign>;
 }
 export declare const ResponsiveContainer: React.FC<ResponsiveContainerProps>;
-export declare const Container: React.FC<ResponsiveContainerProps>;
-export declare const SizedBox: React.FC<ResponsiveContainerProps>;
+export declare const Container: React.FC<SingleContainerProps>;
+export declare const SizedBox: React.FC<SingleContainerProps>;

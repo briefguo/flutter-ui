@@ -76,4 +76,4 @@ export const ResponsiveFlex: React.FC<ResponsiveFlexProps> = createRSC(
   SingleFlex,
 )
 
-export const Flex = ResponsiveFlex
+export const Flex = SingleFlex

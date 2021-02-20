@@ -6,6 +6,9 @@ export interface SingleTextProps extends BaseComponentProps {
     color?: string;
     contrastingColor?: string;
     fontWeight?: Property.FontWeight;
+    /**
+     * @deprecated
+     */
     textAlign?: Property.TextAlign;
     /**
      * @deprecated
@@ -13,7 +16,6 @@ export interface SingleTextProps extends BaseComponentProps {
     whiteSpace?: Property.WhiteSpace;
 }
 export declare const SingleText: (p: SingleTextProps) => JSX.Element;
-export declare const Text: (p: SingleTextProps) => JSX.Element;
 export interface ResponsiveTextProps extends BaseRSComponentProps {
     fontSize?: RSProperty<number | string>;
     color?: RSProperty<string>;
@@ -21,3 +23,4 @@ export interface ResponsiveTextProps extends BaseRSComponentProps {
     fontWeight?: RSProperty<Property.FontWeight>;
 }
 export declare const ResponsiveText: React.FC<ResponsiveTextProps>;
+export declare const Text: (p: SingleTextProps) => JSX.Element;

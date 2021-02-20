@@ -1,8 +1,13 @@
 import React from 'react'
 import cx from 'classnames'
 import { Property } from 'csstype'
-import { BaseComponentProps } from '../interfaces'
+import {
+  BaseComponentProps,
+  BaseRSComponentProps,
+  RSProperty,
+} from '../interfaces'
 import { CSSStyleInjector } from '../helpers/CSSStyleInjector'
+import { createRSC } from '../helpers/createRSC'
 
 const layouts: Record<
   | 'center'
@@ -99,5 +104,13 @@ export const SingleLayout = (p: SingleLayoutProps) => {
 }
 
 SingleLayout.mapLayoutPropsToFlexProps = _mapLayoutPropsToFlexProps
+
+export interface RSLayoutProps extends BaseRSComponentProps {
+  inline?: RSProperty<boolean>
+  wrap?: RSProperty<Property.FlexWrap>
+  alignment?: RSProperty<LayoutProps>
+}
+
+export const RSLayout: React.FC<RSLayoutProps> = createRSC(SingleLayout)
 
 export const Layout = SingleLayout

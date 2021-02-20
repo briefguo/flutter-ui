@@ -6,13 +6,31 @@ export const ScreenDebug = p => {
     const screenTitle = p['data-screen']
     return (
       <CSSStyleInjector
-        classNamePrefix="screen-debug"
-        style={{
-          position: 'sticky',
-          top: 0,
-        }}
+        classNamePrefix="screen-debug__container"
+        style={{ position: 'relative' }}
       >
-        {className => <div className={className}>{screenTitle}</div>}
+        {className => (
+          <div className={className}>
+            <CSSStyleInjector
+              classNamePrefix="screen-debug"
+              style={{
+                position: 'absolute',
+                right: 0,
+                color: '#fff',
+                padding: 15,
+                textAlign: 'center',
+                WebkitBackdropFilter: 'saturate(180%) blur(20px)',
+                backdropFilter: 'saturate(180%) blur(20px)',
+                borderRadius: '24px 0 0 24px',
+                background: 'rgba(0,0,0,0.5)',
+              }}
+            >
+              {className => (
+                <div className={className}>screen-{screenTitle}</div>
+              )}
+            </CSSStyleInjector>
+          </div>
+        )}
       </CSSStyleInjector>
     )
   } else {

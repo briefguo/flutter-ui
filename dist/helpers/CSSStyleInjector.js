@@ -37,11 +37,11 @@ var CSSStyleInjector = function (props) {
     var currentClassName = props.classNamePrefix + "-" + inlineStyle.uuid;
     var styleTag;
     // TODO: 合并去重
-    if (cache.includes(inlineStyle.uuid)) {
+    if (cache.includes(currentClassName)) {
         styleTag = null;
     }
     else {
-        cache.push(inlineStyle.uuid);
+        cache.push(currentClassName);
         styleTag = (react_1["default"].createElement("style", { "data-target": currentClassName }, "." + currentClassName + " {" + inlineStyle.cssText + "}"));
     }
     return (react_1["default"].createElement(react_1["default"].Fragment, null,

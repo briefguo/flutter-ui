@@ -63,7 +63,7 @@ const Test = () => {
       <style scoped>{`h4,h5{margin:0;}`}</style>
       <RS.Content>
         <Section title="基本用法">
-          <Space className="hello" box="flex" gutter={24}>
+          <Space box="flex" gutter={24}>
             <CodeSample title="Container">
               <Container padding={10} background="gray" contrastingColor="#fff">
                 1

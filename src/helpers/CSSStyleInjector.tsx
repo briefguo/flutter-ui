@@ -36,10 +36,10 @@ export const CSSStyleInjector = (props: CSSStyleProviderProps) => {
 
   let styleTag
   // TODO: 合并去重
-  if (cache.includes(inlineStyle.uuid)) {
+  if (cache.includes(currentClassName)) {
     styleTag = null
   } else {
-    cache.push(inlineStyle.uuid)
+    cache.push(currentClassName)
     styleTag = (
       <style data-target={currentClassName}>
         {`.${currentClassName} {${inlineStyle.cssText}}`}

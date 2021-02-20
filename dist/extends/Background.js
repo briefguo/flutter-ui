@@ -32,7 +32,7 @@ var createRSC_1 = require("../helpers/createRSC");
 var Container_1 = require("../bases/Container");
 var SingleBackground = function (props) {
     var src = props.src, background = props.background, p = __rest(props, ["src", "background"]);
-    return (react_1["default"].createElement(Container_1.SingleContainer, __assign({}, p, { className: classnames_1["default"]('single-background', p.className), background: background !== null && background !== void 0 ? background : "center/cover url(" + src + ")" }), p.children));
+    return (react_1["default"].createElement(Container_1.SingleContainer, __assign({ contrastingColor: "#fff" }, p, { className: classnames_1["default"]('single-background', p.className), background: background !== null && background !== void 0 ? background : "center/cover url(" + src + ")" }), p.children));
 };
 exports.SingleBackground = SingleBackground;
 exports.Background = exports.SingleBackground;

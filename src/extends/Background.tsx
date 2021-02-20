@@ -15,6 +15,7 @@ export const SingleBackground = (props: SingleBackgroundProps) => {
   const { src, background, ...p } = props
   return (
     <SingleContainer
+      contrastingColor="#fff"
       {...p}
       className={cx('single-background', p.className)}
       background={background ?? `center/cover url(${src})`}

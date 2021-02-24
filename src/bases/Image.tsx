@@ -7,6 +7,7 @@ type SingleImageProps = React.DetailedHTMLProps<
   HTMLImageElement
 >
 
+// TODO: 添加borderd
 export const SingleImage = (props: SingleImageProps) => (
   <img width="100%" {...props} alt="" />
 )

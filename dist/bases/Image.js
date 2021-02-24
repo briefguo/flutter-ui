@@ -17,6 +17,7 @@ exports.__esModule = true;
 exports.Img = exports.ResponsiveImage = exports.SingleImage = void 0;
 var react_1 = __importDefault(require("react"));
 var createRSC_1 = require("../helpers/createRSC");
+// TODO: 添加borderd
 var SingleImage = function (props) { return (react_1["default"].createElement("img", __assign({ width: "100%" }, props, { alt: "" }))); };
 exports.SingleImage = SingleImage;
 exports.ResponsiveImage = createRSC_1.createRSC(exports.SingleImage);

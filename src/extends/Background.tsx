@@ -1,12 +1,13 @@
 import React from 'react'
 import cx from 'classnames'
-import { ProperRSProperty, XOR } from '../interfaces'
+import { RSProperty, XOR } from '../interfaces'
 import { createRSC } from '../helpers/createRSC'
 import {
   ResponsiveContainerProps,
   SingleContainer,
   SingleContainerProps,
 } from '../bases/Container'
+import { CSSStyleInjector } from '../helpers/CSSStyleInjector'
 
 export type SingleBackgroundProps = SingleContainerProps &
   XOR<{ src?: string }, { background?: string }>
@@ -25,39 +26,60 @@ export const SingleBackground = (props: SingleBackgroundProps) => {
   )
 }
 
-export const Background = SingleBackground
-
 type SingleVideoBackgroundProps = SingleContainerProps & {
   src?: string
-  autoPlay?: any
+  height: number | string
   useRef?: any
 }
 
 export const SingleVideoBackground = (p: SingleVideoBackgroundProps) => {
-  const { src, autoPlay, useRef, ...props } = p
+  const { src, useRef, ...props } = p
   return (
     <SingleContainer
-      {...props}
+      style={{ position: 'relative', overflow: 'hidden', height: props.height }}
       className={cx('single-video-background', p.className)}
     >
-      <video
-        className="single-video-background__video"
+      <SingleContainer
+        {...props}
+        className="single-video-background__text"
         style={{
+          position: 'absolute',
+          zIndex: 2,
+          top: 0,
+          width: '100%',
           height: props.height,
+          ...props.style,
         }}
-        autoPlay={autoPlay}
-        muted
-        src={src}
-        ref={useRef}
-      />
+      >
+        {p.children}
+      </SingleContainer>
+      <CSSStyleInjector
+        classNamePrefix="single-video-background__video"
+        style={{
+          position: 'absolute',
+          zIndex: 1,
+          objectFit: 'cover',
+          top: 0,
+          left: '50%',
+          transform: 'translateX(-50%)',
+          height: props.height,
+          width: props.width,
+        }}
+      >
+        {className => (
+          <video className={className} autoPlay muted src={src} ref={useRef} />
+        )}
+      </CSSStyleInjector>
     </SingleContainer>
   )
 }
 
 // 互斥类型 https://zhuanlan.zhihu.com/p/82459341
 export type ResponsiveBackgroundProps = ResponsiveContainerProps &
-  XOR<{ src?: ProperRSProperty<string> }, { background?: string }>
+  XOR<{ src?: RSProperty<string> }, { background?: string }>
 
 export const ResponsiveBackground: React.FC<ResponsiveBackgroundProps> = createRSC(
   SingleBackground,
 )
+
+export const Background = ResponsiveBackground

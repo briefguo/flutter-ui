@@ -34,4 +34,4 @@ var SingleCenter = function (props) {
 exports.SingleCenter = SingleCenter;
 exports.Center = exports.SingleCenter;
 exports.ResponsiveFlex = createRSC_1.createRSC(exports.SingleFlex);
-exports.Flex = exports.ResponsiveFlex;
+exports.Flex = exports.SingleFlex;

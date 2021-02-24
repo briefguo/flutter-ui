@@ -15,6 +15,10 @@ export interface SingleTextProps extends BaseComponentProps {
   color?: string
   contrastingColor?: string
   fontWeight?: Property.FontWeight
+
+  /**
+   * @deprecated
+   */
   textAlign?: Property.TextAlign
 
   /**
@@ -58,8 +62,6 @@ export const SingleText = (p: SingleTextProps) => {
   )
 }
 
-export const Text = SingleText
-
 export interface ResponsiveTextProps extends BaseRSComponentProps {
   fontSize?: RSProperty<number | string>
   color?: RSProperty<string>
@@ -70,3 +72,5 @@ export interface ResponsiveTextProps extends BaseRSComponentProps {
 export const ResponsiveText: React.FC<ResponsiveTextProps> = createRSC(
   SingleText,
 )
+
+export const Text = SingleText

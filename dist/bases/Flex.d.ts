@@ -27,4 +27,4 @@ export interface ResponsiveFlexProps {
     layout?: RSProperty<LayoutProps>;
 }
 export declare const ResponsiveFlex: React.FC<ResponsiveFlexProps>;
-export declare const Flex: React.FC<ResponsiveFlexProps>;
+export declare const Flex: (p: SingleFlexProps) => JSX.Element;

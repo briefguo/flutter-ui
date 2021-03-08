@@ -21,6 +21,8 @@ export const ResponsiveContent = ResponsiveContainer.of({
   width: { lg: 1200 },
 })
 
+export const Content = ResponsiveContent
+
 export const RS = {
   Container: ResponsiveContainer,
   Flex: ResponsiveFlex,

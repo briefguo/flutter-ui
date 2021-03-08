@@ -8,6 +8,7 @@ export declare const SingleFlex: {
         inline: boolean;
         direction: Property.FlexDirection;
         layout: import("./Layout").LayoutAlignment;
+        style: import("react").CSSProperties;
     }>): import("react").ReactElement<import("..").SingleProps<unknown>, string | ((props: any) => import("react").ReactElement<any, any>) | (new (props: any) => import("react").Component<any, any, any>)>;
     of: (base: import("..").SingleProps<{
         align: Property.AlignItems;
@@ -17,6 +18,7 @@ export declare const SingleFlex: {
         inline: boolean;
         direction: Property.FlexDirection;
         layout: import("./Layout").LayoutAlignment;
+        style: import("react").CSSProperties;
     }>) => {
         (p: import("..").SingleProps<{
             align: Property.AlignItems;
@@ -26,10 +28,11 @@ export declare const SingleFlex: {
             inline: boolean;
             direction: Property.FlexDirection;
             layout: import("./Layout").LayoutAlignment;
+            style: import("react").CSSProperties;
         }>): JSX.Element;
         of: any;
     };
-    css: (p: import("..").SingleProps<{
+    props2CSSProperties: (p: import("..").SingleProps<{
         align: Property.AlignItems;
         justify: Property.JustifyContent;
         wrap: Property.FlexWrap;
@@ -37,8 +40,18 @@ export declare const SingleFlex: {
         inline: boolean;
         direction: Property.FlexDirection;
         layout: import("./Layout").LayoutAlignment;
+        style: import("react").CSSProperties;
     }>) => import("react").CSSProperties;
-    defaultProps: {};
+    defaultProps: {
+        align: Property.AlignItems;
+        justify: Property.JustifyContent;
+        wrap: Property.FlexWrap;
+        expanded: boolean;
+        inline: boolean;
+        direction: Property.FlexDirection;
+        layout: import("./Layout").LayoutAlignment;
+        style: import("react").CSSProperties;
+    };
     selector: string;
 };
 export declare const SingleColumn: {
@@ -50,6 +63,7 @@ export declare const SingleColumn: {
         inline: boolean;
         direction: Property.FlexDirection;
         layout: import("./Layout").LayoutAlignment;
+        style: import("react").CSSProperties;
     }>): JSX.Element;
     of: (base: import("..").SingleProps<{
         align: Property.AlignItems;
@@ -59,6 +73,7 @@ export declare const SingleColumn: {
         inline: boolean;
         direction: Property.FlexDirection;
         layout: import("./Layout").LayoutAlignment;
+        style: import("react").CSSProperties;
     }>) => any;
 };
 export declare const SingleCenter: {
@@ -70,6 +85,7 @@ export declare const SingleCenter: {
         inline: boolean;
         direction: Property.FlexDirection;
         layout: import("./Layout").LayoutAlignment;
+        style: import("react").CSSProperties;
     }>): JSX.Element;
     of: (base: import("..").SingleProps<{
         align: Property.AlignItems;
@@ -79,6 +95,7 @@ export declare const SingleCenter: {
         inline: boolean;
         direction: Property.FlexDirection;
         layout: import("./Layout").LayoutAlignment;
+        style: import("react").CSSProperties;
     }>) => any;
 };
 export declare const Center: {
@@ -90,6 +107,7 @@ export declare const Center: {
         inline: boolean;
         direction: Property.FlexDirection;
         layout: import("./Layout").LayoutAlignment;
+        style: import("react").CSSProperties;
     }>): JSX.Element;
     of: (base: import("..").SingleProps<{
         align: Property.AlignItems;
@@ -99,6 +117,7 @@ export declare const Center: {
         inline: boolean;
         direction: Property.FlexDirection;
         layout: import("./Layout").LayoutAlignment;
+        style: import("react").CSSProperties;
     }>) => any;
 };
 export declare const Flex: {
@@ -110,6 +129,7 @@ export declare const Flex: {
         inline: boolean;
         direction: Property.FlexDirection;
         layout: import("./Layout").LayoutAlignment;
+        style: import("react").CSSProperties;
     }>): import("react").ReactElement<import("..").SingleProps<unknown>, string | ((props: any) => import("react").ReactElement<any, any>) | (new (props: any) => import("react").Component<any, any, any>)>;
     of: (base: import("..").SingleProps<{
         align: Property.AlignItems;
@@ -119,6 +139,7 @@ export declare const Flex: {
         inline: boolean;
         direction: Property.FlexDirection;
         layout: import("./Layout").LayoutAlignment;
+        style: import("react").CSSProperties;
     }>) => {
         (p: import("..").SingleProps<{
             align: Property.AlignItems;
@@ -128,10 +149,11 @@ export declare const Flex: {
             inline: boolean;
             direction: Property.FlexDirection;
             layout: import("./Layout").LayoutAlignment;
+            style: import("react").CSSProperties;
         }>): JSX.Element;
         of: any;
     };
-    css: (p: import("..").SingleProps<{
+    props2CSSProperties: (p: import("..").SingleProps<{
         align: Property.AlignItems;
         justify: Property.JustifyContent;
         wrap: Property.FlexWrap;
@@ -139,7 +161,17 @@ export declare const Flex: {
         inline: boolean;
         direction: Property.FlexDirection;
         layout: import("./Layout").LayoutAlignment;
+        style: import("react").CSSProperties;
     }>) => import("react").CSSProperties;
-    defaultProps: {};
+    defaultProps: {
+        align: Property.AlignItems;
+        justify: Property.JustifyContent;
+        wrap: Property.FlexWrap;
+        expanded: boolean;
+        inline: boolean;
+        direction: Property.FlexDirection;
+        layout: import("./Layout").LayoutAlignment;
+        style: import("react").CSSProperties;
+    };
     selector: string;
 };

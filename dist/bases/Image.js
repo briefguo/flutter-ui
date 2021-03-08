@@ -7,7 +7,8 @@ exports.SingleImage = createSingle_1.singleOf('img', {
     defaultProps: {
         width: '100%',
         src: undefined,
-        bordered: undefined
+        bordered: undefined,
+        style: undefined
     },
     selector: '.s-img-[uuid]',
     props2CSSProperties: function (p) { return ({

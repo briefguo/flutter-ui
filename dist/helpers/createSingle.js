@@ -37,19 +37,19 @@ var _commonKeys = ['lg', 'xs'];
 function singleOf(tag, option) {
     var componentPropsKeys = typeof tag !== 'string' ? Object.keys(tag === null || tag === void 0 ? void 0 : tag.defaultProps) : [];
     var componentCSSMapper = typeof tag !== 'string' ? tag.css : undefined;
-    var _a = option.defaultProps, defaultProps = _a === void 0 ? {} : _a, selector = option.selector, css = option.props2CSSProperties, renderChildren = option.renderChildren;
+    var defaultProps = option.defaultProps, selector = option.selector, props2CSSProperties = option.props2CSSProperties, renderChildren = option.renderChildren;
     var TargetC = function (p) {
         var _a;
-        var className = StyleInjector_1.StyleInjector.useStyle(selector, __assign(__assign({}, componentCSSMapper === null || componentCSSMapper === void 0 ? void 0 : componentCSSMapper(p)), css === null || css === void 0 ? void 0 : css(p))).className;
-        var propsKeys = Object.keys(defaultProps)
+        var className = StyleInjector_1.StyleInjector.useStyle(selector, __assign(__assign({}, componentCSSMapper === null || componentCSSMapper === void 0 ? void 0 : componentCSSMapper(p)), props2CSSProperties === null || props2CSSProperties === void 0 ? void 0 : props2CSSProperties(p))).className;
+        var propsKeys = Object.keys(defaultProps !== null && defaultProps !== void 0 ? defaultProps : {})
             // 当 tag 是 singleOf 创建的组件时，补上它的 keys
             .concat(componentPropsKeys)
             .concat(_commonKeys);
         // eslint-disable-next-line react/no-children-prop
-        return react_1["default"].createElement(tag, __assign(__assign({}, _omit(p, propsKeys)), { className: classnames_1["default"](p.className, className, { lg: p.lg, xs: p.xs }), children: (_a = renderChildren === null || renderChildren === void 0 ? void 0 : renderChildren(p)) !== null && _a !== void 0 ? _a : p.children }));
+        return react_1["default"].createElement(tag, __assign(__assign({}, _omit(p, propsKeys)), { style: p.style, className: classnames_1["default"](p.className, className, { lg: p.lg, xs: p.xs }), children: (_a = renderChildren === null || renderChildren === void 0 ? void 0 : renderChildren(p)) !== null && _a !== void 0 ? _a : p.children }));
     };
     TargetC.of = createOf_1.createOf(TargetC);
-    TargetC.css = css;
+    TargetC.props2CSSProperties = props2CSSProperties;
     TargetC.defaultProps = defaultProps;
     TargetC.selector = selector;
     return TargetC;

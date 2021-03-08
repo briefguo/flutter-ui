@@ -27,7 +27,7 @@ export declare const SingleSpace: {
         }>): JSX.Element;
         of: any;
     };
-    css: (p: import("..").SingleProps<{
+    props2CSSProperties: (p: import("..").SingleProps<{
         direction: "vertical" | "horizen";
         box: "flex" | "inline-flex";
         align: Property.AlignItems;
@@ -35,7 +35,14 @@ export declare const SingleSpace: {
         children: React.ReactNode[];
         style: React.CSSProperties;
     }>) => React.CSSProperties;
-    defaultProps: {};
+    defaultProps: {
+        direction: "vertical" | "horizen";
+        box: "flex" | "inline-flex";
+        align: Property.AlignItems;
+        size: number;
+        children: React.ReactNode[];
+        style: React.CSSProperties;
+    };
     selector: string;
 };
 export declare const Space: {
@@ -65,7 +72,7 @@ export declare const Space: {
         }>): JSX.Element;
         of: any;
     };
-    css: (p: import("..").SingleProps<{
+    props2CSSProperties: (p: import("..").SingleProps<{
         direction: "vertical" | "horizen";
         box: "flex" | "inline-flex";
         align: Property.AlignItems;
@@ -73,6 +80,13 @@ export declare const Space: {
         children: React.ReactNode[];
         style: React.CSSProperties;
     }>) => React.CSSProperties;
-    defaultProps: {};
+    defaultProps: {
+        direction: "vertical" | "horizen";
+        box: "flex" | "inline-flex";
+        align: Property.AlignItems;
+        size: number;
+        children: React.ReactNode[];
+        style: React.CSSProperties;
+    };
     selector: string;
 };

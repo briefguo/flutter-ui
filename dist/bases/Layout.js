@@ -52,7 +52,8 @@ var mapLayoutPropsToCSS = function (layout) {
 exports.mapLayoutPropsToCSS = mapLayoutPropsToCSS;
 exports.SingleLayout = createSingle_1.singleOf('div', {
     defaultProps: {
-        alignment: undefined
+        alignment: undefined,
+        style: undefined
     },
     selector: '.s-layout-[uuid]',
     props2CSSProperties: function (p) { return (__assign({ display: 'flex', flexDirection: 'column', flex: '1 1 auto', height: '100%' }, exports.mapLayoutPropsToCSS(p.alignment))); }

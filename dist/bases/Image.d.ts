@@ -3,25 +3,34 @@ export declare const SingleImage: {
         width: string | number;
         src: string;
         bordered: boolean;
+        style: import("react").CSSProperties;
     }>): import("react").ReactElement<import("..").SingleProps<unknown>, string | ((props: any) => import("react").ReactElement<any, any>) | (new (props: any) => import("react").Component<any, any, any>)>;
     of: (base: import("..").SingleProps<{
         width: string | number;
         src: string;
         bordered: boolean;
+        style: import("react").CSSProperties;
     }>) => {
         (p: import("..").SingleProps<{
             width: string | number;
             src: string;
             bordered: boolean;
+            style: import("react").CSSProperties;
         }>): JSX.Element;
         of: any;
     };
-    css: (p: import("..").SingleProps<{
+    props2CSSProperties: (p: import("..").SingleProps<{
         width: string | number;
         src: string;
         bordered: boolean;
+        style: import("react").CSSProperties;
     }>) => import("react").CSSProperties;
-    defaultProps: {};
+    defaultProps: {
+        width: string | number;
+        src: string;
+        bordered: boolean;
+        style: import("react").CSSProperties;
+    };
     selector: string;
 };
 export declare const Img: {
@@ -29,24 +38,33 @@ export declare const Img: {
         width: string | number;
         src: string;
         bordered: boolean;
+        style: import("react").CSSProperties;
     }>): import("react").ReactElement<import("..").SingleProps<unknown>, string | ((props: any) => import("react").ReactElement<any, any>) | (new (props: any) => import("react").Component<any, any, any>)>;
     of: (base: import("..").SingleProps<{
         width: string | number;
         src: string;
         bordered: boolean;
+        style: import("react").CSSProperties;
     }>) => {
         (p: import("..").SingleProps<{
             width: string | number;
             src: string;
             bordered: boolean;
+            style: import("react").CSSProperties;
         }>): JSX.Element;
         of: any;
     };
-    css: (p: import("..").SingleProps<{
+    props2CSSProperties: (p: import("..").SingleProps<{
         width: string | number;
         src: string;
         bordered: boolean;
+        style: import("react").CSSProperties;
     }>) => import("react").CSSProperties;
-    defaultProps: {};
+    defaultProps: {
+        width: string | number;
+        src: string;
+        bordered: boolean;
+        style: import("react").CSSProperties;
+    };
     selector: string;
 };

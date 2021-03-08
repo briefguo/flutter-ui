@@ -22,7 +22,8 @@ exports.SingleFlex = createSingle_1.singleOf('div', {
         expanded: undefined,
         inline: undefined,
         direction: undefined,
-        layout: undefined
+        layout: undefined,
+        style: undefined
     },
     selector: '.s-flex-[uuid]',
     props2CSSProperties: function (p) { return (__assign({ display: p.inline ? 'inline-flex' : 'flex', justifyContent: p.justify, flexWrap: p.wrap, height: p.expanded ? '100%' : undefined, flex: p.expanded ? '1 1 auto' : undefined, flexDirection: p.direction, alignItems: p.align }, Layout_1.mapLayoutPropsToCSS(p.layout))); }

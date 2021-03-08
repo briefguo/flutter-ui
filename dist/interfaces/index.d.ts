@@ -17,6 +17,7 @@ export interface BaseComponentProps {
     'lg'?: boolean;
     'xs'?: boolean;
     'data-screen'?: string;
+    'style'?: React.CSSProperties;
     'className'?: string;
     'children'?: React.ReactNode;
 }

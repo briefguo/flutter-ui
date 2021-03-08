@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-exports.RS = exports.ResponsiveContent = exports.ResponsiveBackground = exports.ResponsiveSpace = exports.ResponsiveImage = exports.ResponsiveLayout = exports.ResponsiveText = exports.ResponsiveFlex = exports.ResponsiveContainer = void 0;
+exports.RS = exports.Content = exports.ResponsiveContent = exports.ResponsiveBackground = exports.ResponsiveSpace = exports.ResponsiveImage = exports.ResponsiveLayout = exports.ResponsiveText = exports.ResponsiveFlex = exports.ResponsiveContainer = void 0;
 var Container_1 = require("../bases/Container");
 var Text_1 = require("../bases/Text");
 var Image_1 = require("../bases/Image");
@@ -20,6 +20,7 @@ exports.ResponsiveContent = exports.ResponsiveContainer.of({
     margin: { xs: '0 20px', lg: '0 auto' },
     width: { lg: 1200 }
 });
+exports.Content = exports.ResponsiveContent;
 exports.RS = {
     Container: exports.ResponsiveContainer,
     Flex: exports.ResponsiveFlex,

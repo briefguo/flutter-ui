@@ -13,7 +13,8 @@ var defaultProps = {
     border: undefined,
     cursor: undefined,
     textAlign: undefined,
-    children: undefined
+    children: undefined,
+    style: undefined
 };
 exports.SingleContainer = createSingle_1.singleOf('div', {
     defaultProps: defaultProps,

@@ -11,6 +11,7 @@ export declare const SingleBackground: {
         cursor: string;
         textAlign: import("csstype").Property.TextAlign;
         children: import("react").ReactNode;
+        style: import("react").CSSProperties;
     } & {
         contrastingColor: string;
         src: string;
@@ -26,6 +27,7 @@ export declare const SingleBackground: {
         cursor: string;
         textAlign: import("csstype").Property.TextAlign;
         children: import("react").ReactNode;
+        style: import("react").CSSProperties;
     }>, string | ((props: any) => import("react").ReactElement<any, any>) | (new (props: any) => import("react").Component<any, any, any>)>;
     of: (base: import("..").SingleProps<{
         contrastingColor: string;
@@ -39,6 +41,7 @@ export declare const SingleBackground: {
         cursor: string;
         textAlign: import("csstype").Property.TextAlign;
         children: import("react").ReactNode;
+        style: import("react").CSSProperties;
     } & {
         contrastingColor: string;
         src: string;
@@ -55,13 +58,14 @@ export declare const SingleBackground: {
             cursor: string;
             textAlign: import("csstype").Property.TextAlign;
             children: import("react").ReactNode;
+            style: import("react").CSSProperties;
         } & {
             contrastingColor: string;
             src: string;
         }>): JSX.Element;
         of: any;
     };
-    css: (p: import("..").SingleProps<{
+    props2CSSProperties: (p: import("..").SingleProps<{
         contrastingColor: string;
         background: string;
         padding: string | number;
@@ -73,11 +77,15 @@ export declare const SingleBackground: {
         cursor: string;
         textAlign: import("csstype").Property.TextAlign;
         children: import("react").ReactNode;
+        style: import("react").CSSProperties;
     } & {
         contrastingColor: string;
         src: string;
     }>) => import("react").CSSProperties;
-    defaultProps: {};
+    defaultProps: {
+        contrastingColor: string;
+        src: string;
+    };
     selector: string;
 };
 export declare const Background: {
@@ -93,6 +101,7 @@ export declare const Background: {
         cursor: string;
         textAlign: import("csstype").Property.TextAlign;
         children: import("react").ReactNode;
+        style: import("react").CSSProperties;
     } & {
         contrastingColor: string;
         src: string;
@@ -108,6 +117,7 @@ export declare const Background: {
         cursor: string;
         textAlign: import("csstype").Property.TextAlign;
         children: import("react").ReactNode;
+        style: import("react").CSSProperties;
     }>, string | ((props: any) => import("react").ReactElement<any, any>) | (new (props: any) => import("react").Component<any, any, any>)>;
     of: (base: import("..").SingleProps<{
         contrastingColor: string;
@@ -121,6 +131,7 @@ export declare const Background: {
         cursor: string;
         textAlign: import("csstype").Property.TextAlign;
         children: import("react").ReactNode;
+        style: import("react").CSSProperties;
     } & {
         contrastingColor: string;
         src: string;
@@ -137,13 +148,14 @@ export declare const Background: {
             cursor: string;
             textAlign: import("csstype").Property.TextAlign;
             children: import("react").ReactNode;
+            style: import("react").CSSProperties;
         } & {
             contrastingColor: string;
             src: string;
         }>): JSX.Element;
         of: any;
     };
-    css: (p: import("..").SingleProps<{
+    props2CSSProperties: (p: import("..").SingleProps<{
         contrastingColor: string;
         background: string;
         padding: string | number;
@@ -155,10 +167,14 @@ export declare const Background: {
         cursor: string;
         textAlign: import("csstype").Property.TextAlign;
         children: import("react").ReactNode;
+        style: import("react").CSSProperties;
     } & {
         contrastingColor: string;
         src: string;
     }>) => import("react").CSSProperties;
-    defaultProps: {};
+    defaultProps: {
+        contrastingColor: string;
+        src: string;
+    };
     selector: string;
 };

@@ -9,7 +9,8 @@ exports.SingleText = createSingle_1.singleOf('span', {
         contrastingColor: undefined,
         fontWeight: undefined,
         textAlign: undefined,
-        whiteSpace: undefined
+        whiteSpace: undefined,
+        style: undefined
     },
     selector: '.s-text-[uuid]',
     props2CSSProperties: function (p) {

@@ -16,8 +16,8 @@ export declare function singleOf<T, D>(tag: XOR<keyof React.ReactHTML, React.Fun
         (p: SingleProps<T & D>): JSX.Element;
         of: any;
     };
-    css: CSSMapper<T, D>;
-    defaultProps: {};
+    props2CSSProperties: CSSMapper<T, D>;
+    defaultProps: D;
     selector: string;
 };
 export {};

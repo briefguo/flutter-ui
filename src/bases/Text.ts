@@ -9,6 +9,7 @@ export const SingleText = singleOf('span', {
     fontWeight: <Property.FontWeight>undefined,
     textAlign: <Property.TextAlign>undefined,
     whiteSpace: <Property.WhiteSpace>undefined,
+    style: <React.CSSProperties>undefined,
   },
   selector: '.s-text-[uuid]',
   props2CSSProperties: p => ({

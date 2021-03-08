@@ -13,6 +13,7 @@ const defaultProps = {
   cursor: <string>undefined,
   textAlign: <Property.TextAlign>undefined,
   children: <React.ReactNode>undefined,
+  style: <React.CSSProperties>undefined,
 }
 
 export type SingleContainerProps = typeof defaultProps

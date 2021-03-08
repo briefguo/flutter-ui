@@ -51,6 +51,7 @@ export const mapLayoutPropsToCSS = (layout?: LayoutProps) => {
 export const SingleLayout = singleOf('div', {
   defaultProps: {
     alignment: <LayoutAlignment>undefined,
+    style: <React.CSSProperties>undefined,
   },
   selector: '.s-layout-[uuid]',
   props2CSSProperties: p => ({

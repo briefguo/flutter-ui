@@ -6,6 +6,7 @@ export const SingleImage = singleOf('img', {
     width: <number | string>'100%',
     src: <string>undefined,
     bordered: <boolean>undefined,
+    style: <React.CSSProperties>undefined,
   },
   selector: '.s-img-[uuid]',
   props2CSSProperties: p => ({

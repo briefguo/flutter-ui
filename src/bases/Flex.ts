@@ -11,6 +11,7 @@ export const SingleFlex = singleOf('div', {
     inline: <boolean>undefined,
     direction: <Property.FlexDirection>undefined,
     layout: <LayoutProps>undefined,
+    style: <React.CSSProperties>undefined,
   },
   selector: '.s-flex-[uuid]',
   props2CSSProperties: p => ({

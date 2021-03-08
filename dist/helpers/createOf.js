@@ -14,11 +14,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 exports.__esModule = true;
-exports.Content = exports.ResponsiveContent = void 0;
+exports.createOf = void 0;
 var react_1 = __importDefault(require("react"));
-var Container_1 = require("../bases/Container");
-var ResponsiveContent = function (props) {
-    return (react_1["default"].createElement(Container_1.ResponsiveContainer, __assign({ margin: { xs: '0 20px', lg: '0 auto' }, width: { lg: 1200 } }, props), props.children));
-};
-exports.ResponsiveContent = ResponsiveContent;
-exports.Content = exports.ResponsiveContent;
+function createOf(C) {
+    return function (base) {
+        var TargetC = function (p) { return react_1["default"].createElement(C, __assign({}, base, p)); };
+        TargetC.of = createOf(TargetC);
+        return TargetC;
+    };
+}
+exports.createOf = createOf;

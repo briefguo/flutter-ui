@@ -1,25 +1,40 @@
 import React from 'react';
-import { Property } from 'csstype';
-import { BaseComponentProps, BaseRSComponentProps, RSProperty } from '../interfaces';
-declare const layouts: Record<'center' | 'leftCenter' | 'leftBottom' | 'rightCenter' | 'rightBottom' | 'rightTop' | 'leftTop', React.CSSProperties>;
-export declare type LayoutProps = keyof typeof layouts;
-export interface SingleLayoutProps extends BaseComponentProps {
-    inline?: boolean;
-    wrap?: Property.FlexWrap;
-    alignment?: LayoutProps;
-}
+export declare type LayoutAlignment = 'center' | 'leftCenter' | 'leftBottom' | 'rightCenter' | 'rightBottom' | 'rightTop';
+export declare type LayoutProps = LayoutAlignment;
+export declare const mapLayoutPropsToCSS: (layout?: LayoutProps) => React.CSSProperties;
 export declare const SingleLayout: {
-    (p: SingleLayoutProps): JSX.Element;
-    mapLayoutPropsToFlexProps: (layout?: LayoutProps) => React.CSSProperties;
+    (p: import("..").SingleProps<{
+        alignment: LayoutAlignment;
+    }>): React.ReactElement<import("..").SingleProps<unknown>, string | ((props: any) => React.ReactElement<any, any>) | (new (props: any) => React.Component<any, any, any>)>;
+    of: (base: import("..").SingleProps<{
+        alignment: LayoutAlignment;
+    }>) => {
+        (p: import("..").SingleProps<{
+            alignment: LayoutAlignment;
+        }>): JSX.Element;
+        of: any;
+    };
+    css: (p: import("..").SingleProps<{
+        alignment: LayoutAlignment;
+    }>) => React.CSSProperties;
+    defaultProps: {};
+    selector: string;
 };
-export interface RSLayoutProps extends BaseRSComponentProps {
-    inline?: RSProperty<boolean>;
-    wrap?: RSProperty<Property.FlexWrap>;
-    alignment?: RSProperty<LayoutProps>;
-}
-export declare const RSLayout: React.FC<RSLayoutProps>;
 export declare const Layout: {
-    (p: SingleLayoutProps): JSX.Element;
-    mapLayoutPropsToFlexProps: (layout?: LayoutProps) => React.CSSProperties;
+    (p: import("..").SingleProps<{
+        alignment: LayoutAlignment;
+    }>): React.ReactElement<import("..").SingleProps<unknown>, string | ((props: any) => React.ReactElement<any, any>) | (new (props: any) => React.Component<any, any, any>)>;
+    of: (base: import("..").SingleProps<{
+        alignment: LayoutAlignment;
+    }>) => {
+        (p: import("..").SingleProps<{
+            alignment: LayoutAlignment;
+        }>): JSX.Element;
+        of: any;
+    };
+    css: (p: import("..").SingleProps<{
+        alignment: LayoutAlignment;
+    }>) => React.CSSProperties;
+    defaultProps: {};
+    selector: string;
 };
-export {};

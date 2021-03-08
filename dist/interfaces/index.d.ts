@@ -5,16 +5,18 @@ export declare type XOR<T, U> = T | U extends Record<string, unknown> ? (Without
 export declare type ProperRSProperty<T> = Partial<Record<'lg' | 'xs', T>>;
 export declare type RSProperty<T> = T | ProperRSProperty<T>;
 export declare type ValueOf<T> = T[keyof T];
-export interface BaseComponentProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+export declare type SingleProps<T> = BaseComponentProps & {
+    [P in keyof T]?: T[P];
+};
+export declare type RSProps<T> = {
+    [P in keyof T]?: RSProperty<T[P]>;
+} & {
+    children?: React.ReactNode;
+};
+export interface BaseComponentProps {
     'lg'?: boolean;
     'xs'?: boolean;
     'data-screen'?: string;
-}
-export interface BaseRSComponentProps {
-    'id'?: RSProperty<string>;
-    'className'?: RSProperty<string>;
-    'style'?: RSProperty<React.CSSProperties>;
+    'className'?: string;
     'children'?: React.ReactNode;
-    'data-screen'?: string;
-    'onClick'?: React.MouseEventHandler<HTMLElement>;
 }

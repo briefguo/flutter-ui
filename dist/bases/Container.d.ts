@@ -1,31 +1,190 @@
-import React from 'react';
 import { Property } from 'csstype';
-import { BaseComponentProps, BaseRSComponentProps, RSProperty } from '../interfaces';
-export interface SingleContainerProps extends BaseComponentProps {
-    contrastingColor?: string;
-    background?: string;
-    padding?: string | number;
-    margin?: string | number;
-    height?: string | number;
-    width?: number | string;
-    borderRadius?: string | number;
-    border?: string;
-    cursor?: string;
-    textAlign?: Property.TextAlign;
-}
-export declare const SingleContainer: React.FC<SingleContainerProps>;
-export interface ResponsiveContainerProps extends BaseRSComponentProps {
-    contrastingColor?: RSProperty<string>;
-    background?: RSProperty<string>;
-    padding?: RSProperty<string | number>;
-    margin?: RSProperty<string | number>;
-    height?: RSProperty<string | number>;
-    width?: RSProperty<number | string>;
-    borderRadius?: RSProperty<string | number>;
-    border?: RSProperty<string>;
-    cursor?: RSProperty<string>;
-    textAlign?: RSProperty<Property.TextAlign>;
-}
-export declare const ResponsiveContainer: React.FC<ResponsiveContainerProps>;
-export declare const Container: React.FC<SingleContainerProps>;
-export declare const SizedBox: React.FC<SingleContainerProps>;
+declare const defaultProps: {
+    contrastingColor: string;
+    background: string;
+    padding: string | number;
+    margin: string | number;
+    height: string | number;
+    width: string | number;
+    borderRadius: string | number;
+    border: string;
+    cursor: string;
+    textAlign: Property.TextAlign;
+    children: import("react").ReactNode;
+};
+export declare type SingleContainerProps = typeof defaultProps;
+export declare const SingleContainer: {
+    (p: import("..").SingleProps<{
+        contrastingColor: string;
+        background: string;
+        padding: string | number;
+        margin: string | number;
+        height: string | number;
+        width: string | number;
+        borderRadius: string | number;
+        border: string;
+        cursor: string;
+        textAlign: Property.TextAlign;
+        children: import("react").ReactNode;
+    }>): import("react").ReactElement<import("..").SingleProps<unknown>, string | ((props: any) => import("react").ReactElement<any, any>) | (new (props: any) => import("react").Component<any, any, any>)>;
+    of: (base: import("..").SingleProps<{
+        contrastingColor: string;
+        background: string;
+        padding: string | number;
+        margin: string | number;
+        height: string | number;
+        width: string | number;
+        borderRadius: string | number;
+        border: string;
+        cursor: string;
+        textAlign: Property.TextAlign;
+        children: import("react").ReactNode;
+    }>) => {
+        (p: import("..").SingleProps<{
+            contrastingColor: string;
+            background: string;
+            padding: string | number;
+            margin: string | number;
+            height: string | number;
+            width: string | number;
+            borderRadius: string | number;
+            border: string;
+            cursor: string;
+            textAlign: Property.TextAlign;
+            children: import("react").ReactNode;
+        }>): JSX.Element;
+        of: any;
+    };
+    css: (p: import("..").SingleProps<{
+        contrastingColor: string;
+        background: string;
+        padding: string | number;
+        margin: string | number;
+        height: string | number;
+        width: string | number;
+        borderRadius: string | number;
+        border: string;
+        cursor: string;
+        textAlign: Property.TextAlign;
+        children: import("react").ReactNode;
+    }>) => import("react").CSSProperties;
+    defaultProps: {};
+    selector: string;
+};
+export declare const Container: {
+    (p: import("..").SingleProps<{
+        contrastingColor: string;
+        background: string;
+        padding: string | number;
+        margin: string | number;
+        height: string | number;
+        width: string | number;
+        borderRadius: string | number;
+        border: string;
+        cursor: string;
+        textAlign: Property.TextAlign;
+        children: import("react").ReactNode;
+    }>): import("react").ReactElement<import("..").SingleProps<unknown>, string | ((props: any) => import("react").ReactElement<any, any>) | (new (props: any) => import("react").Component<any, any, any>)>;
+    of: (base: import("..").SingleProps<{
+        contrastingColor: string;
+        background: string;
+        padding: string | number;
+        margin: string | number;
+        height: string | number;
+        width: string | number;
+        borderRadius: string | number;
+        border: string;
+        cursor: string;
+        textAlign: Property.TextAlign;
+        children: import("react").ReactNode;
+    }>) => {
+        (p: import("..").SingleProps<{
+            contrastingColor: string;
+            background: string;
+            padding: string | number;
+            margin: string | number;
+            height: string | number;
+            width: string | number;
+            borderRadius: string | number;
+            border: string;
+            cursor: string;
+            textAlign: Property.TextAlign;
+            children: import("react").ReactNode;
+        }>): JSX.Element;
+        of: any;
+    };
+    css: (p: import("..").SingleProps<{
+        contrastingColor: string;
+        background: string;
+        padding: string | number;
+        margin: string | number;
+        height: string | number;
+        width: string | number;
+        borderRadius: string | number;
+        border: string;
+        cursor: string;
+        textAlign: Property.TextAlign;
+        children: import("react").ReactNode;
+    }>) => import("react").CSSProperties;
+    defaultProps: {};
+    selector: string;
+};
+export declare const SizedBox: {
+    (p: import("..").SingleProps<{
+        contrastingColor: string;
+        background: string;
+        padding: string | number;
+        margin: string | number;
+        height: string | number;
+        width: string | number;
+        borderRadius: string | number;
+        border: string;
+        cursor: string;
+        textAlign: Property.TextAlign;
+        children: import("react").ReactNode;
+    }>): import("react").ReactElement<import("..").SingleProps<unknown>, string | ((props: any) => import("react").ReactElement<any, any>) | (new (props: any) => import("react").Component<any, any, any>)>;
+    of: (base: import("..").SingleProps<{
+        contrastingColor: string;
+        background: string;
+        padding: string | number;
+        margin: string | number;
+        height: string | number;
+        width: string | number;
+        borderRadius: string | number;
+        border: string;
+        cursor: string;
+        textAlign: Property.TextAlign;
+        children: import("react").ReactNode;
+    }>) => {
+        (p: import("..").SingleProps<{
+            contrastingColor: string;
+            background: string;
+            padding: string | number;
+            margin: string | number;
+            height: string | number;
+            width: string | number;
+            borderRadius: string | number;
+            border: string;
+            cursor: string;
+            textAlign: Property.TextAlign;
+            children: import("react").ReactNode;
+        }>): JSX.Element;
+        of: any;
+    };
+    css: (p: import("..").SingleProps<{
+        contrastingColor: string;
+        background: string;
+        padding: string | number;
+        margin: string | number;
+        height: string | number;
+        width: string | number;
+        borderRadius: string | number;
+        border: string;
+        cursor: string;
+        textAlign: Property.TextAlign;
+        children: import("react").ReactNode;
+    }>) => import("react").CSSProperties;
+    defaultProps: {};
+    selector: string;
+};
+export {};

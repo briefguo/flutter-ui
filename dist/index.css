@@ -1,19 +1,15 @@
 @media screen and (max-width: 767px) {
   .lg,
-  .single-text.lg,
-  .single-container.lg {
+  [class^='s-text-'].lg,
+  [class^='s-container-'].lg {
     display: none !important;
   }
 }
 
 @media screen and (min-width: 768px) {
   .xs,
-  .single-text.xs,
-  .single-container.xs {
+  [class^='s-text-'].xs,
+  [class^='s-container-'].xs {
     display: none !important;
   }
-}
-
-style[data-target] {
-  display: none !important;
 }

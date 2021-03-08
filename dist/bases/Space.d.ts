@@ -1,22 +1,78 @@
 import React from 'react';
 import { Property } from 'csstype';
-import { BaseComponentProps, RSProperty } from '../interfaces';
-export interface SpaceProps extends BaseComponentProps {
-    direction?: 'vertical' | 'horizen';
-    box?: 'inline-flex' | 'flex';
-    children: React.ReactElement[];
-    align?: Property.AlignItems;
-    size?: number;
-}
-export declare function SingleSpace(p: SpaceProps): JSX.Element;
-export interface RSSpaceProps {
-    direction?: RSProperty<'vertical' | 'horizen'>;
-    align?: RSProperty<Property.AlignItems>;
-    size?: RSProperty<number>;
-    className?: RSProperty<string>;
-    style?: RSProperty<React.CSSProperties>;
-    children: React.ReactChild[];
-    box?: 'inline-flex' | 'flex';
-}
-export declare const ResponsiveSpace: React.FC<RSSpaceProps>;
-export declare const Space: typeof SingleSpace;
+export declare const SingleSpace: {
+    (p: import("..").SingleProps<{
+        direction: "vertical" | "horizen";
+        box: "flex" | "inline-flex";
+        align: Property.AlignItems;
+        size: number;
+        children: React.ReactNode[];
+        style: React.CSSProperties;
+    }>): React.ReactElement<import("..").SingleProps<unknown>, string | ((props: any) => React.ReactElement<any, any>) | (new (props: any) => React.Component<any, any, any>)>;
+    of: (base: import("..").SingleProps<{
+        direction: "vertical" | "horizen";
+        box: "flex" | "inline-flex";
+        align: Property.AlignItems;
+        size: number;
+        children: React.ReactNode[];
+        style: React.CSSProperties;
+    }>) => {
+        (p: import("..").SingleProps<{
+            direction: "vertical" | "horizen";
+            box: "flex" | "inline-flex";
+            align: Property.AlignItems;
+            size: number;
+            children: React.ReactNode[];
+            style: React.CSSProperties;
+        }>): JSX.Element;
+        of: any;
+    };
+    css: (p: import("..").SingleProps<{
+        direction: "vertical" | "horizen";
+        box: "flex" | "inline-flex";
+        align: Property.AlignItems;
+        size: number;
+        children: React.ReactNode[];
+        style: React.CSSProperties;
+    }>) => React.CSSProperties;
+    defaultProps: {};
+    selector: string;
+};
+export declare const Space: {
+    (p: import("..").SingleProps<{
+        direction: "vertical" | "horizen";
+        box: "flex" | "inline-flex";
+        align: Property.AlignItems;
+        size: number;
+        children: React.ReactNode[];
+        style: React.CSSProperties;
+    }>): React.ReactElement<import("..").SingleProps<unknown>, string | ((props: any) => React.ReactElement<any, any>) | (new (props: any) => React.Component<any, any, any>)>;
+    of: (base: import("..").SingleProps<{
+        direction: "vertical" | "horizen";
+        box: "flex" | "inline-flex";
+        align: Property.AlignItems;
+        size: number;
+        children: React.ReactNode[];
+        style: React.CSSProperties;
+    }>) => {
+        (p: import("..").SingleProps<{
+            direction: "vertical" | "horizen";
+            box: "flex" | "inline-flex";
+            align: Property.AlignItems;
+            size: number;
+            children: React.ReactNode[];
+            style: React.CSSProperties;
+        }>): JSX.Element;
+        of: any;
+    };
+    css: (p: import("..").SingleProps<{
+        direction: "vertical" | "horizen";
+        box: "flex" | "inline-flex";
+        align: Property.AlignItems;
+        size: number;
+        children: React.ReactNode[];
+        style: React.CSSProperties;
+    }>) => React.CSSProperties;
+    defaultProps: {};
+    selector: string;
+};

@@ -16,8 +16,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 exports.__esModule = true;
 exports.createRSC = void 0;
 var react_1 = __importDefault(require("react"));
-var classnames_1 = __importDefault(require("classnames"));
 var deprecated_1 = require("../deprecated");
+var createOf_1 = require("./createOf");
 var _pickProps = function (option) {
     var obj = {};
     Object.keys(option.entity)
@@ -29,8 +29,8 @@ var _pickProps = function (option) {
     });
     return obj;
 };
-var createRSC = function (C) {
-    return function (props) {
+function createRSC(C) {
+    var TargetC = function (props) {
         var lgProps = _pickProps({
             entity: props,
             breakPoint: 'lg',
@@ -44,8 +44,10 @@ var createRSC = function (C) {
         // TODO: 待优化实现
         var _a = deprecated_1.useDevices(), isDefault = _a.isDefault, isMobile = _a.isMobile;
         return (react_1["default"].createElement(react_1["default"].Fragment, null,
-            isDefault && (react_1["default"].createElement(C, __assign({}, lgProps, { className: classnames_1["default"](lgProps.className, 'lg') }), props.children)),
-            isMobile && (react_1["default"].createElement(C, __assign({}, xsProps, { className: classnames_1["default"](xsProps.className, 'xs') }), props.children))));
+            isDefault && react_1["default"].createElement(C, __assign({}, lgProps, { lg: true })),
+            isMobile && react_1["default"].createElement(C, __assign({}, xsProps, { xs: true }))));
     };
-};
+    TargetC.of = createOf_1.createOf(TargetC);
+    return TargetC;
+}
 exports.createRSC = createRSC;

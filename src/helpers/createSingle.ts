@@ -4,17 +4,7 @@ import { StyleInjector } from '../bases/StyleInjector'
 import { SingleProps, XOR } from '../interfaces'
 import { createOf } from './createOf'
 
-export const pick = (obj: any = {}, keys: any[] = []) => {
-  const targetObj: any = {}
-  Object.keys(obj)
-    .filter(k => keys.includes(k))
-    .forEach(k => {
-      targetObj[k] = obj[k]
-    })
-  return targetObj
-}
-
-export const omit = (obj: any = {}, keys: any[] = []) => {
+const _omit = (obj: any = {}, keys: any[] = []) => {
   const targetObj: any = {}
   Object.keys(obj)
     .filter(k => !keys.includes(k))
@@ -24,24 +14,14 @@ export const omit = (obj: any = {}, keys: any[] = []) => {
   return targetObj
 }
 
-const commonKeys = ['lg', 'xs']
-
-export function classNameOf(className: string) {
-  return p => ({
-    ...p,
-    className: cx(p.className, className, {
-      lg: p.lg,
-      xs: p.xs,
-    }),
-  })
-}
+const _commonKeys = ['lg', 'xs']
 
 type CSSMapper<T, D> = (p: SingleProps<T & D>) => React.CSSProperties
 
 export interface SingleOfOption<T, D> {
   defaultProps?: D
   selector: string
-  css?: CSSMapper<T, D>
+  props2CSSProperties?: CSSMapper<T, D>
   renderChildren?: (p: SingleProps<T & D>) => React.ReactElement
 }
 
@@ -62,7 +42,7 @@ export function singleOf<T, D>(
   const componentPropsKeys =
     typeof tag !== 'string' ? Object.keys(tag?.defaultProps) : []
   const componentCSSMapper = typeof tag !== 'string' ? tag.css : undefined
-  const { defaultProps = {}, selector, css, renderChildren } = option
+  const { defaultProps = {}, selector, props2CSSProperties: css, renderChildren } = option
   const TargetC = (p: SingleProps<T & D>) => {
     const { className } = StyleInjector.useStyle(selector, {
       ...componentCSSMapper?.(p),
@@ -71,11 +51,11 @@ export function singleOf<T, D>(
     const propsKeys = Object.keys(defaultProps)
       // 当 tag 是 singleOf 创建的组件时，补上它的 keys
       .concat(componentPropsKeys)
-      .concat(commonKeys)
+      .concat(_commonKeys)
 
     // eslint-disable-next-line react/no-children-prop
     return React.createElement(tag, {
-      ...omit(p, propsKeys),
+      ..._omit(p, propsKeys),
       className: cx(p.className, className, { lg: p.lg, xs: p.xs }),
       children: renderChildren?.(p) ?? p.children,
     })

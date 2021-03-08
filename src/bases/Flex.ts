@@ -13,7 +13,7 @@ export const SingleFlex = singleOf('div', {
     layout: <LayoutProps>undefined,
   },
   selector: '.s-flex-[uuid]',
-  css: p => ({
+  props2CSSProperties: p => ({
     display: p.inline ? 'inline-flex' : 'flex',
     justifyContent: p.justify,
     flexWrap: p.wrap,

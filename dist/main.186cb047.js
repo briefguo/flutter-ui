@@ -28820,7 +28820,7 @@ var __importDefault = this && this.__importDefault || function (mod) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.singleOf = exports.classNameOf = exports.omit = exports.pick = void 0;
+exports.singleOf = void 0;
 
 var react_1 = __importDefault(require("react"));
 
@@ -28830,27 +28830,7 @@ var StyleInjector_1 = require("../bases/StyleInjector");
 
 var createOf_1 = require("./createOf");
 
-var pick = function pick(obj, keys) {
-  if (obj === void 0) {
-    obj = {};
-  }
-
-  if (keys === void 0) {
-    keys = [];
-  }
-
-  var targetObj = {};
-  Object.keys(obj).filter(function (k) {
-    return keys.includes(k);
-  }).forEach(function (k) {
-    targetObj[k] = obj[k];
-  });
-  return targetObj;
-};
-
-exports.pick = pick;
-
-var omit = function omit(obj, keys) {
+var _omit = function _omit(obj, keys) {
   if (obj === void 0) {
     obj = {};
   }
@@ -28868,21 +28848,7 @@ var omit = function omit(obj, keys) {
   return targetObj;
 };
 
-exports.omit = omit;
-var commonKeys = ['lg', 'xs'];
-
-function classNameOf(className) {
-  return function (p) {
-    return __assign(__assign({}, p), {
-      className: classnames_1.default(p.className, className, {
-        lg: p.lg,
-        xs: p.xs
-      })
-    });
-  };
-}
-
-exports.classNameOf = classNameOf; // TODO: 调试
+var _commonKeys = ['lg', 'xs']; // TODO: 调试
 // import ReactDOM from 'react-dom'
 // import { ScreenDebug } from '../debug/ScreenDebug'
 
@@ -28892,7 +28858,7 @@ function singleOf(tag, option) {
   var _a = option.defaultProps,
       defaultProps = _a === void 0 ? {} : _a,
       selector = option.selector,
-      css = option.css,
+      css = option.props2CSSProperties,
       renderChildren = option.renderChildren;
 
   var TargetC = function TargetC(p) {
@@ -28900,9 +28866,9 @@ function singleOf(tag, option) {
 
     var className = StyleInjector_1.StyleInjector.useStyle(selector, __assign(__assign({}, componentCSSMapper === null || componentCSSMapper === void 0 ? void 0 : componentCSSMapper(p)), css === null || css === void 0 ? void 0 : css(p))).className;
     var propsKeys = Object.keys(defaultProps) // 当 tag 是 singleOf 创建的组件时，补上它的 keys
-    .concat(componentPropsKeys).concat(commonKeys); // eslint-disable-next-line react/no-children-prop
+    .concat(componentPropsKeys).concat(_commonKeys); // eslint-disable-next-line react/no-children-prop
 
-    return react_1.default.createElement(tag, __assign(__assign({}, exports.omit(p, propsKeys)), {
+    return react_1.default.createElement(tag, __assign(__assign({}, _omit(p, propsKeys)), {
       className: classnames_1.default(p.className, className, {
         lg: p.lg,
         xs: p.xs
@@ -28945,7 +28911,7 @@ var defaultProps = {
 exports.SingleContainer = createSingle_1.singleOf('div', {
   defaultProps: defaultProps,
   selector: '.s-container-[uuid]',
-  css: function css(p) {
+  props2CSSProperties: function props2CSSProperties(p) {
     return {
       color: p.contrastingColor,
       background: p.background,
@@ -28982,7 +28948,7 @@ exports.SingleText = createSingle_1.singleOf('span', {
     whiteSpace: undefined
   },
   selector: '.s-text-[uuid]',
-  css: function css(p) {
+  props2CSSProperties: function props2CSSProperties(p) {
     var _a;
 
     return {
@@ -29009,10 +28975,11 @@ var createSingle_1 = require("../helpers/createSingle"); // TODO: 添加borderd
 exports.SingleImage = createSingle_1.singleOf('img', {
   defaultProps: {
     width: '100%',
-    src: undefined
+    src: undefined,
+    bordered: undefined
   },
   selector: '.s-img-[uuid]',
-  css: function css(p) {
+  props2CSSProperties: function props2CSSProperties(p) {
     return {
       width: p.width
     };
@@ -29089,7 +29056,7 @@ var SpaceItem = createSingle_1.singleOf('div', {
     size: undefined
   },
   selector: '.s-space__item-[uuid]',
-  css: function css(p) {
+  props2CSSProperties: function props2CSSProperties(p) {
     switch (p.direction) {
       case 'vertical':
         return {
@@ -29119,7 +29086,7 @@ exports.SingleSpace = createSingle_1.singleOf('div', {
     style: undefined
   },
   selector: '.s-space-[uuid]',
-  css: function css(p) {
+  props2CSSProperties: function props2CSSProperties(p) {
     switch (p.direction) {
       case 'vertical':
         return {
@@ -29183,30 +29150,25 @@ var createSingle_1 = require("../helpers/createSingle");
 var layouts = {
   center: {
     justifyContent: 'center',
-    height: '100%',
     textAlign: 'center',
     alignItems: 'center'
   },
   leftBottom: {
     justifyContent: 'flex-end',
-    alignItems: 'flex-start',
-    height: '100%'
+    alignItems: 'flex-start'
   },
   rightTop: {
     alignItems: 'flex-end'
   },
   rightBottom: {
     justifyContent: 'flex-end',
-    alignItems: 'flex-end',
-    height: '100%'
+    alignItems: 'flex-end'
   },
   leftCenter: {
-    height: '100%',
     alignItems: 'flex-start',
     justifyContent: 'center'
   },
   rightCenter: {
-    height: '100%',
     justifyContent: 'center',
     alignItems: 'flex-end'
   }
@@ -29230,11 +29192,12 @@ exports.SingleLayout = createSingle_1.singleOf('div', {
     alignment: undefined
   },
   selector: '.s-layout-[uuid]',
-  css: function css(p) {
+  props2CSSProperties: function props2CSSProperties(p) {
     return __assign({
       display: 'flex',
       flexDirection: 'column',
-      flex: '1 1 auto'
+      flex: '1 1 auto',
+      height: '100%'
     }, exports.mapLayoutPropsToCSS(p.alignment));
   }
 });
@@ -29278,7 +29241,7 @@ exports.SingleFlex = createSingle_1.singleOf('div', {
     layout: undefined
   },
   selector: '.s-flex-[uuid]',
-  css: function css(p) {
+  props2CSSProperties: function props2CSSProperties(p) {
     return __assign({
       display: p.inline ? 'inline-flex' : 'flex',
       justifyContent: p.justify,
@@ -29321,7 +29284,7 @@ exports.SingleBackground = createSingle_1.singleOf(Container_1.SingleContainer, 
     src: ''
   },
   selector: '.s-background-[uuid]',
-  css: function css(p) {
+  props2CSSProperties: function props2CSSProperties(p) {
     var _a;
 
     return {

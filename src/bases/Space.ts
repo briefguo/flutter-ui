@@ -10,7 +10,7 @@ const SpaceItem = singleOf('div', {
     size: <number>undefined,
   },
   selector: '.s-space__item-[uuid]',
-  css: p => {
+  props2CSSProperties: p => {
     switch (p.direction) {
       case 'vertical':
         return {
@@ -41,7 +41,7 @@ export const SingleSpace = singleOf('div', {
     style: <React.CSSProperties>undefined,
   },
   selector: '.s-space-[uuid]',
-  css: p => {
+  props2CSSProperties: p => {
     switch (p.direction) {
       case 'vertical':
         return {

@@ -10,7 +10,7 @@ export const SingleBackground = singleOf(SingleContainer, {
     src: '',
   },
   selector: '.s-background-[uuid]',
-  css: p => ({
+  props2CSSProperties: p => ({
     background: p.background ?? src2Background(p.src),
   }),
 })

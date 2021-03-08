@@ -20,7 +20,7 @@ export type SingleContainerProps = typeof defaultProps
 export const SingleContainer = singleOf('div', {
   defaultProps,
   selector: '.s-container-[uuid]',
-  css: p => ({
+  props2CSSProperties: p => ({
     color: p.contrastingColor,
     background: p.background,
     padding: p.padding,

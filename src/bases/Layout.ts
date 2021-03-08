@@ -12,14 +12,12 @@ export type LayoutAlignment =
 const layouts: Record<LayoutAlignment, React.CSSProperties> = {
   center: {
     justifyContent: 'center',
-    height: '100%',
     textAlign: 'center',
     alignItems: 'center',
   },
   leftBottom: {
     justifyContent: 'flex-end',
     alignItems: 'flex-start',
-    height: '100%',
   },
   rightTop: {
     alignItems: 'flex-end',
@@ -27,15 +25,12 @@ const layouts: Record<LayoutAlignment, React.CSSProperties> = {
   rightBottom: {
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
-    height: '100%',
   },
   leftCenter: {
-    height: '100%',
     alignItems: 'flex-start',
     justifyContent: 'center',
   },
   rightCenter: {
-    height: '100%',
     justifyContent: 'center',
     alignItems: 'flex-end',
   },
@@ -58,10 +53,11 @@ export const SingleLayout = singleOf('div', {
     alignment: <LayoutAlignment>undefined,
   },
   selector: '.s-layout-[uuid]',
-  css: p => ({
+  props2CSSProperties: p => ({
     display: 'flex',
     flexDirection: 'column',
     flex: '1 1 auto',
+    height: '100%',
     ...mapLayoutPropsToCSS(p.alignment),
   }),
 })

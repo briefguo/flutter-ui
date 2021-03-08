@@ -11,7 +11,7 @@ export const SingleText = singleOf('span', {
     whiteSpace: <Property.WhiteSpace>undefined,
   },
   selector: '.s-text-[uuid]',
-  css: p => ({
+  props2CSSProperties: p => ({
     fontSize: p.fontSize,
     color: p.contrastingColor ?? p.color,
     textAlign: p.textAlign,

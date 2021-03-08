@@ -11,6 +11,7 @@
   - [x] 新组件Layout。
   - [x] 新的样式生成逻辑。CSSStyleInjector
   - [x] 新组件ListBuilder。CSSStyleInjector
+  - [x] 全线组件支持工厂方法，类似`const MyContainer = Container.of({ width:250 })`
   - [ ] 重写的屏幕调试组件
   - [ ] 为组件编写测试用例
 

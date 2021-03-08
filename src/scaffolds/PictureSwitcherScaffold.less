@@ -1,0 +1,74 @@
+.picture-switcher {
+  &__controllers {
+  }
+  &__underline {
+    position: relative;
+    width: 100%;
+    height: 1px;
+    margin-top: 5px;
+
+    &-activetity {
+      position: absolute;
+      bottom: 1px;
+      height: 2px;
+      transition: all 0.2s linear;
+    }
+  }
+  // 滚动动画样式
+  &__container {
+    position: relative;
+  }
+  &__scrollControllers {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border-radius: 28px;
+    span.text {
+      width: 50%;
+      align-items: center;
+      &.is-disabled {
+        opacity: 1;
+      }
+      &.is-active {
+        color: #33bbff;
+      }
+      &:last-child {
+        &.is-active {
+          color: #222;
+        }
+      }
+    }
+  }
+  &__scroll {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    top: 0;
+    left: 0;
+    transition: all 0.2s linear;
+    border-radius: 28px;
+  }
+
+  .text {
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  .text + .text {
+    // margin-left: 42px;
+  }
+
+  .text.is-disabled {
+    opacity: 0.6;
+  }
+
+  .text.is-active {
+    color: inherit;
+    opacity: 1;
+  }
+}

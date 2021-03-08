@@ -1,6 +1,7 @@
-import React from 'react'
-import cx from 'classnames'
+import React, { PropsWithChildren } from 'react'
 import { useDevices } from '../deprecated'
+import { RSProps } from '../interfaces'
+import { createOf } from './createOf'
 
 interface PickPropsOption {
   entity: any
@@ -19,8 +20,8 @@ const _pickProps = (option: PickPropsOption) => {
   return obj
 }
 
-export const createRSC = C => {
-  return props => {
+export function createRSC<T>(C: React.FC<T>) {
+  const TargetC = (props: PropsWithChildren<RSProps<T>>) => {
     const lgProps = _pickProps({
       entity: props,
       breakPoint: 'lg',
@@ -35,17 +36,11 @@ export const createRSC = C => {
     const { isDefault, isMobile } = useDevices()
     return (
       <>
-        {isDefault && (
-          <C {...lgProps} className={cx(lgProps.className, 'lg')}>
-            {props.children}
-          </C>
-        )}
-        {isMobile && (
-          <C {...xsProps} className={cx(xsProps.className, 'xs')}>
-            {props.children}
-          </C>
-        )}
+        {isDefault && <C {...lgProps} lg />}
+        {isMobile && <C {...xsProps} xs />}
       </>
     )
   }
+  TargetC.of = createOf(TargetC)
+  return TargetC
 }

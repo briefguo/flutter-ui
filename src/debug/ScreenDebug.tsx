@@ -1,20 +1,22 @@
 import React from 'react'
-import { CSSStyleInjector } from '../helpers/CSSStyleInjector'
+import { StyleInjector } from '../bases/StyleInjector'
 
 export const ScreenDebug = p => {
+  // 使用shadowDOM
   if (process.env.SHOW_SCREEN_DEBUG && p['data-screen']) {
     const screenTitle = p['data-screen']
     return (
-      <CSSStyleInjector
+      <StyleInjector
         classNamePrefix="screen-debug__container"
-        style={{ position: 'relative' }}
+        style={{ position: 'relative', right: 0 }}
       >
         {className => (
           <div className={className}>
-            <CSSStyleInjector
+            <StyleInjector
               classNamePrefix="screen-debug"
               style={{
                 position: 'absolute',
+                top: 0,
                 right: 0,
                 color: '#fff',
                 padding: 15,
@@ -28,10 +30,10 @@ export const ScreenDebug = p => {
               {className => (
                 <div className={className}>screen-{screenTitle}</div>
               )}
-            </CSSStyleInjector>
+            </StyleInjector>
           </div>
         )}
-      </CSSStyleInjector>
+      </StyleInjector>
     )
   } else {
     return null

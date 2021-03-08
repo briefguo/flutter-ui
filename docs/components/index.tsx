@@ -14,16 +14,14 @@ export const CodeSample: React.FC<{
   desc?: string
 }> = props => {
   return (
-    <>
-      <Space box="flex" direction="vertical" size={5}>
-        <div>
-          <strong>{props.title}</strong>
-          <br />
-          {props.desc}
-        </div>
-        <div>{props.children}</div>
-      </Space>
-    </>
+    <Space box="flex" direction="vertical" size={5}>
+      <div>
+        <strong>{props.title}</strong>
+        <br />
+        {props.desc}
+      </div>
+      <div>{props.children}</div>
+    </Space>
   )
 }
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { StyleInjector } from '../bases/StyleInjector'
 
 interface PageScaffoldProps {
   child?: React.ReactChild
@@ -9,10 +10,12 @@ interface PageScaffoldProps {
 }
 
 export const PageScaffold = (props: PageScaffoldProps) => {
+  StyleInjector.useStyle(`body`, {
+    background: props.backgroundColor,
+    color: props.contrastingColor,
+  })
+
   return (
-    <>
-      <style>{`body { background: ${props.backgroundColor}; color: ${props.contrastingColor}; }`}</style>
-      <main className={props.className}>{props.child || props.children}</main>
-    </>
+    <main className={props.className}>{props.child ?? props.children}</main>
   )
 }

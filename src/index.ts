@@ -8,8 +8,8 @@ export * from './bases/Flex'
 
 // extend
 export * from './extends/Background'
-export * from './extends/Content'
 export * from './extends/ListBuilder'
+export * from './extends/RS'
 
 // theme and colors
 export * from './theme/Colors'
@@ -18,6 +18,7 @@ export * from './theme/TextThemeData'
 
 // scaffold
 export * from './scaffolds/PageScaffold'
+export * from './scaffolds/ScreenScaffold'
 
 // helpers
 export * from './helpers/renderComponent'
@@ -25,5 +26,4 @@ export * from './helpers/StopPropagation'
 
 export * from './deprecated'
 
-export * from './RS'
 export * from './interfaces'

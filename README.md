@@ -2,6 +2,13 @@
 
 ## RoadMap
 
+### V3版本
+
+- [ ] 完全兼容SSR
+- [ ] 去掉react-responsive
+- [ ] 重写的屏幕调试组件
+- [ ] 为组件编写测试用例
+
 ### V2版本
 
 - [ ] 新特性
@@ -12,14 +19,11 @@
   - [x] 新的样式生成逻辑。CSSStyleInjector
   - [x] 新组件ListBuilder。CSSStyleInjector
   - [x] 全线组件支持工厂方法，类似`const MyContainer = Container.of({ width:250 })`
-  - [ ] 重写的屏幕调试组件
-  - [ ] 为组件编写测试用例
-
+  
 - [ ] Break Change
   - [x] 去掉styled-components
   - [x] 去掉react-overlays
-  - [ ] 去掉react-responsive
-- [ ] 完全兼容SSR
+  
 - [ ] 兼容v1，然后发布v2到npm（npm源只有v1，v2版本仅支持git引用，待完全兼容v1后发布v2）
 
 

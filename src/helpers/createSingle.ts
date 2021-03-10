@@ -1,6 +1,6 @@
 import React from 'react'
 import cx from 'classnames'
-import { StyleInjector } from '../bases/StyleInjector'
+import { StyleInjector } from './StyleInjector'
 import { SingleProps, XOR } from '../interfaces'
 import { createOf } from './createOf'
 import { RSProps } from '../interfaces'
@@ -85,19 +85,19 @@ export function singleOf<T, D>(
       lg: {
         ...componentCSSMapper?.(lgProps),
         ...props2CSSProperties?.(lgProps),
-        ...lgProps.style
+        ...lgProps.style,
       },
       xs: {
         ...componentCSSMapper?.(xsProps),
         ...props2CSSProperties?.(xsProps),
-        ...xsProps.style
+        ...xsProps.style,
       },
     })
 
     // eslint-disable-next-line react/no-children-prop
     return React.createElement(tag, {
       ..._omit(p, propsKeys),
-      className: cx(p.className, className),
+      className: cx(p.className, className, { lg: p.lg, xs: p.xs }),
       children: p.children,
     })
   }

@@ -1,4 +1,5 @@
-import * as React from 'react'
+import React from 'react'
+import ReactDOM from 'react-dom/server'
 import md5 from 'md5'
 import { ProperRSProperty } from '../interfaces'
 
@@ -34,6 +35,7 @@ export interface StyleInjectorProps {
 }
 
 const cache = []
+const cssCache = []
 
 function useStyle(
   selector: string,
@@ -58,21 +60,41 @@ function useStyle(
   `
   const targetClassName = targetSelector.replace(/^./, '')
 
-  React.useEffect(() => {
-    const styleTag = document.createElement('style')
-    styleTag.id = uuid
-    styleTag.textContent = cssText
+  if (cache.includes(uuid)) {
+    // document.getElementById(id).remove()
+    // document.head.appendChild(styleTag)
+  } else {
+    cache.push(uuid)
+    cssCache.push(cssText)
+  }
 
-    if (cache.includes(uuid)) {
-      // document.getElementById(id).remove()
-      // document.head.appendChild(styleTag)
-    } else {
-      document.head.appendChild(styleTag)
-      cache.push(uuid)
-    }
-  }, [])
+  // React.useEffect(() => {
+  //   const styleTag = document.createElement('style')
+  //   styleTag.id = uuid
+  //   styleTag.textContent = cssText
+  //   if (cache.includes(uuid)) {
+  //     // document.getElementById(id).remove()
+  //     // document.head.appendChild(styleTag)
+  //   } else {
+  //     cache.push(uuid)
+  //     document.head.appendChild(styleTag)
+  //   }
+  // }, [])
 
   return { className: targetClassName }
+}
+
+export function collectStyles(a) {
+  ReactDOM.renderToStaticMarkup(a)
+  // console.log(ReactDOM.renderToStaticMarkup(a))
+  // console.log(cssCache)
+  return a
+}
+
+export function getStyleElement() {
+  // console.log(ReactDOM.renderToStaticMarkup(a))
+  // console.log(cssCache)
+  return <style data-power-by="flutter-ui">{cssCache.join()}</style>
 }
 
 export const StyleInjector = () => {

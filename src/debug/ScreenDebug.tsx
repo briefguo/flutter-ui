@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleInjector } from '../bases/StyleInjector'
+import { StyleInjector } from '../helpers/StyleInjector'
 
 export const ScreenDebug = p => {
   // 使用shadowDOM

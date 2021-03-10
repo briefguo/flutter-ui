@@ -24,6 +24,4 @@ export * from './scaffolds/ScreenScaffold'
 export * from './helpers/renderComponent'
 export * from './helpers/StopPropagation'
 
-export * from './deprecated'
-
 export * from './interfaces'

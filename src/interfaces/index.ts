@@ -11,7 +11,9 @@ export type ValueOf<T> = T[keyof T]
 export type SingleProps<T> = BaseComponentProps & { [P in keyof T]?: T[P] }
 
 export type RSProps<T> = { [P in keyof T]?: RSProperty<T[P]> } & {
-  children?: React.ReactNode
+  'className'?: string
+  'data-screen'?: string
+  'children'?: React.ReactNode
 }
 
 export interface BaseComponentProps {

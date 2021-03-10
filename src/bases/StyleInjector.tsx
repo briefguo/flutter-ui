@@ -1,5 +1,6 @@
-import React, { Fragment } from 'react'
+import * as React from 'react'
 import md5 from 'md5'
+import { ProperRSProperty } from '../interfaces'
 
 function isNumber(n: any) {
   return typeof n === 'number'
@@ -23,10 +24,7 @@ export const CSSStyleDeclaration2InlineCSSText = (css: React.CSSProperties) => {
     })
     .join(';')
 
-  return {
-    cssText: styleString ? styleString + ';' : '',
-    uuid: md5(JSON.stringify(css ?? {})).slice(0, 8),
-  }
+  return styleString ? styleString + ';' : ''
 }
 
 export interface StyleInjectorProps {
@@ -37,39 +35,48 @@ export interface StyleInjectorProps {
 
 const cache = []
 
-const appendStyle = (id: string, css: string) => {
-  const styleTag = document.createElement('style')
-  styleTag.textContent = css
-  styleTag.id = id
+function useStyle(
+  selector: string,
+  css: ProperRSProperty<React.CSSProperties>,
+) {
+  const { lg, xs } = css
+  const isMobile = '@media screen and (max-width: 767px)'
+  // const isDesktop = '@media screen and (min-width: 992px)'
+  // const isNotMobile = '@media screen and (min-width: 768px)'
+  const isDefault = '@media screen and (min-width: 768px)'
+  const uuid = md5(JSON.stringify(css)).slice(0, 8)
+  const targetSelector = selector.replace('[uuid]', uuid)
 
-  if (cache.includes(id)) {
-    // document.getElementById(id).remove()
-    // document.head.appendChild(styleTag)
-  } else {
-    document.head.appendChild(styleTag)
-    cache.push(id)
-  }
-}
+  const cssText = `
+    ${isMobile} {
+      ${targetSelector} { ${CSSStyleDeclaration2InlineCSSText(xs)} }
+    }
 
-function useStyle(selector: string, css: React.CSSProperties) {
-  const inlineStyle = CSSStyleDeclaration2InlineCSSText(css)
-  const targetSelector = selector.replace('[uuid]', inlineStyle.uuid)
+    ${isDefault} {
+      ${targetSelector} { ${CSSStyleDeclaration2InlineCSSText(lg)} }
+    }
+  `
   const targetClassName = targetSelector.replace(/^./, '')
 
-  appendStyle(
-    inlineStyle.uuid,
-    targetSelector.concat(`{ ${inlineStyle.cssText} }`),
-  )
+  React.useEffect(() => {
+    const styleTag = document.createElement('style')
+    styleTag.id = uuid
+    styleTag.textContent = cssText
+
+    if (cache.includes(uuid)) {
+      // document.getElementById(id).remove()
+      // document.head.appendChild(styleTag)
+    } else {
+      document.head.appendChild(styleTag)
+      cache.push(uuid)
+    }
+  }, [])
 
   return { className: targetClassName }
 }
 
-export const StyleInjector = (props: StyleInjectorProps) => {
-  const { className } = useStyle(
-    `.${props.classNamePrefix}-[uuid]`,
-    props.style,
-  )
-  return <>{props.children?.(className)}</>
+export const StyleInjector = () => {
+  return <></>
 }
 
 StyleInjector.useStyle = useStyle

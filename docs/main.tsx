@@ -8,12 +8,18 @@ import {
   PageScaffold,
   Space,
   Text,
+  ListBuilder,
 } from '../src'
 import { CodeSample, SampleBox, Section } from './components'
+
+const MyListBuilder = ListBuilder.of({ items: [{ a: 10 }] })
 
 const Test = () => {
   return (
     <PageScaffold backgroundColor="#f6f8fa">
+      <MyListBuilder builder={item => <div>{item.a}</div>} />
+
+      <MyListBuilder builder={item => <div>{item.a}</div>} />
       <ScreenScaffold background="#ff6000" height={200} layout="center">
         <Text fontSize={32} fontWeight="bold">
           Flutter-UI

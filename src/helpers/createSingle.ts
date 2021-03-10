@@ -3,6 +3,24 @@ import cx from 'classnames'
 import { StyleInjector } from '../bases/StyleInjector'
 import { SingleProps, XOR } from '../interfaces'
 import { createOf } from './createOf'
+import { RSProps } from '../interfaces'
+
+interface PickPropsOption {
+  entity: any
+  keys: string[]
+  breakPoint: 'lg' | 'xs'
+}
+
+const _pickProps = (option: PickPropsOption) => {
+  const obj: any = {}
+  Object.keys(option.entity)
+    .filter(k => option.keys.includes(k))
+    .forEach(k => {
+      // 取断点值，不存在时取共用值为断点值
+      obj[k] = option.entity[k]?.[option.breakPoint] ?? option.entity[k]
+    })
+  return obj
+}
 
 const _omit = (obj: any = {}, keys: any[] = []) => {
   const targetObj: any = {}
@@ -42,25 +60,48 @@ export function singleOf<T, D>(
   const componentPropsKeys =
     typeof tag !== 'string' ? Object.keys(tag?.defaultProps) : []
   const componentCSSMapper = typeof tag !== 'string' ? tag.css : undefined
-  const { defaultProps, selector, props2CSSProperties, renderChildren } = option
-  const TargetC = (p: SingleProps<T & D>) => {
-    const { className } = StyleInjector.useStyle(selector, {
-      ...componentCSSMapper?.(p),
-      ...props2CSSProperties?.(p),
+
+  const { defaultProps, selector, props2CSSProperties } = option
+
+  const propsKeys = Object.keys(defaultProps ?? {})
+    // 当 tag 是 singleOf 创建的组件时，补上它的 keys
+    .concat(componentPropsKeys)
+    .concat(_commonKeys)
+
+  const TargetC = (p: RSProps<T & D>) => {
+    const lgProps = _pickProps({
+      entity: p,
+      breakPoint: 'lg',
+      keys: propsKeys,
     })
-    const propsKeys = Object.keys(defaultProps ?? {})
-      // 当 tag 是 singleOf 创建的组件时，补上它的 keys
-      .concat(componentPropsKeys)
-      .concat(_commonKeys)
+
+    const xsProps = _pickProps({
+      entity: p,
+      breakPoint: 'xs',
+      keys: propsKeys,
+    })
+
+    const { className } = StyleInjector.useStyle(selector, {
+      lg: {
+        ...componentCSSMapper?.(lgProps),
+        ...props2CSSProperties?.(lgProps),
+        ...lgProps.style
+      },
+      xs: {
+        ...componentCSSMapper?.(xsProps),
+        ...props2CSSProperties?.(xsProps),
+        ...xsProps.style
+      },
+    })
 
     // eslint-disable-next-line react/no-children-prop
     return React.createElement(tag, {
       ..._omit(p, propsKeys),
-      style: p.style,
-      className: cx(p.className, className, { lg: p.lg, xs: p.xs }),
-      children: renderChildren?.(p) ?? p.children,
+      className: cx(p.className, className),
+      children: p.children,
     })
   }
+
   TargetC.of = createOf(TargetC)
   TargetC.props2CSSProperties = props2CSSProperties
   TargetC.defaultProps = defaultProps

@@ -6,15 +6,14 @@ import { SingleFlex } from '../bases/Flex'
 import { SingleLayout } from '../bases/Layout'
 
 import { SingleBackground } from './Background'
-import { createRSC } from '../helpers/createRSC'
 
-export const ResponsiveContainer = createRSC(SingleContainer)
-export const ResponsiveFlex = createRSC(SingleFlex)
-export const ResponsiveText = createRSC(SingleText)
-export const ResponsiveLayout = createRSC(SingleLayout)
-export const ResponsiveImage = createRSC(SingleImage)
-export const ResponsiveSpace = createRSC(SingleSpace)
-export const ResponsiveBackground = createRSC(SingleBackground)
+export const ResponsiveContainer = SingleContainer
+export const ResponsiveFlex = SingleFlex
+export const ResponsiveText = SingleText
+export const ResponsiveLayout = SingleLayout
+export const ResponsiveImage = SingleImage
+export const ResponsiveSpace = SingleSpace
+export const ResponsiveBackground = SingleBackground
 
 export const ResponsiveContent = ResponsiveContainer.of({
   margin: { xs: '0 20px', lg: '0 auto' },

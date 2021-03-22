@@ -1,8 +1,11 @@
 import React from 'react'
-import { singleOf } from '../helpers/createSingle'
+import { createOf } from '../helpers/createOf'
+import { RSCProps, Style } from '../helpers/createRSC'
+import { RSProps } from '../interfaces'
 
 export type LayoutAlignment =
   | 'center'
+  | 'topCenter'
   | 'leftCenter'
   | 'leftBottom'
   | 'rightCenter'
@@ -12,6 +15,10 @@ export type LayoutAlignment =
 const layouts: Record<LayoutAlignment, React.CSSProperties> = {
   center: {
     justifyContent: 'center',
+    textAlign: 'center',
+    alignItems: 'center',
+  },
+  topCenter: {
     textAlign: 'center',
     alignItems: 'center',
   },
@@ -36,31 +43,32 @@ const layouts: Record<LayoutAlignment, React.CSSProperties> = {
   },
 }
 
-export type LayoutProps = LayoutAlignment
-
-export const mapLayoutPropsToCSS = (layout?: LayoutProps) => {
+export const mapLayoutPropsToCSS = (
+  layout?: LayoutAlignment,
+): React.CSSProperties => {
   let layoutProps: React.CSSProperties
   if (Object.keys(layouts).includes(layout as any)) {
-    layoutProps = layouts[layout as keyof typeof layouts]
+    layoutProps = layouts[layout as LayoutAlignment]
   } else {
     layoutProps = layout as React.CSSProperties
   }
-  return layoutProps
+  return {
+    ...layoutProps,
+  }
 }
 
-export const SingleLayout = singleOf('div', {
-  defaultProps: {
-    alignment: <LayoutAlignment>undefined,
-    style: <React.CSSProperties>undefined,
-  },
-  selector: '.s-layout-[uuid]',
-  props2CSSProperties: p => ({
+export class LayoutProps extends RSCProps {
+  @Style.Calc(alignment => ({
     display: 'flex',
     flexDirection: 'column',
     flex: '1 1 auto',
     height: '100%',
-    ...mapLayoutPropsToCSS(p.alignment),
-  }),
-})
+    ...mapLayoutPropsToCSS(alignment),
+  }))
+  alignment?: LayoutAlignment
+}
 
-export const Layout = SingleLayout
+export const Layout = (p: RSProps<LayoutProps>) =>
+  React.createElement('div', LayoutProps.of(p))
+
+Layout.of = createOf(Layout)

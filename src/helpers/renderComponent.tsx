@@ -10,7 +10,7 @@ export type RenderedComponent<T = any> = React.FC<
 
 export type RCProps<P, R> = P & {
   onClose: () => void
-  onComplete: (R) => void
+  onComplete: (r: R) => void
 }
 export type RC<P, R> = React.FC<RCProps<P, R>>
 

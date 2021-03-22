@@ -1,19 +1,18 @@
-import { SingleContainer } from '../bases/Container'
-import { SingleText } from '../bases/Text'
-import { SingleImage } from '../bases/Image'
-import { SingleSpace } from '../bases/Space'
-import { SingleFlex } from '../bases/Flex'
-import { SingleLayout } from '../bases/Layout'
+import { Container } from '../bases/Container'
+import { Text } from '../bases/Text'
+import { Layout } from '../bases/Layout'
+import { Background } from '../bases/Background'
+import { Flex } from '../bases/Flex'
 
-import { SingleBackground } from './Background'
+import { Image } from '../bases/Image'
+import { Space } from '../bases/Space'
 
-export const ResponsiveContainer = SingleContainer
-export const ResponsiveFlex = SingleFlex
-export const ResponsiveText = SingleText
-export const ResponsiveLayout = SingleLayout
-export const ResponsiveImage = SingleImage
-export const ResponsiveSpace = SingleSpace
-export const ResponsiveBackground = SingleBackground
+export const ResponsiveContainer = Container
+export const ResponsiveFlex = Flex
+export const ResponsiveText = Text
+export const ResponsiveLayout = Layout
+export const ResponsiveImage = Image
+export const ResponsiveBackground = Background
 
 export const ResponsiveContent = ResponsiveContainer.of({
   margin: { xs: '0 20px', lg: '0 auto' },
@@ -28,7 +27,7 @@ export const RS = {
   Text: ResponsiveText,
   Layout: ResponsiveLayout,
   Image: ResponsiveImage,
-  Space: ResponsiveSpace,
+  Space: Space,
   Background: ResponsiveBackground,
   Content: ResponsiveContent,
 }

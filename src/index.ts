@@ -5,9 +5,10 @@ export * from './bases/Image'
 export * from './bases/Space'
 export * from './bases/Layout'
 export * from './bases/Flex'
+export * from './bases/StopPropagation'
+export * from './bases/Background'
 
 // extend
-export * from './extends/Background'
 export * from './extends/ListBuilder'
 export * from './extends/RS'
 
@@ -22,6 +23,6 @@ export * from './scaffolds/ScreenScaffold'
 
 // helpers
 export * from './helpers/renderComponent'
-export * from './helpers/StopPropagation'
+export * from './helpers/RSStyleSheet'
 
 export * from './interfaces'

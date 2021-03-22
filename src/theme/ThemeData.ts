@@ -12,10 +12,10 @@ export class ThemeData {
   static defaultTheme = new ThemeData({})
 
   constructor(v: Partial<ThemeData>) {
-    Object.keys(v).forEach(k => ((this as any)[k] = v[k]))
+    Object.keys(v).forEach(k => ((this as any)[k] = v[k as keyof ThemeData]))
   }
 
-  copyWith(v: Partial<ThemeData>) {
+  copyWith(v: Partial<ThemeData>): ThemeData {
     return new ThemeData({ ...this, ...v })
   }
 }

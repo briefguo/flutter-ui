@@ -19,12 +19,12 @@
 
     
     "strict": true,
-    "importHelpers": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
+    // "importHelpers": true,
+    // "resolveJsonModule": true,
+    // "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "isolatedModules": true
+    // "noEmit": true,
+    // "isolatedModules": true
   },
   "include": ["src/**/**.tsx", "src/**/**.ts"]
 }

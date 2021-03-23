@@ -26,3 +26,6 @@ export * from './helpers/renderComponent'
 export * from './helpers/RSStyleSheet'
 
 export * from './interfaces'
+
+// 
+export * from './v2'

@@ -6,7 +6,7 @@ import { ContainerProps } from './Container'
 
 export class BackgroundProps extends ContainerProps {
   @Style.As('color')
-  contrastingColor = '#fff'
+  contrastingColor?: string = '#fff'
 
   @Style.Map(p => BackgroundProps.p2Background(p))
   src?: string

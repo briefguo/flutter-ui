@@ -4,17 +4,18 @@ import { Style, RSCProps } from '../helpers/createRSC'
 import { RSProps } from '../interfaces'
 
 const props2CSSProperties = (p: SpaceItemProps) => {
+  const size = p.size ?? 0
   switch (p.direction) {
     case 'vertical':
       return {
-        marginTop: p.size / 2,
-        marginBottom: p.size / 2,
+        marginTop: size / 2,
+        marginBottom: size / 2,
       }
     case 'horizen':
     default:
       return {
-        marginLeft: p.size / 2,
-        marginRight: p.size / 2,
+        marginLeft: size / 2,
+        marginRight: size / 2,
       }
   }
 }
@@ -32,7 +33,7 @@ class SpaceItemProps extends RSCProps {
   align?: Property.AlignItems
 
   @Style.Map(props2CSSProperties)
-  size = 0
+  size?: number = 0
 }
 
 const SpaceItem = (p: RSProps<SpaceItemProps>) =>
@@ -42,17 +43,18 @@ const SpaceItem = (p: RSProps<SpaceItemProps>) =>
 // // https://developer.mozilla.org/zh-CN/docs/Web/CSS/column-gap
 
 const calcSpaceStyle = (p: SpaceProps) => {
+  const size = p.size ?? 0
   switch (p.direction) {
     case 'vertical':
       return {
-        marginTop: -p.size / 2,
-        marginBottom: -p.size / 2,
+        marginTop: -size / 2,
+        marginBottom: -size / 2,
       }
     case 'horizen':
     default:
       return {
-        marginLeft: -p.size / 2,
-        marginRight: -p.size / 2,
+        marginLeft: -size / 2,
+        marginRight: -size / 2,
       }
   }
 }
@@ -70,7 +72,7 @@ export class SpaceProps extends RSCProps {
   align?: Property.AlignItems
 
   @Style.Map(calcSpaceStyle)
-  size = 0
+  size?: number = 0
 }
 
 const SpaceContainer = (p: RSProps<SpaceProps>) =>

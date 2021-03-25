@@ -91,3 +91,7 @@ export declare const Center: {
     displayName: string;
     of: (base: RSProps<import("./bases/Flex").FlexProps, import("react").ReactNode>) => any;
 };
+export declare const useDevices: () => {
+    isDefault: boolean;
+    isMobile: boolean;
+};

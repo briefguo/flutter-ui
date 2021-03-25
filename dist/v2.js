@@ -1,11 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Center = exports.SingleCenter = exports.SingleColumn = exports.SingleFlex = exports.SingleLayout = exports.SingleText = exports.SingleBackground = exports.SizedBox = exports.SingleContainer = void 0;
+exports.useDevices = exports.Center = exports.SingleCenter = exports.SingleColumn = exports.SingleFlex = exports.SingleLayout = exports.SingleText = exports.SingleBackground = exports.SizedBox = exports.SingleContainer = void 0;
 var Background_1 = require("./bases/Background");
 var Container_1 = require("./bases/Container");
 var Text_1 = require("./bases/Text");
 var Flex_1 = require("./bases/Flex");
 var Layout_1 = require("./bases/Layout");
+var RSStyleSheet_1 = require("./helpers/RSStyleSheet");
 exports.SingleContainer = Container_1.Container;
 exports.SizedBox = exports.SingleContainer;
 exports.SingleBackground = Background_1.Background;
@@ -18,3 +19,10 @@ exports.SingleCenter = Flex_1.Flex.of({
     layout: 'center',
 });
 exports.Center = exports.SingleCenter;
+var useDevices = function () {
+    return {
+        isDefault: RSStyleSheet_1.RSStyleSheet.breakpoint === 'lg',
+        isMobile: RSStyleSheet_1.RSStyleSheet.breakpoint === 'xs',
+    };
+};
+exports.useDevices = useDevices;

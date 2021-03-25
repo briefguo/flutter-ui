@@ -4,6 +4,7 @@ import { RSProps } from './interfaces'
 import { Text, TextProps } from './bases/Text'
 import { Flex } from './bases/Flex'
 import { Layout } from './bases/Layout'
+import { RSStyleSheet } from './helpers/RSStyleSheet'
 
 export type SingleContainerProps = ContainerProps
 export const SingleContainer = Container
@@ -25,3 +26,10 @@ export const SingleCenter = Flex.of({
 })
 
 export const Center = SingleCenter
+
+export const useDevices = () => {
+  return {
+    isDefault: RSStyleSheet.breakpoint === 'lg',
+    isMobile: RSStyleSheet.breakpoint === 'xs',
+  }
+}

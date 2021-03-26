@@ -123,13 +123,13 @@ var RSCProps = /** @class */ (function () {
         var lgProps = this.pickByBreakpoint(styleProps, 'lg');
         var xsProps = this.pickByBreakpoint(styleProps, 'xs');
         var className = RSStyleSheet_1.RSStyleSheet.createStyle(this.selector, {
-            lg: this.props2Style(lgProps),
-            xs: this.props2Style(xsProps),
+            lg: __assign(__assign({}, this.props2Style(lgProps)), lgProps.style),
+            xs: __assign(__assign({}, this.props2Style(xsProps)), xsProps.style),
         }).className;
         return __assign(__assign({}, nativeProps), { className: classnames_1.default(className, p.className, {
                 lg: p.lg,
                 xs: p.xs,
-            }), children: p.children, style: p.style });
+            }), children: p.children });
     };
     RSCProps.getCurrentProperty = function (p) {
         if (RSCProps.isRSProperty(p)) {

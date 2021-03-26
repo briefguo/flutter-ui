@@ -11,6 +11,7 @@
     "start:docs": "SHOW_SCREEN_DEBUG=true parcel docs/index.html",
     "test": "jest",
     "start": "npm run start:docs",
+    "watch": "tsc -d -w",
     "build": "tsc -d && cp src/index.css dist/index.css"
   },
   "dependencies": {

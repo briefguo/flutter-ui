@@ -15,6 +15,5 @@ export declare class RSCProps {
     static of(p: any): {
         className: string;
         children: any;
-        style: any;
     };
 }

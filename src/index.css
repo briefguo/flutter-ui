@@ -1,3 +1,9 @@
+/* 懒加载时，图片无src时会有默认边框 */
+img[src=''],
+img:not([src]) {
+  opacity: 0;
+}
+
 @media screen and (max-width: 767px) {
   .lg,
   [class^='s-text-'].lg,

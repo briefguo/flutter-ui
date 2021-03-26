@@ -63,7 +63,7 @@ export class RSStyleSheet {
         'style[data-power-by="flutter-ui"]',
       )[0]
       // 服务端没渲染出来的样式(客户端需要请求接口后渲染的)，客户端主动添加
-      if (!serverStyle.textContent?.includes(targetClassName)) {
+      if (!serverStyle?.textContent?.includes(targetClassName)) {
         if (clientCache.includes(targetClassName)) {
           //
         } else {

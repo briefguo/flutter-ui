@@ -14,7 +14,6 @@ export declare const Text: {
     (p: RSProps<TextProps>): React.DetailedReactHTMLElement<{
         className: string;
         children: any;
-        style: any;
     }, HTMLElement>;
     of: (base: RSProps<TextProps, React.ReactNode>) => {
         (p: RSProps<TextProps, React.ReactNode>): JSX.Element;

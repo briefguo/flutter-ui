@@ -16,7 +16,6 @@ export declare const Flex: {
     (p: RSProps<FlexProps>): React.DetailedReactHTMLElement<{
         className: string;
         children: any;
-        style: any;
     }, HTMLElement>;
     of: (base: RSProps<FlexProps, React.ReactNode>) => {
         (p: RSProps<FlexProps, React.ReactNode>): JSX.Element;

@@ -5,7 +5,8 @@ function isNumber(n) {
     return typeof n === 'number';
 }
 var CSSStyleDeclaration2InlineCSSText = function (css) {
-    var excludeUnitProps = ['zIndex'];
+    // TODO: number类
+    var excludeUnitProps = ['zIndex', 'columnCount'];
     // https://stackoverflow.com/questions/45205593/how-to-convert-a-json-style-object-to-a-css-string
     var styleString = Object.entries(css !== null && css !== void 0 ? css : {})
         .filter(function (_a) {

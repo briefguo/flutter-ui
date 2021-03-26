@@ -60,8 +60,6 @@ var SpaceItemProps = /** @class */ (function (_super) {
     __extends(SpaceItemProps, _super);
     function SpaceItemProps() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.direction = 'horizen';
-        _this.box = 'inline-flex';
         _this.size = 0;
         return _this;
     }
@@ -72,7 +70,10 @@ var SpaceItemProps = /** @class */ (function (_super) {
         __metadata("design:type", String)
     ], SpaceItemProps.prototype, "direction", void 0);
     __decorate([
-        createRSC_1.Style.Calc(function (box) { return ({ display: box }); }),
+        createRSC_1.Style.Calc(function (box) { return ({
+            display: box,
+            flex: box === 'flex' ? '1 1 auto' : undefined,
+        }); }),
         __metadata("design:type", String)
     ], SpaceItemProps.prototype, "box", void 0);
     __decorate([
@@ -113,7 +114,6 @@ var SpaceProps = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.direction = 'horizen';
         _this.box = 'inline-flex';
-        _this.size = 0;
         return _this;
     }
     __decorate([

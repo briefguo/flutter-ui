@@ -22,6 +22,7 @@ __exportStar(require("./bases/Background"), exports);
 // extend
 __exportStar(require("./extends/ListBuilder"), exports);
 __exportStar(require("./extends/RS"), exports);
+__exportStar(require("./extends/MutipleColumn"), exports);
 // theme and colors
 __exportStar(require("./theme/Colors"), exports);
 __exportStar(require("./theme/ThemeData"), exports);
@@ -32,6 +33,7 @@ __exportStar(require("./scaffolds/ScreenScaffold"), exports);
 // helpers
 __exportStar(require("./helpers/renderComponent"), exports);
 __exportStar(require("./helpers/RSStyleSheet"), exports);
+__exportStar(require("./helpers/createOf"), exports);
 __exportStar(require("./interfaces"), exports);
 // 
 __exportStar(require("./v2"), exports);

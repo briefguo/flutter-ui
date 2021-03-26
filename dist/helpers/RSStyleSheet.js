@@ -56,7 +56,7 @@ var RSStyleSheet = /** @class */ (function () {
         if (typeof window !== 'undefined') {
             var serverStyle = document.querySelectorAll('style[data-power-by="flutter-ui"]')[0];
             // 服务端没渲染出来的样式(客户端需要请求接口后渲染的)，客户端主动添加
-            if (!((_a = serverStyle.textContent) === null || _a === void 0 ? void 0 : _a.includes(targetClassName))) {
+            if (!((_a = serverStyle === null || serverStyle === void 0 ? void 0 : serverStyle.textContent) === null || _a === void 0 ? void 0 : _a.includes(targetClassName))) {
                 if (clientCache.includes(targetClassName)) {
                     //
                 }

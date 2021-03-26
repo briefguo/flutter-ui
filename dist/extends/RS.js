@@ -8,6 +8,7 @@ var Background_1 = require("../bases/Background");
 var Flex_1 = require("../bases/Flex");
 var Image_1 = require("../bases/Image");
 var Space_1 = require("../bases/Space");
+var MutipleColumn_1 = require("./MutipleColumn");
 exports.ResponsiveContainer = Container_1.Container;
 exports.ResponsiveFlex = Flex_1.Flex;
 exports.ResponsiveText = Text_1.Text;
@@ -20,12 +21,13 @@ exports.ResponsiveContent = exports.ResponsiveContainer.of({
 });
 exports.Content = exports.ResponsiveContent;
 exports.RS = {
-    Container: exports.ResponsiveContainer,
-    Flex: exports.ResponsiveFlex,
-    Text: exports.ResponsiveText,
-    Layout: exports.ResponsiveLayout,
-    Image: exports.ResponsiveImage,
+    Container: Container_1.Container,
+    Flex: Flex_1.Flex,
+    Text: Text_1.Text,
+    Layout: Layout_1.Layout,
+    Image: Image_1.Image,
     Space: Space_1.Space,
-    Background: exports.ResponsiveBackground,
-    Content: exports.ResponsiveContent,
+    MutipleColumn: MutipleColumn_1.MutipleColumn,
+    Background: Background_1.Background,
+    Content: exports.Content,
 };

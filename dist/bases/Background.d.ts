@@ -13,7 +13,6 @@ export declare const Background: {
     (p: RSProps<BackgroundProps>): React.DetailedReactHTMLElement<{
         className: string;
         children: any;
-        style: any;
     }, HTMLElement>;
     of: (base: RSProps<BackgroundProps, React.ReactNode>) => {
         (p: RSProps<BackgroundProps, React.ReactNode>): JSX.Element;

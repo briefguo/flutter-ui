@@ -19,6 +19,9 @@ export class ContainerProps extends RSCProps {
   textAlign?: Property.TextAlign
 
   boxShadow?: string
+
+  columnCount?: number
+  columnGap?: number
 }
 
 export const Container = (p: RSProps<ContainerProps>) =>

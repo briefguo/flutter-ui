@@ -24,10 +24,13 @@ class SpaceItemProps extends RSCProps {
   @Style.Calc(direction => ({
     flexDirection: direction === 'vertical' ? 'column' : 'row',
   }))
-  direction?: 'vertical' | 'horizen' = 'horizen'
+  direction?: 'vertical' | 'horizen'
 
-  @Style.Calc(box => ({ display: box }))
-  box?: 'inline-flex' | 'flex' = 'inline-flex'
+  @Style.Calc(box => ({
+    display: box,
+    flex: box === 'flex' ? '1 1 auto' : undefined,
+  }))
+  box?: 'inline-flex' | 'flex'
 
   @Style.As('alignItems')
   align?: Property.AlignItems
@@ -72,7 +75,7 @@ export class SpaceProps extends RSCProps {
   align?: Property.AlignItems
 
   @Style.Map(calcSpaceStyle)
-  size?: number = 0
+  size?: number
 }
 
 const SpaceContainer = (p: RSProps<SpaceProps>) =>

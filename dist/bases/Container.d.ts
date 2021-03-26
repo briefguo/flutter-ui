@@ -14,12 +14,13 @@ export declare class ContainerProps extends RSCProps {
     cursor?: string;
     textAlign?: Property.TextAlign;
     boxShadow?: string;
+    columnCount?: number;
+    columnGap?: number;
 }
 export declare const Container: {
     (p: RSProps<ContainerProps>): React.DetailedReactHTMLElement<{
         className: string;
         children: any;
-        style: any;
     }, HTMLElement>;
     of: (base: RSProps<ContainerProps, React.ReactNode>) => {
         (p: RSProps<ContainerProps, React.ReactNode>): JSX.Element;

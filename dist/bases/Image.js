@@ -56,11 +56,13 @@ exports.Img = exports.Image = exports.ImageProps = void 0;
 var react_1 = __importStar(require("react"));
 var createOf_1 = require("../helpers/createOf");
 var createRSC_1 = require("../helpers/createRSC");
+var useWindowScroll_1 = require("../helpers/useWindowScroll");
 var ImageProps = /** @class */ (function (_super) {
     __extends(ImageProps, _super);
     function ImageProps() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.width = '100%';
+        _this.height = '';
         return _this;
     }
     __decorate([
@@ -72,14 +74,16 @@ var ImageProps = /** @class */ (function (_super) {
 exports.ImageProps = ImageProps;
 var Image = function (p) {
     var imgRef = react_1.default.createRef();
+    var y = useWindowScroll_1.useWindowScroll().y;
     react_1.useEffect(function () {
-        var _a, _b;
-        var rect = (_a = imgRef.current) === null || _a === void 0 ? void 0 : _a.getBoundingClientRect(); // 出现在视野的时候加载图片
-        if ((rect === null || rect === void 0 ? void 0 : rect.top) && (rect === null || rect === void 0 ? void 0 : rect.top) < document.documentElement.clientHeight) {
+        var elem = imgRef.current;
+        var rect = elem === null || elem === void 0 ? void 0 : elem.getBoundingClientRect(); // 出现在视野的时候加载图片
+        if ((rect === null || rect === void 0 ? void 0 : rect.top) && (rect === null || rect === void 0 ? void 0 : rect.top) < window.innerHeight) {
             var src = createRSC_1.RSCProps.getCurrentProperty(p.src);
-            src && ((_b = imgRef.current) === null || _b === void 0 ? void 0 : _b.setAttribute('src', src));
+            // 未加载图片时加载
+            src && (elem === null || elem === void 0 ? void 0 : elem.setAttribute('src', src));
         }
-    }, [p.src, imgRef]);
+    }, [y, p.src, imgRef]);
     return react_1.default.createElement("img", __assign({ ref: imgRef }, ImageProps.of(p), { alt: "" }));
 };
 exports.Image = Image;

@@ -10,7 +10,6 @@ export declare const Layout: {
     (p: RSProps<LayoutProps>): React.DetailedReactHTMLElement<{
         className: string;
         children: any;
-        style: any;
     }, HTMLElement>;
     of: (base: RSProps<LayoutProps, React.ReactNode>) => {
         (p: RSProps<LayoutProps, React.ReactNode>): JSX.Element;

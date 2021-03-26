@@ -12,7 +12,7 @@ export * from '../decorators/Native'
 
 export class RSCProps {
   static getCurrentProperty = (p: any) => {
-    if (RSCProps.isRSProperty(p)) {      
+    if (RSCProps.isRSProperty(p)) {
       if (RSStyleSheet.breakpoint) {
         return p[RSStyleSheet.breakpoint]
       }
@@ -112,8 +112,8 @@ export class RSCProps {
     const xsProps = this.pickByBreakpoint(styleProps, 'xs')
 
     const { className } = RSStyleSheet.createStyle(this.selector, {
-      lg: this.props2Style(lgProps),
-      xs: this.props2Style(xsProps),
+      lg: { ...this.props2Style(lgProps), ...lgProps.style },
+      xs: { ...this.props2Style(xsProps), ...xsProps.style },
     })
 
     return {
@@ -123,7 +123,6 @@ export class RSCProps {
         xs: p.xs,
       }),
       children: p.children,
-      style: p.style,
     }
   }
 }

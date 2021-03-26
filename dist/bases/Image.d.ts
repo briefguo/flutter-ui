@@ -3,6 +3,7 @@ import { RSCProps } from '../helpers/createRSC';
 import { RSProps } from '../interfaces';
 export declare class ImageProps extends RSCProps {
     width: number | string;
+    height: number | string;
     src?: string;
 }
 export declare const Image: {

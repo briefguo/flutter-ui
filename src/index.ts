@@ -11,6 +11,7 @@ export * from './bases/Background'
 // extend
 export * from './extends/ListBuilder'
 export * from './extends/RS'
+export * from './extends/MutipleColumn'
 
 // theme and colors
 export * from './theme/Colors'
@@ -24,6 +25,7 @@ export * from './scaffolds/ScreenScaffold'
 // helpers
 export * from './helpers/renderComponent'
 export * from './helpers/RSStyleSheet'
+export * from './helpers/createOf'
 
 export * from './interfaces'
 

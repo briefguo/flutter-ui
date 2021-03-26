@@ -6,7 +6,6 @@ export declare const SingleContainer: {
     (p: RSProps<ContainerProps, import("react").ReactNode>): import("react").DetailedReactHTMLElement<{
         className: string;
         children: any;
-        style: any;
     }, HTMLElement>;
     of: (base: RSProps<ContainerProps, import("react").ReactNode>) => {
         (p: RSProps<ContainerProps, import("react").ReactNode>): JSX.Element;
@@ -18,7 +17,6 @@ export declare const SizedBox: {
     (p: RSProps<ContainerProps, import("react").ReactNode>): import("react").DetailedReactHTMLElement<{
         className: string;
         children: any;
-        style: any;
     }, HTMLElement>;
     of: (base: RSProps<ContainerProps, import("react").ReactNode>) => {
         (p: RSProps<ContainerProps, import("react").ReactNode>): JSX.Element;
@@ -30,7 +28,6 @@ export declare const SingleBackground: {
     (p: RSProps<import("./bases/Background").BackgroundProps, import("react").ReactNode>): import("react").DetailedReactHTMLElement<{
         className: string;
         children: any;
-        style: any;
     }, HTMLElement>;
     of: (base: RSProps<import("./bases/Background").BackgroundProps, import("react").ReactNode>) => {
         (p: RSProps<import("./bases/Background").BackgroundProps, import("react").ReactNode>): JSX.Element;
@@ -44,7 +41,6 @@ export declare const SingleText: {
     (p: RSProps<TextProps, import("react").ReactNode>): import("react").DetailedReactHTMLElement<{
         className: string;
         children: any;
-        style: any;
     }, HTMLElement>;
     of: (base: RSProps<TextProps, import("react").ReactNode>) => {
         (p: RSProps<TextProps, import("react").ReactNode>): JSX.Element;
@@ -56,7 +52,6 @@ export declare const SingleLayout: {
     (p: RSProps<import("./bases/Layout").LayoutProps, import("react").ReactNode>): import("react").DetailedReactHTMLElement<{
         className: string;
         children: any;
-        style: any;
     }, HTMLElement>;
     of: (base: RSProps<import("./bases/Layout").LayoutProps, import("react").ReactNode>) => {
         (p: RSProps<import("./bases/Layout").LayoutProps, import("react").ReactNode>): JSX.Element;
@@ -68,7 +63,6 @@ export declare const SingleFlex: {
     (p: RSProps<import("./bases/Flex").FlexProps, import("react").ReactNode>): import("react").DetailedReactHTMLElement<{
         className: string;
         children: any;
-        style: any;
     }, HTMLElement>;
     of: (base: RSProps<import("./bases/Flex").FlexProps, import("react").ReactNode>) => {
         (p: RSProps<import("./bases/Flex").FlexProps, import("react").ReactNode>): JSX.Element;

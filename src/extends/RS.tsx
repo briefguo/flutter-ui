@@ -6,6 +6,7 @@ import { Flex } from '../bases/Flex'
 
 import { Image } from '../bases/Image'
 import { Space } from '../bases/Space'
+import { MutipleColumn } from './MutipleColumn'
 
 export const ResponsiveContainer = Container
 export const ResponsiveFlex = Flex
@@ -22,12 +23,13 @@ export const ResponsiveContent = ResponsiveContainer.of({
 export const Content = ResponsiveContent
 
 export const RS = {
-  Container: ResponsiveContainer,
-  Flex: ResponsiveFlex,
-  Text: ResponsiveText,
-  Layout: ResponsiveLayout,
-  Image: ResponsiveImage,
-  Space: Space,
-  Background: ResponsiveBackground,
-  Content: ResponsiveContent,
+  Container,
+  Flex,
+  Text,
+  Layout,
+  Image,
+  Space,
+  MutipleColumn,
+  Background,
+  Content,
 }

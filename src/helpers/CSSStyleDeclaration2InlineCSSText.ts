@@ -2,8 +2,11 @@ function isNumber(n: any) {
   return typeof n === 'number'
 }
 
-export const CSSStyleDeclaration2InlineCSSText = (css?: React.CSSProperties) => {
-  const excludeUnitProps = ['zIndex']
+export const CSSStyleDeclaration2InlineCSSText = (
+  css?: React.CSSProperties,
+) => {
+  // TODO: number类
+  const excludeUnitProps = ['zIndex', 'columnCount']
 
   // https://stackoverflow.com/questions/45205593/how-to-convert-a-json-style-object-to-a-css-string
   const styleString = Object.entries(css ?? {})
